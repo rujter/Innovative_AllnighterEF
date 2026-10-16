@@ -10,7 +10,7 @@ A local, interactive system demonstration, not a replacement portal. All records
 - All three use `../allnighter.html`, with `#patient`, `#doctor` or `#nurse` selecting the workspace. Opening the same underlying file in three tabs allows browser-local state to be shared where localStorage is available.
 - For HTTP preview, run `npm run dev` and open `http://localhost:5173/` with the appropriate role hash.
 
-The patient version starts with a login form. Enter the fictional ZZZS number and randomly generated password shown under **Demo access details**, then select **Log in**. The inputs are confined to this login step; the care workflow still uses large choices without typing. **Log out** beside the patient's name returns to the form while keeping demo records, and **Reset demo** creates new demo credentials. This is a visual workflow example, not a real identity check or secure account system.
+The patient version opens directly to the care workflow, with large choices and no typing. The sample patient's ZZZS number remains visible in the Patient Passport. **Reset demo** restores the fictional records and appointments.
 
 ## Demonstrate a complete workflow
 
@@ -24,7 +24,9 @@ The guided questionnaire branches according to urgency, concern and selected sym
 
 The Passport shows medications, allergies, conditions and past operations. In either staff workspace, select a medicine to see its ingredient, strength, prescription issue status, issue date, treatment start/end timeline, precautions, and examples of interacting medicines linked to NHS references. Ongoing treatment has no invented end date. These examples are not a complete interaction checker, and treatment dates do not establish that doses were taken. The Ibuprofen example starts as **Not issued**; the doctor can review and mark it issued in the demo to demonstrate the shared update.
 
-Nurses record examination steps with large **Done** / **Not applicable** buttons. Required steps cannot be skipped, and sample collection is required for lab appointments. Each update records the nurse and timestamp, with an undo history. Completing the record makes it read-only and updates the patient request. Doctors can see saved nurse steps immediately. The checklist records workflow completion only, not observation measurements; it is not a clinical protocol.
+Nurses can apply one of three reusable templates with a click: **Routine examination**, **Blood / urine collection**, or **Chronic follow-up**. They can customize a template by clicking which checklist steps it includes and save it for later visits. Existing recorded steps remain visible when the template changes. Applying a template never marks care as completed.
+
+Nurses record examination steps with large **Done** / **Not applicable** buttons. Required steps cannot be skipped, and sample collection is required for lab appointments even if a different template is selected. Each update records the nurse and timestamp, with an undo history. Completing the record makes it read-only and updates the patient request. Doctors can see saved nurse steps immediately. The checklist records workflow completion only, not observation measurements; it is not a clinical protocol.
 
 Appointments can be booked or cancelled directly. Suitable cancelled consultation slots are automatically offered to the next eligible fictional waiting-list patient. Switching to Marija's authorized sample family profile demonstrates accepting an offer. Available slots and the doctor's scheduling activity update together.
 
