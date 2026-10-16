@@ -11,25 +11,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap" rel="stylesheet">
   <style>
-:root{--ink:#17382f;--muted:#566b64;--green:#19654e;--pale:#edf5ee;--line:#d5e0d9;--paper:#fff;--bg:#f5f7f4;--red:#9e3028;--amber:#775416}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:18px/1.55 'DM Sans',Arial,sans-serif}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:'Manrope','DM Sans',Arial,sans-serif}h1{font-size:34px;line-height:1.25;letter-spacing:-1px}h2{font-size:25px;line-height:1.3;letter-spacing:-.6px}h3{font-size:20px;line-height:1.4}button,input,a{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}button:disabled{opacity:.5;cursor:not-allowed}a{color:var(--green)}:focus-visible{outline:3px solid #2e795e;outline-offset:4px}button{border-radius:12px}svg.icon{width:24px;height:24px;flex-shrink:0;display:block}button .icon,a .icon{pointer-events:none}.muted{color:var(--muted)}.small{font-size:15px}.eyebrow{font-size:13px;font-weight:750;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:9px}.prototype-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px max(24px,calc((100vw - 1320px)/2));background:#163f34;color:#fff;font-size:14px}.prototype-bar>span{display:flex;align-items:center;gap:8px}.prototype-bar .icon{width:17px;height:17px}.version-links{display:flex;gap:6px}.version-links a{display:flex;align-items:center;gap:6px;color:#fff;padding:7px 13px;text-decoration:none;border-radius:7px;white-space:nowrap}.version-links a.active{background:#fff;color:#163f34}.site-header{padding:25px max(24px,calc((100vw - 1320px)/2));background:white;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}.wordmark{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}.wordmark strong{font-size:31px;color:var(--green);letter-spacing:-1px}.wordmark span{font-size:16px;color:var(--muted);border-left:1px solid var(--line);padding-left:16px}.account-button{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);padding:10px 14px;font-size:16px;min-height:56px}.avatar{width:40px;height:40px;display:grid;place-items:center;background:#e7eee1;border-radius:50%;font-size:14px;font-weight:700;flex-shrink:0}.account-button small{display:block;text-align:left;color:var(--muted);font-size:12px}.page{max-width:1368px;margin:0 auto;padding:35px 24px 28px}.intro{margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.intro p{margin-top:8px;color:var(--muted)}.step-label{display:inline-flex;align-items:center;gap:8px;font-size:14px;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:24px;white-space:nowrap}.step-label .icon{color:var(--green);height:18px;width:18px}.patient-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:25px;align-items:start}.stack{display:flex;flex-direction:column;gap:25px;min-width:0}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.panel-head>div>p{font-size:15px;color:var(--muted);margin-top:7px}.panel-head .icon{color:var(--green)}.question-hero{background:#eaf3e8;border:1px solid #c4d9bd;padding:29px;border-radius:18px;position:relative;overflow:hidden}.question-hero h2{font-size:31px;max-width:480px;margin-bottom:10px}.question-hero p{max-width:500px;color:#3c5e4a}.question-hero .btn{margin-top:23px}.tree-symbol{position:absolute;top:24px;right:25px;color:#82a57a}.tree-symbol .icon{width:37px;height:37px}.process-preview{display:flex;align-items:center;gap:8px;margin-top:23px;font-size:14px;color:#436449;flex-wrap:wrap}.process-preview .icon{width:16px;height:16px}.process-preview span{display:flex;align-items:center;gap:5px}.process-preview b{display:grid;place-items:center;border:1px solid #a7c39b;border-radius:50%;width:23px;height:23px;font-size:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border:1px solid #b4c8bb;background:white;padding:12px 19px;font-size:17px;font-weight:650;color:#215b45;text-decoration:none;text-align:center}.btn:hover{background:#f0f6ee}.btn.primary{background:var(--green);border-color:var(--green);color:white}.btn.primary:hover{background:#124e3b}.btn.danger{color:var(--red);border-color:#d9aaa6;background:#fff}.btn.danger:hover{background:#fff1ef}.btn.subtle{border:0;background:transparent;padding:8px;font-size:15px;min-height:44px}.btn.full{width:100%}.btn .icon{width:21px;height:21px}.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.action-tile{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:11px;border:1px solid var(--line);background:#fff;padding:21px 17px;min-height:156px}.action-tile:hover{border-color:#6f9b7b;background:#f8fbf6}.action-tile strong{font-size:19px;line-height:1.35}.action-tile span{font-size:14px;color:var(--muted)}.action-tile .icon{color:var(--green);width:27px;height:27px}.passport{border-top:5px solid var(--green);padding-top:23px}.passport-title{display:flex;gap:13px;align-items:center}.passport-title>.icon{width:32px;height:32px}.passport-title h2{font-size:25px}.passport-title p{font-size:14px;color:var(--muted);margin-top:3px}.identity{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;margin:20px 0}.identity .avatar{width:52px;height:52px;font-size:18px}.identity h3{font-size:22px}.identity p{font-size:15px;color:var(--muted)}.allergy{border:1px solid #d5a7a0;border-left:5px solid #ae453a;background:#fff3ef;padding:13px 15px;border-radius:9px;margin-bottom:19px;display:flex;align-items:flex-start;gap:10px;color:#893328}.allergy strong{display:block}.allergy .icon{margin-top:4px}.record-group{padding-top:19px;margin-top:19px;border-top:1px solid var(--line)}.record-group h3{display:flex;gap:9px;align-items:center;font-size:17px;margin-bottom:11px}.record-group h3 .icon{width:19px;height:19px;color:var(--green)}.record-item{font-size:17px;margin:9px 0}.record-item span{display:block;font-size:14px;color:var(--muted);margin-top:2px}.passport-note{font-size:13px;line-height:1.6;color:var(--muted);background:#f4f6f2;border-radius:9px;padding:12px;margin-top:19px}.passport .pill{font-size:12px}.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;background:#edf4e8;color:#42683c;border-radius:6px;font-size:13px;font-weight:600}.pill.amber{background:#fff3d9;color:#79561c}.pill.red{background:#fdebe7;color:#9e3028}.pill.gray{background:#edf0ed;color:#53665a}.appointment{display:flex;align-items:center;gap:16px;padding:20px 0;border-top:1px solid var(--line)}.appointment:first-child{padding-top:0;border:0}.appointment:last-child{padding-bottom:0}.date-block{width:62px;min-width:62px;background:#f0f4ec;border:1px solid #dbe3d4;border-radius:10px;display:flex;align-items:center;flex-direction:column;padding:8px}.date-block strong{font-size:29px;line-height:1.2}.date-block span{font-size:12px;letter-spacing:1px}.appointment-info{flex:1;min-width:0}.appointment-info h3{font-size:18px}.appointment-info p{font-size:15px;color:var(--muted);margin:3px 0}.appointment-info .time{display:flex;gap:6px;align-items:center;color:#284b3a;font-weight:600}.appointment-info .icon{width:16px;height:16px}.appointment .btn{font-size:15px;min-height:48px;padding:9px 13px}.section-label{font-size:18px;margin:27px 0 13px}.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.slot{border:2px solid #d6e2d6;background:#f9fcf6;min-height:102px;text-align:center;padding:13px 8px}.slot:hover{border-color:var(--green)}.slot strong{font-size:21px;display:block;margin:5px 0}.slot span{font-size:14px;display:block}.choice{width:100%;display:flex;align-items:center;gap:15px;min-height:78px;border:2px solid #ccd9ce;background:white;text-align:left;padding:17px 19px;color:var(--ink)}.choice:hover{border-color:#538c67;background:#f4f9f0}.choice.selected{border-color:var(--green);background:#eaf4e6;box-shadow:0 0 0 1px var(--green)}.choice-box{width:28px;height:28px;border:2px solid #8fa496;border-radius:6px;flex-shrink:0;display:grid;place-items:center;background:white}.choice.selected .choice-box{background:var(--green);border-color:var(--green);color:#fff}.choice-box .icon{width:21px;height:21px}.choice strong{display:block;font-size:20px;line-height:1.4}.choice small{display:block;color:var(--muted);font-size:15px;margin-top:4px;line-height:1.45}.choice-grid{display:grid;gap:12px}.choice-grid.two{grid-template-columns:1fr 1fr}.notice{font-size:15px;line-height:1.6;background:#f0f5eb;border:1px solid #d6e1ce;padding:15px 17px;border-radius:10px;display:flex;gap:10px;align-items:flex-start}.notice .icon{flex-shrink:0;color:var(--green);margin-top:1px}.notice.warning{background:#fff3e8;border-color:#e4c8a7;color:#784d22}.notice.urgent{background:#fff0ed;border-color:#e2b7ac;color:#8e3028}.notice.urgent .icon{color:#a14032}.notice+.notice{margin-top:15px}.panel>.notice{margin-top:20px}.toggle-choice{display:flex;align-items:center;gap:12px;background:transparent;border:0;padding:18px 0 0;text-align:left;font-size:15px}.toggle-choice .choice-box{width:24px;height:24px}.toggle-choice.selected .choice-box{background:var(--green);border-color:var(--green);color:white}.request-status{padding:18px 0;border-top:1px solid var(--line)}.request-status:first-child{padding-top:0;border:0}.request-status h3{font-size:18px}.request-status p{font-size:15px;color:var(--muted);margin-top:7px}.status-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.request-status .btn{margin-top:13px}.status-response{padding:12px;border-radius:9px;background:#f0f5ec;margin-top:12px;font-size:16px}.empty{padding:18px 0;color:var(--muted);font-size:16px}.footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:32px;border-top:1px solid var(--line);padding-top:19px;font-size:13px;color:var(--muted)}.footer button{font-size:13px;min-height:44px}.modal-overlay{position:fixed;inset:0;background:#153b2e80;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px)}.modal{width:min(100%,760px);max-height:calc(100dvh - 40px);overflow:hidden;display:flex;flex-direction:column;background:white;border-radius:18px;box-shadow:0 20px 90px #12302235}.modal-header{padding:23px 27px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}.modal-header h2{font-size:26px}.modal-header p{font-size:14px;color:var(--muted);margin-top:5px}.close{height:48px;width:48px;border:1px solid var(--line);background:white;display:grid;place-items:center;flex-shrink:0}.modal-body{padding:26px;overflow-y:auto}.modal-footer{padding:18px 26px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fafbf8}.modal-footer .btn{min-width:130px}.modal-body>p{margin-bottom:20px;color:var(--muted)}.modal-body>.notice{margin-bottom:20px}.question-title{font-size:25px;margin-bottom:9px}.question-hint{font-size:17px;color:var(--muted);margin-bottom:21px!important}.progress{display:flex;gap:6px;margin-bottom:22px}.progress span{height:6px;background:#e0e8dd;border-radius:4px;flex:1}.progress span.done{background:var(--green)}.answer-list{display:grid;gap:0}.answer-row{padding:13px 0;border-bottom:1px solid var(--line);font-size:17px}.answer-row span{display:block;color:var(--muted);font-size:14px;margin-bottom:4px}.answer-row strong{font-weight:600}.success-mark{width:66px;height:66px;background:#e6f2df;border-radius:50%;display:grid;place-items:center;color:var(--green);margin:0 auto 20px}.success-mark .icon{width:35px;height:35px}.success{text-align:center}.success h3{font-size:26px;margin-bottom:12px}.success p{font-size:18px}.success .notice{text-align:left;margin-top:24px}.tree-path{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:22px 0;font-size:14px}.tree-node{background:#edf4e7;border:1px solid #c7dabe;padding:7px 10px;border-radius:7px}.tree-path .icon{height:17px;width:17px;color:#62805b}.decision-preview{padding:18px;border:1px solid #c7d8c1;background:#f4f8ee;border-radius:12px;margin-top:20px}.decision-preview h3{font-size:17px;margin-bottom:8px}.decision-preview p{font-size:14px;color:var(--muted)}.offer{background:#edf5e4;border:2px solid #aec89a}.offer .btn{margin-top:15px}.offer h3{margin-top:8px}.offer p{margin-top:10px}.doctor-layout{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.4fr);gap:25px;align-items:start}.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.filter{font-size:14px;padding:10px 12px;border:1px solid var(--line);background:white;min-height:44px}.filter.active{background:var(--green);border-color:var(--green);color:#fff}.queue-row{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);padding:19px;margin:11px 0}.queue-row.selected{border:2px solid var(--green);background:#f0f6ec;padding:18px}.queue-row.urgent{border-left:5px solid #b44b3a}.queue-row h3{margin:8px 0;font-size:19px}.queue-row p{font-size:14px;color:var(--muted)}.queue-patient{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:15px}.request-detail h2{font-size:26px}.request-detail .record-group{margin-top:23px}.doctor-passport{margin-top:25px}.doctor-passport .passport-content{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.doctor-passport .identity{grid-column:1/-1}.doctor-passport .allergy{margin-bottom:0}.doctor-passport .record-group{margin:0 0 18px;padding:0;border:0}.doctor-passport .passport-note{margin-top:0}.doctor-actions{display:grid;gap:10px;margin-top:20px}.doctor-actions .btn{justify-content:flex-start}.route-control{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:13px}.route-control .btn{font-size:14px;min-height:46px;padding:9px 13px}.route-control .btn.selected{background:#e4efdb;border:2px solid #6b945c}.activity-row{padding:12px 0;border-top:1px solid var(--line);font-size:15px}.activity-row small{display:block;color:var(--muted);margin-top:3px}.toast-region{position:fixed;bottom:22px;right:22px;z-index:200;pointer-events:none}.toast{display:flex;align-items:center;gap:10px;max-width:460px;padding:17px 21px;background:#173f30;color:white;border-radius:12px;font-size:16px;box-shadow:0 8px 35px #183c342b}.invisible{display:none}.checkin-ticket{text-align:center;padding:25px;background:#f0f5e9;border:1px dashed #9bb88b;border-radius:12px}.checkin-ticket strong{display:block;font-size:64px;margin:12px}.appointment-list:empty{display:none}.mini-link{display:flex;align-items:center;gap:8px}.plan-reminder{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:16px}.plan-reminder .icon{height:18px;width:18px}.lab-icon{font-size:29px;font-weight:700}.test-choice-icon{width:42px;height:42px;display:grid;place-items:center;background:#edf3e8;border-radius:10px;color:var(--green)}.completed-list{margin-top:15px}.plain-list{padding-left:22px}.warning-note{font-size:13px;color:#785e3a;margin-top:18px}.skip{position:absolute;left:16px;top:-100px;padding:12px;background:#fff;z-index:300}.skip:focus{top:10px}.queue-panel{position:sticky;top:20px}.patient-summary-label{display:flex;align-items:center;gap:8px}.context-line{font-size:14px;color:var(--muted);margin-top:10px}.category-heading{display:flex;justify-content:space-between;gap:15px;align-items:center}.queue-count{font-size:14px;background:#e5eddf;border-radius:8px;padding:4px 8px}.decision-section{border-top:4px solid #6d9460}.no-typing{font-size:14px;display:flex;align-items:center;gap:7px;margin-top:14px;color:#416044}.no-typing .icon{height:17px;width:17px}.order-summary{background:#f5f7f2;border-radius:12px;padding:17px;margin-top:17px}.sample-tag{font-size:12px;letter-spacing:.4px;color:var(--muted)}
+:root{--ink:#17382f;--muted:#566b64;--green:#19654e;--pale:#edf5ee;--line:#d5e0d9;--paper:#fff;--bg:#f5f7f4;--red:#9e3028;--amber:#775416}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:var(--bg);font:18px/1.55 'DM Sans',Arial,sans-serif}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:'Manrope','DM Sans',Arial,sans-serif}h1{font-size:34px;line-height:1.25;letter-spacing:-1px}h2{font-size:25px;line-height:1.3;letter-spacing:-.6px}h3{font-size:20px;line-height:1.4}button,input,a{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}button:disabled{opacity:.5;cursor:not-allowed}a{color:var(--green)}:focus-visible{outline:3px solid #2e795e;outline-offset:4px}button{border-radius:12px}svg.icon{width:24px;height:24px;flex-shrink:0;display:block}button .icon,a .icon{pointer-events:none}.muted{color:var(--muted)}.small{font-size:15px}.eyebrow{font-size:13px;font-weight:750;letter-spacing:1.2px;text-transform:uppercase;color:var(--green);margin-bottom:9px}.prototype-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px max(24px,calc((100vw - 1320px)/2));background:#163f34;color:#fff;font-size:14px}.prototype-bar>span{display:flex;align-items:center;gap:8px}.prototype-bar .icon{width:17px;height:17px}.version-links{display:flex;gap:6px}.version-links a{display:flex;align-items:center;gap:6px;color:#fff;padding:7px 13px;text-decoration:none;border-radius:7px;white-space:nowrap}.version-links a.active{background:#fff;color:#163f34}.site-header{padding:25px max(24px,calc((100vw - 1320px)/2));background:white;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}.wordmark{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit}.wordmark strong{font-size:31px;color:var(--green);letter-spacing:-1px}.wordmark span{font-size:16px;color:var(--muted);border-left:1px solid var(--line);padding-left:16px}.account-button{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);padding:10px 14px;font-size:16px;min-height:56px}.avatar{width:40px;height:40px;display:grid;place-items:center;background:#e7eee1;border-radius:50%;font-size:14px;font-weight:700;flex-shrink:0}.account-button small{display:block;text-align:left;color:var(--muted);font-size:12px}.page{max-width:1368px;margin:0 auto;padding:35px 24px 28px}.intro{margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.intro p{margin-top:8px;color:var(--muted)}.step-label{display:inline-flex;align-items:center;gap:8px;font-size:14px;background:#fff;border:1px solid var(--line);padding:9px 13px;border-radius:24px;white-space:nowrap}.step-label .icon{color:var(--green);height:18px;width:18px}.patient-layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(330px,1fr);gap:25px;align-items:start}.stack{display:flex;flex-direction:column;gap:25px;min-width:0}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:20px}.panel-head>div>p{font-size:15px;color:var(--muted);margin-top:7px}.panel-head .icon{color:var(--green)}.question-hero{background:#eaf3e8;border:1px solid #c4d9bd;padding:29px;border-radius:18px;position:relative;overflow:hidden}.question-hero h2{font-size:31px;max-width:480px;margin-bottom:10px}.question-hero p{max-width:500px;color:#3c5e4a}.question-hero .btn{margin-top:23px}.tree-symbol{position:absolute;top:24px;right:25px;color:#82a57a}.tree-symbol .icon{width:37px;height:37px}.process-preview{display:flex;align-items:center;gap:8px;margin-top:23px;font-size:14px;color:#436449;flex-wrap:wrap}.process-preview .icon{width:16px;height:16px}.process-preview span{display:flex;align-items:center;gap:5px}.process-preview b{display:grid;place-items:center;border:1px solid #a7c39b;border-radius:50%;width:23px;height:23px;font-size:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;border:1px solid #b4c8bb;background:white;padding:12px 19px;font-size:17px;font-weight:650;color:#215b45;text-decoration:none;text-align:center}.btn:hover{background:#f0f6ee}.btn.primary{background:var(--green);border-color:var(--green);color:white}.btn.primary:hover{background:#124e3b}.btn.danger{color:var(--red);border-color:#d9aaa6;background:#fff}.btn.danger:hover{background:#fff1ef}.btn.subtle{border:0;background:transparent;padding:8px;font-size:15px;min-height:44px}.btn.full{width:100%}.btn .icon{width:21px;height:21px}.action-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.action-tile{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:11px;border:1px solid var(--line);background:#fff;padding:21px 17px;min-height:156px}.action-tile:hover{border-color:#6f9b7b;background:#f8fbf6}.action-tile strong{font-size:19px;line-height:1.35}.action-tile span{font-size:14px;color:var(--muted)}.action-tile .icon{color:var(--green);width:27px;height:27px}.passport{border-top:5px solid var(--green);padding-top:23px}.passport-title{display:flex;gap:13px;align-items:center}.passport-title>.icon{width:32px;height:32px}.passport-title h2{font-size:25px}.passport-title p{font-size:14px;color:var(--muted);margin-top:3px}.identity{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:19px 0;margin:20px 0}.identity .avatar{width:52px;height:52px;font-size:18px}.identity h3{font-size:22px}.identity p{font-size:15px;color:var(--muted)}.allergy{border:1px solid #d5a7a0;border-left:5px solid #ae453a;background:#fff3ef;padding:13px 15px;border-radius:9px;margin-bottom:19px;display:flex;align-items:flex-start;gap:10px;color:#893328}.allergy.safe{border:1px solid #c4d9bd;border-left:5px solid var(--green);background:#edf5ee;color:#215b45}.allergy strong{display:block}.allergy .icon{margin-top:4px}.record-group{padding-top:19px;margin-top:19px;border-top:1px solid var(--line)}.record-group h3{display:flex;gap:9px;align-items:center;font-size:17px;margin-bottom:11px}.record-group h3 .icon{width:19px;height:19px;color:var(--green)}.record-item{font-size:17px;margin:9px 0}.record-item span{display:block;font-size:14px;color:var(--muted);margin-top:2px}.passport-note{font-size:13px;line-height:1.6;color:var(--muted);background:#f4f6f2;border-radius:9px;padding:12px;margin-top:19px}.passport .pill{font-size:12px}.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 9px;background:#edf4e8;color:#42683c;border-radius:6px;font-size:13px;font-weight:600}.pill.amber{background:#fff3d9;color:#79561c}.pill.red{background:#fdebe7;color:#9e3028}.pill.gray{background:#edf0ed;color:#53665a}.appointment{display:flex;align-items:center;gap:16px;padding:20px 0;border-top:1px solid var(--line)}.appointment:first-child{padding-top:0;border:0}.appointment:last-child{padding-bottom:0}.date-block{width:62px;min-width:62px;background:#f0f4ec;border:1px solid #dbe3d4;border-radius:10px;display:flex;align-items:center;flex-direction:column;padding:8px}.date-block strong{font-size:29px;line-height:1.2}.date-block span{font-size:12px;letter-spacing:1px}.appointment-info{flex:1;min-width:0}.appointment-info h3{font-size:18px}.appointment-info p{font-size:15px;color:var(--muted);margin:3px 0}.appointment-info .time{display:flex;gap:6px;align-items:center;color:#284b3a;font-weight:600}.appointment-info .icon{width:16px;height:16px}.appointment .btn{font-size:15px;min-height:48px;padding:9px 13px}.section-label{font-size:18px;margin:27px 0 13px}.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.slot{border:2px solid #d6e2d6;background:#f9fcf6;min-height:102px;text-align:center;padding:13px 8px}.slot:hover{border-color:var(--green)}.slot strong{font-size:21px;display:block;margin:5px 0}.slot span{font-size:14px;display:block}.choice{width:100%;display:flex;align-items:center;gap:15px;min-height:78px;border:2px solid #ccd9ce;background:white;text-align:left;padding:17px 19px;color:var(--ink)}.choice:hover{border-color:#538c67;background:#f4f9f0}.choice.selected{border-color:var(--green);background:#eaf4e6;box-shadow:0 0 0 1px var(--green)}.choice-box{width:28px;height:28px;border:2px solid #8fa496;border-radius:6px;flex-shrink:0;display:grid;place-items:center;background:white}.choice.selected .choice-box{background:var(--green);border-color:var(--green);color:#fff}.choice-box .icon{width:21px;height:21px}.choice strong{display:block;font-size:20px;line-height:1.4}.choice small{display:block;color:var(--muted);font-size:15px;margin-top:4px;line-height:1.45}.choice-grid{display:grid;gap:12px}.choice-grid.two{grid-template-columns:1fr 1fr}.notice{font-size:15px;line-height:1.6;background:#f0f5eb;border:1px solid #d6e1ce;padding:15px 17px;border-radius:10px;display:flex;gap:10px;align-items:flex-start}.notice .icon{flex-shrink:0;color:var(--green);margin-top:1px}.notice.warning{background:#fff3e8;border-color:#e4c8a7;color:#784d22}.notice.urgent{background:#fff0ed;border-color:#e2b7ac;color:#8e3028}.notice.urgent .icon{color:#a14032}.notice+.notice{margin-top:15px}.panel>.notice{margin-top:20px}.toggle-choice{display:flex;align-items:center;gap:12px;background:transparent;border:0;padding:18px 0 0;text-align:left;font-size:15px}.toggle-choice .choice-box{width:24px;height:24px}.toggle-choice.selected .choice-box{background:var(--green);border-color:var(--green);color:white}.request-status{padding:18px 0;border-top:1px solid var(--line)}.request-status:first-child{padding-top:0;border:0}.request-status h3{font-size:18px}.request-status p{font-size:15px;color:var(--muted);margin-top:7px}.status-top{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.request-status .btn{margin-top:13px}.status-response{padding:12px;border-radius:9px;background:#f0f5ec;margin-top:12px;font-size:16px}.empty{padding:18px 0;color:var(--muted);font-size:16px}.footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:32px;border-top:1px solid var(--line);padding-top:19px;font-size:13px;color:var(--muted)}.footer button{font-size:13px;min-height:44px}.modal-overlay{position:fixed;inset:0;background:#153b2e80;z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px)}.modal{width:min(100%,760px);max-height:calc(100dvh - 40px);overflow:hidden;display:flex;flex-direction:column;background:white;border-radius:18px;box-shadow:0 20px 90px #12302235}.modal-header{padding:23px 27px;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line)}.modal-header h2{font-size:26px}.modal-header p{font-size:14px;color:var(--muted);margin-top:5px}.close{height:48px;width:48px;border:1px solid var(--line);background:white;display:grid;place-items:center;flex-shrink:0}.modal-body{padding:26px;overflow-y:auto}.modal-footer{padding:18px 26px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:15px;background:#fafbf8}.modal-footer .btn{min-width:130px}.modal-body>p{margin-bottom:20px;color:var(--muted)}.modal-body>.notice{margin-bottom:20px}.question-title{font-size:25px;margin-bottom:9px}.question-hint{font-size:17px;color:var(--muted);margin-bottom:21px!important}.progress{display:flex;gap:6px;margin-bottom:22px}.progress span{height:6px;background:#e0e8dd;border-radius:4px;flex:1}.progress span.done{background:var(--green)}.answer-list{display:grid;gap:0}.answer-row{padding:13px 0;border-bottom:1px solid var(--line);font-size:17px}.answer-row span{display:block;color:var(--muted);font-size:14px;margin-bottom:4px}.answer-row strong{font-weight:600}.success-mark{width:66px;height:66px;background:#e6f2df;border-radius:50%;display:grid;place-items:center;color:var(--green);margin:0 auto 20px}.success-mark .icon{width:35px;height:35px}.success{text-align:center}.success h3{font-size:26px;margin-bottom:12px}.success p{font-size:18px}.success .notice{text-align:left;margin-top:24px}.tree-path{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:22px 0;font-size:14px}.tree-node{background:#edf4e7;border:1px solid #c7dabe;padding:7px 10px;border-radius:7px}.tree-path .icon{height:17px;width:17px;color:#62805b}.decision-preview{padding:18px;border:1px solid #c7d8c1;background:#f4f8ee;border-radius:12px;margin-top:20px}.decision-preview h3{font-size:17px;margin-bottom:8px}.decision-preview p{font-size:14px;color:var(--muted)}.offer{background:#edf5e4;border:2px solid #aec89a}.offer .btn{margin-top:15px}.offer h3{margin-top:8px}.offer p{margin-top:10px}.doctor-layout{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.4fr);gap:25px;align-items:start}.filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px}.filter{font-size:14px;padding:10px 12px;border:1px solid var(--line);background:white;min-height:44px}.filter.active{background:var(--green);border-color:var(--green);color:#fff}.queue-row{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);padding:19px;margin:11px 0}.queue-row.selected{border:2px solid var(--green);background:#f0f6ec;padding:18px}.queue-row.urgent{border-left:5px solid #b44b3a}.queue-row h3{margin:8px 0;font-size:19px}.queue-row p{font-size:14px;color:var(--muted)}.queue-patient{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:15px}.request-detail h2{font-size:26px}.request-detail .record-group{margin-top:23px}.doctor-passport{margin-top:25px}.doctor-passport .passport-content{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.doctor-passport .identity{grid-column:1/-1}.doctor-passport .allergy{margin-bottom:0}.doctor-passport .record-group{margin:0 0 18px;padding:0;border:0}.doctor-passport .passport-note{margin-top:0}.doctor-actions{display:grid;gap:10px;margin-top:20px}.doctor-actions .btn{justify-content:flex-start}.route-control{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:13px}.route-control .btn{font-size:14px;min-height:46px;padding:9px 13px}.route-control .btn.selected{background:#e4efdb;border:2px solid #6b945c}.activity-row{padding:12px 0;border-top:1px solid var(--line);font-size:15px}.activity-row small{display:block;color:var(--muted);margin-top:3px}.toast-region{position:fixed;bottom:22px;right:22px;z-index:200;pointer-events:none}.toast{display:flex;align-items:center;gap:10px;max-width:460px;padding:17px 21px;background:#173f30;color:white;border-radius:12px;font-size:16px;box-shadow:0 8px 35px #183c342b}.invisible{display:none}.checkin-ticket{text-align:center;padding:25px;background:#f0f5e9;border:1px dashed #9bb88b;border-radius:12px}.checkin-ticket strong{display:block;font-size:64px;margin:12px}.appointment-list:empty{display:none}.mini-link{display:flex;align-items:center;gap:8px}.plan-reminder{display:flex;gap:8px;align-items:flex-start;font-size:14px;color:var(--muted);margin-top:16px}.plan-reminder .icon{height:18px;width:18px}.lab-icon{font-size:29px;font-weight:700}.test-choice-icon{width:42px;height:42px;display:grid;place-items:center;background:#edf3e8;border-radius:10px;color:var(--green)}.completed-list{margin-top:15px}.plain-list{padding-left:22px}.warning-note{font-size:13px;color:#785e3a;margin-top:18px}.skip{position:absolute;left:16px;top:-100px;padding:12px;background:#fff;z-index:300}.skip:focus{top:10px}.queue-panel{position:sticky;top:20px}.patient-summary-label{display:flex;align-items:center;gap:8px}.context-line{font-size:14px;color:var(--muted);margin-top:10px}.category-heading{display:flex;justify-content:space-between;gap:15px;align-items:center}.queue-count{font-size:14px;background:#e5eddf;border-radius:8px;padding:4px 8px}.decision-section{border-top:4px solid #6d9460}.no-typing{font-size:14px;display:flex;align-items:center;gap:7px;margin-top:14px;color:#416044}.no-typing .icon{height:17px;width:17px}.order-summary{background:#f5f7f2;border-radius:12px;padding:17px;margin-top:17px}.sample-tag{font-size:12px;letter-spacing:.4px;color:var(--muted)}
 @media(min-width:1500px){.page{padding-top:45px}.patient-layout{gap:30px}.panel{padding:29px}.question-hero{padding:33px}}
 @media(max-width:1050px){.patient-layout{grid-template-columns:minmax(0,1.2fr) minmax(300px,1fr);gap:18px}.panel{padding:21px}.action-grid{grid-template-columns:1fr}.action-tile{min-height:90px;display:grid;grid-template-columns:30px 1fr;gap:3px 14px;padding:17px}.action-tile>.icon{grid-row:1/3;align-self:center}.action-tile strong{font-size:19px}.action-tile span{grid-column:2}.slots{grid-template-columns:1fr}.slot{min-height:70px;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 15px}.appointment{flex-wrap:wrap}.appointment .btn{margin-left:78px}.doctor-layout{grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);gap:18px}.doctor-passport .passport-content{display:block}.question-hero h2{font-size:27px}.prototype-bar{font-size:12px}}
 @media(max-width:760px){body{font-size:17px}h1{font-size:29px}.prototype-bar{padding:10px 16px;flex-wrap:wrap;gap:9px}.prototype-bar>span{font-size:12px}.version-links{margin-left:auto}.version-links a{font-size:13px;padding:8px 10px}.site-header{padding:19px 16px;gap:10px}.wordmark{gap:10px}.wordmark strong{font-size:27px}.wordmark span{font-size:12px;padding-left:10px;max-width:120px}.account-button{font-size:14px;padding:8px 10px;gap:8px}.account-button small{font-size:11px}.account-button>.icon{display:none}.account-button .avatar{width:32px;height:32px;font-size:12px}.page{padding:25px 16px}.intro{display:block;margin-bottom:22px}.intro p{font-size:16px}.step-label{display:none}.patient-layout,.doctor-layout{display:flex;flex-direction:column;gap:20px}.patient-layout>.stack,.patient-layout>.passport-column{width:100%}.passport-column{order:-1}.passport-column .passport-content{display:none}.passport-column .passport.expanded .passport-content{display:block}.passport-column .passport{padding:19px}.passport-column .passport:not(.expanded) .passport-title p{display:none}.passport-column .passport:not(.expanded) .passport-title h2{font-size:22px}.passport-column .passport:not(.expanded) .identity{display:none}.passport-column .passport:not(.expanded) .passport-note{display:none}.passport-mobile-summary{display:block!important;margin-top:15px;font-size:16px}.passport-toggle{display:flex!important;width:100%;margin-top:14px}.passport-column .passport.expanded .passport-mobile-summary{display:none!important}.passport-column .passport-title h2{font-size:24px}.stack{gap:20px}.question-hero{padding:23px}.question-hero h2{font-size:28px;padding-right:22px}.question-hero p{font-size:17px}.tree-symbol{right:16px;top:19px}.tree-symbol .icon{width:24px;height:24px}.process-preview{gap:7px;font-size:12px}.process-preview b{width:20px;height:20px}.question-hero .btn{width:100%;font-size:18px}.panel{padding:21px}.panel h2{font-size:24px}.action-grid{gap:10px}.appointment-info h3{font-size:18px}.slots{grid-template-columns:1fr}.choice-grid.two{grid-template-columns:1fr}.modal-overlay{padding:10px}.modal{max-height:calc(100dvh - 20px);border-radius:14px}.modal-header{padding:18px}.modal-header h2{font-size:22px}.modal-body{padding:19px}.modal-footer{padding:15px 18px;gap:10px}.modal-footer .btn{min-width:0;font-size:16px;padding:12px}.modal-footer .btn.primary{flex:1}.choice{min-height:82px;padding:15px;gap:12px}.choice strong{font-size:19px}.choice small{font-size:14px}.choice-box{width:27px;height:27px}.question-title{font-size:24px}.status-top{display:block}.status-top .pill{margin-top:8px}.footer{font-size:12px;gap:8px}.queue-panel{position:static;width:100%}.doctor-layout>.stack{width:100%}.queue-row{padding:17px}.request-detail .panel-head{align-items:flex-start}.request-detail h2{font-size:25px}.doctor-passport .passport-content{display:block}.toast-region{left:16px;right:16px;bottom:16px}.toast{font-size:15px;max-width:none}.doctor-actions .btn{white-space:normal}.intro .btn{margin-top:15px}.queue-patient{flex-wrap:wrap}.passport-title{justify-content:space-between}.panel-head{gap:10px}.panel-head h2{font-size:23px}.decision-preview{padding:14px}.choice strong{overflow-wrap:anywhere}}
 .passport-mobile-summary,.passport-toggle{display:none}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}} 
 .clinical-passport-strip{border:1px solid #c8d9c6;border-left:4px solid var(--green);padding:16px 18px;background:#f6f9f2;border-radius:10px;margin-bottom:20px}.clinical-passport-strip>strong{display:flex;gap:8px;align-items:center;font-size:17px;margin-bottom:8px}.clinical-passport-strip p{font-size:15px;margin:6px 0;color:#334e40}.clinical-passport-strip .icon{width:20px;height:20px}.doctor-passport .passport-content{align-items:start}.doctor-passport .allergy{margin-bottom:18px}.context-line>.icon{display:inline-block;width:17px;height:17px;vertical-align:middle}.decision-preview h3{display:flex;align-items:center;gap:8px}
 @media(max-width:1050px){.appointment-info{flex:1 1 calc(100% - 80px)}.appointment>.btn{margin-left:78px}.appointment .time{flex-wrap:wrap}.appointment-info p{overflow-wrap:break-word}}
-/* Shared medication specifications and examination records. */
 .medicine-record{padding:14px 0;border-bottom:1px solid var(--line)}.medicine-record:last-child{border-bottom:0}.medicine-record>strong{font-size:17px}.medicine-caution{background:#fff8ed;border-left:3px solid #bc8528;padding:13px;margin:10px -3px;border-radius:7px}.medicine-link{display:flex;align-items:center;gap:8px;min-height:44px;padding:6px 8px;margin-left:-8px;background:transparent;border:1px solid transparent;color:#155940;text-align:left;font-size:17px;font-weight:650;max-width:100%}.medicine-link:hover{background:#e9f2e3;border-color:#b8cdb1}.medicine-link>.icon{width:19px;height:19px}.medicine-link>.icon:last-child{width:16px;height:16px}.medicine-tags{display:flex;flex-wrap:wrap;gap:6px;margin:5px 0 8px}.medicine-tags .icon{width:14px;height:14px}.medicine-dates{font-size:14px;color:#3c6049;margin-top:8px}.medicine-short-list>b{font-size:15px;display:block;margin:9px 0 3px}.medicine-short-list .medicine-link{font-size:15px;padding:5px 8px;min-height:40px}.medication-spec{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:19px;background:#f4f7ef;border:1px solid var(--line);border-radius:12px;margin:12px 0 25px}.medication-spec span{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}.medication-spec strong{font-size:17px}.medicine-timeline{display:flex;align-items:flex-start;gap:12px;padding:22px 0 16px}.medicine-timeline>div:not(.medicine-timeline-line){flex:1;min-width:0}.medicine-timeline small{display:block;color:var(--muted);font-size:13px;margin:9px 0 3px}.medicine-timeline strong{display:block;font-size:17px}.timeline-point{display:block;width:14px;height:14px;background:var(--green);border:3px solid #dcecd5;border-radius:50%}.timeline-point.ongoing{background:white;border:2px solid var(--green)}.medicine-timeline-line{height:2px;background:#a7c199;flex:1;margin:6px -3px 0;min-width:25px}.interaction-list{margin-top:15px}.interaction-row{display:flex;align-items:flex-start;gap:12px;padding:16px 0;border-top:1px solid var(--line)}.interaction-row>.icon{color:#a47120;width:19px;height:19px;margin-top:3px}.interaction-row strong{font-size:17px}.interaction-row p{font-size:15px;color:var(--muted);margin-top:5px}.reference-link{font-size:14px;margin-top:15px!important}.reference-link a{display:inline-flex;align-items:center;gap:4px}.reference-link .icon{width:15px;height:15px}.nurse-step{padding:22px 0;border-bottom:1px solid var(--line)}.nurse-step h3{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:19px}.nurse-step p{font-size:15px;color:var(--muted);margin:7px 0 12px}.required-step{font-family:'DM Sans',Arial,sans-serif;font-size:11px;letter-spacing:.4px;font-weight:500;color:#606e5a;border:1px solid #d4dfcb;border-radius:4px;padding:2px 5px}.step-options{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.step-options .btn{min-height:47px;font-size:15px}.nurse-step .step-stamp{font-size:12px;margin-top:12px;color:#65775d}.nurse-checklist{margin-bottom:24px}.nurse-answers{border:1px solid var(--line);border-radius:10px;margin-top:20px;padding:14px 17px}.nurse-answers summary{font-size:16px;cursor:pointer;font-weight:600}.nurse-answers p{font-size:14px;margin:14px 0;color:var(--muted)}.nursing-record{padding:20px 0;border-top:1px solid var(--line)}.nursing-record:first-of-type{border-top:0;padding-top:0}.nursing-record h3{font-size:18px}.nursing-summary-step{display:flex;align-items:flex-start;gap:9px;padding:12px 0}.nursing-summary-step>.icon{color:var(--green);width:19px;height:19px;margin-top:3px}.nursing-summary-step strong{display:block;font-size:15px}.nursing-summary-step small{font-size:12px;color:var(--muted)}.admin-task{padding:18px 0;border-top:1px solid var(--line)}.admin-task>strong{font-size:16px}.admin-task>p{font-size:15px;margin:6px 0 12px}.admin-task .btn{font-size:15px;min-height:46px}.auto-route{margin-top:20px}.version-links .icon{width:18px;height:18px}
 @media(max-width:760px){.version-links{width:100%;justify-content:space-between;margin:0}.version-links a{flex:1;justify-content:center;font-size:14px;min-height:43px}.prototype-bar{gap:7px}.site-header>.small{font-size:13px;max-width:160px;text-align:right}.medication-spec{padding:14px;gap:15px}.medication-spec strong{font-size:15px}.medicine-timeline strong{font-size:14px}.medicine-timeline{gap:8px}.medicine-timeline-line{flex:.3}.medicine-record .medicine-link{font-size:16px}.step-options .btn{font-size:14px}.nurse-step h3{font-size:18px}.nursing-summary .status-top{display:block}.nursing-summary .status-top .pill{margin:8px 0}.clinical-passport-strip .medicine-link{font-size:14px}.medicine-short-list .medicine-link span{min-width:0;overflow-wrap:anywhere}}
-/* Connect each medicine's two dated points with one continuous timeline. */
 .medicine-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;position:relative}.medicine-timeline-line{position:absolute;top:28px;left:7px;right:calc(50% - 16px);margin:0;min-width:0}.medicine-timeline .timeline-point{position:relative;z-index:1}
 .nurse-template-panel{padding:22px;margin:24px 0;background:#f3f8ef;border:1px solid #c9dfc7;border-radius:13px}.template-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.template-heading>.icon{color:var(--green)}.template-heading .eyebrow{margin-bottom:3px}.template-heading h3{font-size:19px}.template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:17px 0}.template-choice{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;min-height:125px;border:2px solid #d4e1d3;background:white;padding:12px;border-radius:10px}.template-choice.selected{border-color:var(--green);background:#e8f3e5}.template-choice strong{font-size:15px;line-height:1.25}.template-choice small{font-size:12px;color:var(--muted);line-height:1.3}.template-choice span{margin-top:auto;color:var(--green);font-size:12px;font-weight:700}.template-edit{min-height:44px;font-size:14px;padding:8px 12px;margin-bottom:12px}.nurse-template-panel>.small{font-size:13px}.template-editor{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:20px}.template-editor h3{font-size:17px}.template-editor>.small{margin-top:6px}.template-step-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.template-step{display:flex;align-items:center;gap:9px;text-align:left;min-height:60px;border:1px solid #d5e0d9;background:#fff;padding:9px;border-radius:8px;font-size:13px}.template-step.selected{background:#eaf4e7;border-color:#7ca888}.template-step:disabled{opacity:1;cursor:default}.template-step .choice-box{width:20px;height:20px;min-width:20px;border-radius:5px}.template-step .choice-box .icon{width:15px;height:15px}.template-step small{display:block;color:var(--muted);font-size:11px}.template-editor-actions{display:flex;gap:8px;flex-wrap:wrap}.template-editor-actions .btn{min-height:45px;font-size:14px}.nurse-checklist>.template-heading{padding-bottom:8px}
 @media(max-width:760px){.nurse-template-panel{padding:17px;margin:19px 0}.template-grid,.template-step-grid{grid-template-columns:1fr}.template-choice{min-height:70px}.template-choice small,.template-choice span{font-size:13px}.template-step{min-height:55px}}
-
-</style>
-  <style>
-/* The demonstration uses one shared, accessible visual system in styles.css. */
-
 </style>
 </head>
 <body>
@@ -56,283 +49,1121 @@ stethoscope:'<path d="M5 3v6a5 5 0 0 0 10 0V3M3 3h4m6 0h4m-7 11v2a5 5 0 0 0 10 0
 file:'<path d="M14 2H5v20h14V7zM14 2v6h5M8 13h8m-8 4h6"/>',x:'<path d="m6 6 12 12M6 18 18 6"/>',
 alert:'<path d="m12 3 10 18H2zM12 9v5m0 3h.01"/>',video:'<rect x="2" y="5" width="14" height="14" rx="3"/><path d="m16 10 6-4v12l-6-4"/>',
 download:'<path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/>',menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>',
-leaf:'<path d="M20 3C4 2 2 11 5 16c4 7 16 3 15-13ZM4 21 16 9"/>',checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',logout:'<path d="M9 4H4v16h5m5-13 5 5-5 5M9 12h12"/>',location:'<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/>',lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4m-4 5v2"/>'
-};
-const icon = (name, extra='') => `<svg class="icon ${extra}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[name] || paths.heart}</svg>`;
-const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-
-const seed = {
- version:2, patient:'ana', selectedRequest:'r1', filter:'Pending',
- patients:{
-  ana:{id:'ana',name:'Ana Novak',dob:'12 May 1988',insurance:'DEMO 2847 0193',doctor:'Dr. Nina Kovač',allergies:['Penicillin'],conditions:['Hypothyroidism'],medications:[{id:'m1',name:'Euthyrox',dose:'50 mcg',when:'Once daily · morning'},{id:'m2',name:'Vitamin D3',dose:'1,000 IU',when:'Once daily · with a meal'}],operations:[{name:'Appendectomy',date:'March 2014'}]},
-  marija:{id:'marija',name:'Marija Novak',dob:'21 February 1959',insurance:'DEMO 2847 0531',doctor:'Dr. Nina Kovač',allergies:['No recorded allergies'],conditions:['Hypertension'],medications:[{id:'m3',name:'Amlodipine',dose:'5 mg',when:'Once daily · morning'}],operations:[{name:'Cataract surgery',date:'June 2022'}]}
- },
- appointments:[
-  {id:'a1',patient:'ana',date:'2026-10-20',time:'09:30',title:'Regular check-up',kind:'Consultation',place:'Health Centre Ljubljana · Room 12',status:'Booked'},
-  {id:'a2',patient:'ana',date:'2026-10-28',time:'08:15',title:'Routine blood test',kind:'Laboratory',place:'Health Centre Ljubljana · Laboratory',status:'Booked'},
-  {id:'a3',patient:'marija',date:'2026-10-23',time:'10:00',title:'Regular check-up',kind:'Consultation',place:'Health Centre Ljubljana · Room 12',status:'Booked'}
- ],
- slots:[{id:'n1',date:'2026-10-21',time:'08:30',kind:'Nurse'},{id:'n2',date:'2026-10-22',time:'11:30',kind:'Nurse'},{id:'s1',date:'2026-10-21',time:'09:00',kind:'Consultation'},{id:'s2',date:'2026-10-22',time:'10:30',kind:'Consultation'},{id:'s3',date:'2026-10-26',time:'11:00',kind:'Consultation'},{id:'l1',date:'2026-10-22',time:'07:30',kind:'Laboratory'},{id:'l2',date:'2026-10-26',time:'08:00',kind:'Laboratory'}],
- requests:[{id:'r1',patient:'ana',type:'Symptoms',title:'New health concern',category:'Medical',route:'Nurse',status:'Pending',answers:[['Urgent help needed?','No'],['Main concern','Cold or throat symptoms'],['Symptoms','Cough; sore throat'],['Duration','A few days']],created:'Today · 08:45'},
- {id:'r2',patient:'marija',type:'Prescription',title:'Repeat prescription: Amlodipine',category:'Medical',route:'Doctor',status:'Pending',medications:['m3'],answers:[['Medication','Amlodipine 5 mg'],['Details','Existing prescription attached']],created:'Today · 08:30'},
- {id:'r3',patient:'ana',type:'Administrative',title:'Attendance confirmation',category:'Administrative',route:'Administration',status:'Pending',answers:[['Request','Attendance confirmation']],created:'Today · 08:15'}],
- waitingList:[{patient:'marija',appointment:'a3',enabled:true},{patient:'ana',appointment:'a1',enabled:true}], offers:[], activity:[], reminders:{ana:true,marija:true}, ticket:0
-};
-const concernOptions = [
- {value:'cold',label:'Cold or throat symptoms',icon:'activity'},
- {value:'pain',label:'Pain or discomfort',icon:'heart'},
- {value:'urine',label:'A urinary problem',icon:'activity'},
- {value:'ongoing',label:'An ongoing condition',icon:'file'},
- {value:'unsure',label:'Something else / I’m not sure',icon:'help'}
-];
-const branchOptions = {
- cold:{question:'What are you experiencing?',choices:['Cough','Sore throat','Blocked or runny nose','Feeling feverish','I’m not sure']},
- pain:{question:'Where is the discomfort?',choices:['Head','Back or joints','Stomach','Somewhere else / I’m not sure']},
- urine:{question:'What has changed?',choices:['Discomfort when passing urine','Going more often','A change I’m worried about','I’m not sure']},
- ongoing:{question:'What do you need help with?',choices:['A regular follow-up','My medication','A change in how I feel','I’m not sure']}
+leaf:'<path d="M20 3C4 2 2 11 5 16c4 7 16 3 15-13ZM4 21 16 9"/>',checkCircle:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',logout:'<path d="M9 4H4v16h5m5-13 5 5-5 5M9 12h12"/>',location:'<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>'
 };
 
-const medicationDefaults={
- m1:{ingredient:'Levothyroxine',start:'2024-01-12',end:null,issueStatus:'Issued',issuedAt:'2026-10-01',prescriber:'Dr. Nina Kovač',medicineType:'Thyroid hormone',caution:'Dose monitoring',catalog:'levothyroxine'},
- m2:{ingredient:'Colecalciferol',start:'2026-09-01',end:'2026-10-31',issueStatus:'Not recorded',issuedAt:null,prescriber:'Recorded supplement',medicineType:'Vitamin supplement',caution:'Supplement review',catalog:'colecalciferol'},
- m3:{ingredient:'Amlodipine',start:'2022-03-15',end:null,issueStatus:'Issued',issuedAt:'2026-10-01',prescriber:'Dr. Nina Kovač',medicineType:'Blood pressure medicine',caution:'Clinical monitoring',catalog:'amlodipine'},
- m4:{id:'m4',name:'Ibuprofen',dose:'400 mg',when:'Planned short course · sample prescription',ingredient:'Ibuprofen',start:'2026-10-17',end:'2026-10-21',issueStatus:'Not issued',issuedAt:null,prescriber:'Dr. Nina Kovač',medicineType:'NSAID painkiller',caution:'Additional precautions',catalog:'ibuprofen'}
-};
-const medicineReferences={
- levothyroxine:{url:'https://www.nhs.uk/medicines/levothyroxine/',source:'NHS · Levothyroxine',risk:'The dose needs monitoring. Incorrect dosing can cause side effects.',interactions:[{names:'Calcium or iron supplements',detail:'Listed as medicines that may interact; professional review is needed.'},{names:'Antacids and omeprazole',detail:'May affect treatment; review the complete medicine list.'},{names:'Digoxin, some beta blockers and sertraline',detail:'Potential interactions requiring clinical review.'}]},
- colecalciferol:{url:'https://www.nhs.uk/medicines/colecalciferol/taking-colecalciferol-with-other-medicines-and-herbal-supplements/',source:'NHS · Colecalciferol interactions',risk:'Review other calcium or vitamin D products to avoid duplicate supplementation.',interactions:[{names:'Digoxin',detail:'Raised calcium may increase the risk of abnormal heart rhythm.'},{names:'Indapamide or bendroflumethiazide',detail:'May increase calcium in the blood.'},{names:'Other calcium or vitamin D supplements',detail:'Combined supplements require professional review.'}]},
- amlodipine:{url:'https://www.nhs.uk/medicines/amlodipine/',source:'NHS · Amlodipine',risk:'Dizziness and low blood pressure are considerations for clinical review.',interactions:[{names:'Simvastatin',detail:'A listed interaction; review the prescribed combination.'},{names:'Rifampicin or fluconazole',detail:'These medicines may affect amlodipine treatment.'},{names:'Other blood pressure medicines',detail:'The combined effects need professional review.'}]},
- ibuprofen:{url:'https://www.nhs.uk/medicines/ibuprofen-for-adults/',source:'NHS · Ibuprofen for adults',risk:'NSAID painkiller. Important risks include stomach ulceration or bleeding and kidney problems; risk increases with higher doses or longer use.',interactions:[{names:'Naproxen, aspirin and other NSAIDs',detail:'Combining NSAIDs increases the risk of serious side effects, including stomach ulcers.'},{names:'Warfarin and other anticoagulants',detail:'Potential interaction; professional review is required.'},{names:'Steroids, some antidepressants and blood pressure medicines',detail:'Potential interactions to review before prescribing.'}]}
-};
-function medicationDate(date){return date?new Date(date.length===10?date+'T12:00:00':date).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'Europe/Ljubljana'}):'Not recorded';}
-function medicineLinkHTML(m,person,{icon,escapeHTML:e}){return `<button class="medicine-link" data-action="medicine" data-id="${e(m.id)}" data-patient="${e(person)}">${icon('pill')}<span>${e(m.name)} · ${e(m.dose)}</span>${icon('chevron')}</button>`;}
-function medicineTimelineHTML(m,{icon,escapeHTML:e}){return `<div class="medicine-timeline" aria-label="Treatment dates for ${e(m.name)}"><div><span class="timeline-point"></span><small>Start date</small><strong>${medicationDate(m.start)}</strong></div><div class="medicine-timeline-line" aria-hidden="true"></div><div><span class="timeline-point ${!m.end?'ongoing':''}"></span><small>${m.end?'End date':'End date'}</small><strong>${m.end?medicationDate(m.end):'Ongoing · not set'}</strong></div></div>`;}
-function medicineRowHTML(m,person,{icon,escapeHTML:e},staff=false){return `<div class="medicine-record ${m.catalog==='ibuprofen'?'medicine-caution':''}">${staff?medicineLinkHTML(m,person,{icon,escapeHTML:e}):`<strong>${e(m.name)} · ${e(m.dose)}</strong>`}<div class="medicine-tags"><span class="pill ${m.issueStatus==='Issued'?'':'amber'}">${e(m.issueStatus==='Issued'?'Issued · demo':m.issueStatus==='Not issued'?'Not issued':'Issue status not recorded')}</span>${m.catalog==='ibuprofen'?`<span class="pill amber">${icon('alert')} Painkiller · extra precautions</span>`:''}</div><p class="small muted">${e(m.when)}</p><p class="medicine-dates">${medicationDate(m.start)} → ${m.end?medicationDate(m.end):'Ongoing'}</p></div>`;}
-function medicationDetailHTML(m,p,{icon,escapeHTML:e}){const reference=medicineReferences[m.catalog];return `<p class="eyebrow">${e(p.name)} · SAMPLE MEDICATION RECORD</p><div class="medication-spec"><div><span>Active ingredient</span><strong>${e(m.ingredient||'Not recorded')}</strong></div><div><span>Medicine type</span><strong>${e(m.medicineType||'Not recorded')}</strong></div><div><span>Prescription status</span><strong>${e(m.issueStatus==='Issued'?'Issued in this demo':m.issueStatus)}</strong></div><div><span>Issue date</span><strong>${medicationDate(m.issuedAt)}</strong></div><div><span>Recorded strength</span><strong>${e(m.dose)}</strong></div><div><span>Prescriber / source</span><strong>${e(m.prescriber||'Not recorded')}</strong></div></div><h3 class="section-label">Medication treatment timeline</h3>${medicineTimelineHTML(m,{icon,escapeHTML:e})}<p class="small muted">${m.issueStatus==='Not issued'?'Planned dates; the prescription has not been issued.':'Recorded treatment period; actual dose-taking is not confirmed.'} Dates are fictional.</p><div class="notice ${m.catalog==='ibuprofen'?'warning':''}" style="margin-top:20px">${icon('alert')}<span><strong>${e(m.caution||'Medication precautions')}</strong><br>${e(reference?.risk||'Clinical information is not available in this demo.')}</span></div><h3 class="section-label">Incompatible / interacting medicines</h3><p class="small muted">Examples to review, not a complete compatibility check. Some combinations require monitoring rather than being absolutely prohibited.</p><div class="interaction-list">${reference?reference.interactions.map(i=>`<div class="interaction-row">${icon('alert')}<div><strong>${e(i.names)}</strong><p>${e(i.detail)}</p></div></div>`).join(''):'<p>No reference data loaded. This does not establish compatibility.</p>'}</div>${reference?`<p class="reference-link">Reference: <a href="${reference.url}" target="_blank" rel="noopener noreferrer">${e(reference.source)} ${icon('arrow')}</a></p>`:''}<p class="warning-note">Reference examples only. The demo does not screen the patient’s full medication list or authorize treatment changes.</p>`;}
+function icon(name, cls='icon') {
+  return `<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths[name] || ''}</svg>`;
+}
 
-const examinationSteps = [
- {id:'identity',label:'Confirm patient identity',detail:'Check the patient against the appointment record.',required:true},
- {id:'passport',label:'Review the Patient Passport',detail:'Review recorded allergies, medicines and previous procedures.',required:true},
- {id:'symptoms',label:'Confirm the patient’s answers',detail:'Review the reason for the visit and the questionnaire.',required:true},
- {id:'observations',label:'Record examination observations',detail:'Confirm that relevant observations have been documented.',required:false},
- {id:'vitals',label:'Confirm vital signs documented',detail:'Check that the relevant measurements are in the clinical record.',required:false},
- {id:'medicines',label:'Review current medicines',detail:'Confirm the medication list was reviewed with the patient.',required:false},
- {id:'sample',label:'Collect requested samples',detail:'For an approved blood or urine collection only.',required:false},
- {id:'blood',label:'Label blood sample',detail:'Confirm any collected blood sample was labelled.',required:false},
- {id:'urine',label:'Label urine sample',detail:'Confirm any collected urine sample was labelled.',required:false},
- {id:'followup',label:'Confirm follow-up plan',detail:'Confirm the next appointment or recurring plan was reviewed.',required:false},
- {id:'nextstep',label:'Explain the next step to the patient',detail:'Confirm that the patient knows what happens next.',required:true}
-];
-const nurseTemplateDefaults = [
- {id:'routine',name:'Routine examination',description:'A usual nurse visit',steps:['identity','passport','symptoms','observations','vitals','nextstep']},
- {id:'samples',name:'Blood / urine collection',description:'Approved sample collection',steps:['identity','passport','symptoms','sample','blood','urine','nextstep']},
- {id:'followup',name:'Chronic follow-up',description:'Regular condition review',steps:['identity','passport','symptoms','observations','medicines','followup','nextstep']}
-];
-const requiredIds=examinationSteps.filter(s=>s.required).map(s=>s.id);
-const knownIds=new Set(examinationSteps.map(s=>s.id));
-function normalizedStepIds(ids,lab=false){return [...new Set([...requiredIds,...(Array.isArray(ids)?ids:[]),...(lab?['sample']:[])])].filter(id=>knownIds.has(id));}
-function stepsForExam(exam){const ids=normalizedStepIds([...(exam.templateSteps||[]),...Object.keys(exam.steps||{})],!!exam.appointmentId);return examinationSteps.filter(s=>ids.includes(s.id));}
-function canFinishExamination(exam){return stepsForExam(exam).every(s=>{const value=exam.steps[s.id]?.value;return (s.required||(exam.appointmentId&&s.id==='sample'))?value==='Done':value==='Done'||value==='Not applicable';});}
-function applyTemplateToExam(exam,template){exam.templateId=template.id;exam.templateSteps=normalizedStepIds(template.steps,!!exam.appointmentId);}
-function automaticRoute(r){if(r.category==='Urgent'||r.type==='Prescription'||r.type==='Tests'||r.category==='Medical'&&r.type==='Administrative')return 'Doctor';if(r.category==='Administrative')return 'Administration';if(r.type==='Walk-in')return 'Nurse';const concern=r.answers?.find(([q])=>q==='Main concern')?.[1]||'';return /cold|throat|urinar/i.test(concern)?'Nurse':'Doctor';}
-function ensureExaminations(state){
- state.examinations??=[];
- state.nurseTemplates??=structuredClone(nurseTemplateDefaults);
- for(const fallback of nurseTemplateDefaults){let template=state.nurseTemplates.find(t=>t.id===fallback.id);if(!template){template=structuredClone(fallback);state.nurseTemplates.push(template);}template.steps=normalizedStepIds(template.steps,template.id==='samples');}
- for(const x of state.examinations){
-  x.steps??={};x.history??=[];
-  if(x.appointmentId&&x.status==='In progress'&&state.appointments.some(a=>a.id===x.appointmentId&&a.status==='Cancelled'))x.status='Cancelled';
-  const fallbackId=x.appointmentId?'samples':'routine';
-  if(!x.templateId||!state.nurseTemplates.some(t=>t.id===x.templateId))x.templateId=fallbackId;
-  if(!Array.isArray(x.templateSteps))x.templateSteps=normalizedStepIds([...state.nurseTemplates.find(t=>t.id===x.templateId).steps,...Object.keys(x.steps)],!!x.appointmentId);
- }
- for(const r of state.requests){
-  r.route=automaticRoute(r);
-  if(r.route==='Nurse'&&['Pending','Appointment needed'].includes(r.status)&&!state.examinations.some(x=>x.requestId===r.id)){
-   const exam={id:'exam-'+r.id,patient:r.patient,requestId:r.id,title:r.title,status:'In progress',steps:{},history:[]};
-   applyTemplateToExam(exam,state.nurseTemplates.find(t=>t.id==='routine'));state.examinations.push(exam);
+const state = {
+  role: 'patient',
+  patientTab: 'home',
+  doctorTab: 'queue',
+  nurseTab: 'queue',
+  selectedPatientId: 'p1',
+  selectedNursePatientId: 'np1',
+  expandedPassport: false,
+  modal: null,
+  toast: null,
+  questionState: { step: 0, answers: {} },
+  appointmentBooking: { doctor: null, date: null, slot: null },
+  testRequest: { type: null, description: '' },
+  doctorQueueFilter: 'all',
+  doctorActiveRoute: 'default',
+  nurseQueueFilter: 'all',
+  nurseActiveTab: 'assessment',
+  nurseTemplate: 'standard',
+  customTemplateSteps: ['Vital signs check', 'Pain scale evaluation', 'Allergy re-verification', 'Current medication review'],
+  customTemplateEditorOpen: false,
+  requests: [
+    { id: 'req-1', type: 'Sample request', patientId: 'p1', requestedBy: 'Patient', title: 'Urine sample', date: 'Today, 09:15', status: 'pending', response: '' },
+    { id: 'req-2', type: 'Appointment', title: 'Cardiology follow-up with Dr. Ana Novak', date: 'Yesterday', status: 'approved', response: 'Confirmed for Oct 24 at 10:30 AM.' }
+  ],
+  patients: {
+    'p1': {
+      id: 'p1', name: 'Marija Novak', emt: '051283-50214', age: 42, gender: 'Female',
+      allergies: ['Penicillin (Moderate rash)'],
+      conditions: ['Essential hypertension', 'Mild asthma'],
+      medications: [
+        { name: 'Lisinopril 10mg', dose: '1 tablet daily', start: 'Jan 2024', prescriptionEnd: '2026-10-22', ongoing: true, caution: '' },
+        { name: 'Salbutamol Inhaler', dose: 'As needed for shortness of breath', start: 'Mar 2023', prescriptionEnd: '2026-12-01', ongoing: true, caution: 'Check technique annually' }
+      ],
+      appointments: [
+        { date: '24', month: 'OCT', title: 'Cardiology Follow-up', doctor: 'Dr. Ana Novak', time: '10:30 AM', type: 'In-person' },
+        { date: '12', month: 'NOV', title: 'Annual Health Check', doctor: 'Dr. Marko Zupan', time: '09:00 AM', type: 'In-person' }
+      ]
+    },
+    'p2': {
+      id: 'p2', name: 'Janez Horvat', emt: '180475-50891', age: 51, gender: 'Male',
+      allergies: [], // No allergies -> will show green safe state or be omitted/clean
+      conditions: ['Type 2 Diabetes'],
+      medications: [
+        { name: 'Metformin 850mg', dose: '2 tablets daily with meals', start: 'Jun 2022', prescriptionEnd: '2026-10-16', ongoing: true, caution: 'Monitor renal function' }
+      ],
+      appointments: [
+        { date: '28', month: 'OCT', title: 'Diabetes Care Review', doctor: 'Dr. Maja Kranjc', time: '11:15 AM', type: 'In-person' }
+      ]
+    },
+    'p3': {
+      id: 'p3', name: 'Ana Zupančič', emt: '221190-50332', age: 34, gender: 'Female',
+      allergies: ['Sulfonamides'],
+      conditions: ['Seasonal Allergic Rhinitis'],
+      medications: [
+        { name: 'Cetirizine 10mg', dose: '1 tablet daily during spring', start: 'Apr 2023', ongoing: false, caution: '' }
+      ],
+      appointments: [
+        { date: '05', month: 'NOV', title: 'Allergy Consultation', doctor: 'Dr. Rok Korošec', time: '02:00 PM', type: 'Video' }
+      ]
+    }
+  },
+  nursePatients: {
+    'np1': {
+      id: 'np1', name: 'Marija Novak', emt: '051283-50214', room: 'Room 2', triage: 'Routine', time: '10 mins ago',
+      allergies: ['Penicillin (Moderate rash)'],
+      steps: { vitals: true, pain: false, allergy: false, meds: false }
+    },
+    'np2': {
+      id: 'np2', name: 'Janez Horvat', emt: '180475-50891', room: 'Room 4', triage: 'Urgent', time: '2 mins ago',
+      allergies: [],
+      steps: { vitals: false, pain: false, allergy: false, meds: false }
+    }
   }
- }
- for(const a of state.appointments.filter(a=>a.status==='Booked'&&a.kind==='Laboratory'&&a.orderId)){
-  if(!state.examinations.some(x=>x.appointmentId===a.id)){
-   const exam={id:'exam-'+a.id,patient:a.patient,requestId:a.orderId,appointmentId:a.id,title:'Sample collection · '+a.title,status:'In progress',steps:{},history:[]};
-   applyTemplateToExam(exam,state.nurseTemplates.find(t=>t.id==='samples'));state.examinations.push(exam);
+};
+
+function showToast(msg) {
+  state.toast = msg;
+  render();
+  setTimeout(() => {
+    if(state.toast === msg) {
+      state.toast = null;
+      render();
+    }
+  }, 4000);
+}
+
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = `
+    <div class="prototype-bar" role="region" aria-label="Prototype Navigation">
+      <span>${icon('leaf')} <strong>zVEM Workflow Demonstration</strong> · Local Interactive Prototype</span>
+      <div class="version-links">
+        <a href="#" class="${state.role==='patient'?'active':''}" onclick="switchRole('patient');return false;">${icon('users')} Patient View</a>
+        <a href="#" class="${state.role==='doctor'?'active':''}" onclick="switchRole('doctor');return false;">${icon('stethoscope')} Doctor View</a>
+        <a href="#" class="${state.role==='nurse'?'active':''}" onclick="switchRole('nurse');return false;">${icon('activity')} Nurse View</a>
+      </div>
+    </div>
+    
+    <header class="site-header">
+      <a class="wordmark" href="#" onclick="switchRole('patient');return false;">
+        ${icon('leaf')}
+        <div>
+          <strong>zVEM</strong>
+          <span>Central Health Portal</span>
+        </div>
+      </a>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <button class="account-button btn" onclick="openAccountModal()">
+          <div class="avatar">${state.role==='doctor'?'DR':'MN'}</div>
+          <div style="text-align:left">
+            <strong>${state.role==='doctor' ? 'Dr. Ana Novak' : (state.role==='nurse' ? 'Nurse Petra S.' : 'Marija Novak')}</strong>
+            <small>${state.role==='doctor' ? 'General Practitioner · ZD Ljubljana' : (state.role==='nurse' ? 'Triage Nurse · Unit 2' : 'Patient ID: 051283-50214')}</small>
+          </div>
+          ${icon('chevron')}
+        </button>
+      </div>
+    </header>
+
+    <main class="page">
+      ${state.role === 'patient' ? renderPatientView() : (state.role === 'doctor' ? renderDoctorView() : renderNurseView())}
+    </main>
+    
+    <footer class="footer">
+      <div>zVEM Prototype · Demonstrating guided clinical questions, shared Patient Passport, and streamlined requests.</div>
+      <div style="display:flex; gap:10px;">
+        <button class="btn subtle" onclick="resetDemoState()">Reset Demo Data</button>
+        <button class="btn subtle" onclick="openHelpModal()">About this Prototype</button>
+      </div>
+    </footer>
+  `;
+
+  renderModal();
+  renderToast();
+}
+
+function switchRole(role) {
+  state.role = role;
+  state.modal = null;
+  render();
+}
+
+function renderPatientView() {
+  const p = state.patients[state.selectedPatientId];
+  return `
+    <div class="intro">
+      <div>
+        <h1>Welcome back, ${p.name.split(' ')[0]}</h1>
+        <p>Access your health passport, review upcoming appointments, or check guided health questions with your doctor.</p>
+      </div>
+      <div class="step-label">
+        ${icon('shield')} Secure Patient Session Active
+      </div>
+    </div>
+
+    <div class="patient-layout">
+      <div class="stack">
+        ${renderPatientTabsNav()}
+        ${state.patientTab === 'home' ? renderPatientHome(p) : (state.patientTab === 'passport' ? renderPassportContent(p) : (state.patientTab === 'appointments' ? renderAppointmentsTab(p) : renderRequestsTab()))}
+      </div>
+      
+      <div class="passport-column">
+        ${renderPassportCard(p)}
+      </div>
+    </div>
+  `;
+}
+
+function renderPatientTabsNav() {
+  return `
+    <div style="display:flex; gap:8px; border-bottom:1px solid var(--line); padding-bottom:12px; overflow-x:auto;">
+      <button class="btn ${state.patientTab==='home'?'primary':''}" onclick="setPatientTab('home')">${icon('home')} Overview</button>
+      <button class="btn ${state.patientTab==='passport'?'primary':''}" onclick="setPatientTab('passport')">${icon('passport')} Patient Passport</button>
+      <button class="btn ${state.patientTab==='appointments'?'primary':''}" onclick="setPatientTab('appointments')">${icon('calendar')} Appointments (${state.patients[state.selectedPatientId].appointments.length})</button>
+      <button class="btn ${state.patientTab==='requests'?'primary':''}" onclick="setPatientTab('requests')">${icon('inbox')} Requests & Test Status</button>
+    </div>
+  `;
+}
+
+function setPatientTab(tab) {
+  state.patientTab = tab;
+  render();
+}
+
+function renderPatientHome(p) {
+  return `
+    <div class="question-hero">
+      <div class="tree-symbol">${icon('leaf')}</div>
+      <span class="eyebrow">Guided Consultation Assistant</span>
+      <h2>Prepare for your upcoming visit with guided clinical questions</h2>
+      <p>Take 2 minutes to answer structured questions about your symptoms so your doctor has precise information before your consultation.</p>
+      <button class="btn primary" onclick="openWizardModal()">${icon('plus')} Start Guided Questionnaire</button>
+      
+      <div class="process-preview">
+        <span><b>1</b> Select main concern</span>
+        ${icon('chevron')}
+        <span><b>2</b> Symptom duration</span>
+        ${icon('chevron')}
+        <span><b>3</b> Summary for doctor</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Quick Actions</h2>
+          <p>Common tasks and patient portal features</p>
+        </div>
+        ${icon('activity')}
+      </div>
+
+      <div class="action-grid">
+        <button class="action-tile btn" onclick="openBookAppointmentModal()">
+          ${icon('calendar')}
+          <strong>Book Appointment</strong>
+          <span>Schedule an in-person or video consultation</span>
+        </button>
+        <button class="action-tile btn" onclick="openTestRequestModal()">
+          ${icon('pill')}
+          <strong>Request Urine or Stool Sample</strong>
+          <span>Request urine or stool sampling</span>
+        </button>
+        <button class="action-tile btn" onclick="setPatientTab('passport')">
+          ${icon('passport')}
+          <strong>View Health Passport</strong>
+          <span>Allergies, chronic conditions & medications</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Upcoming Appointments</h2>
+          <p>Your next scheduled clinic visits</p>
+        </div>
+        ${icon('calendar')}
+      </div>
+
+      <div class="appointment-list">
+        ${p.appointments.map(a => `
+          <div class="appointment">
+            <div class="date-block">
+              <span>${a.month}</span>
+              <strong>${a.date}</strong>
+            </div>
+            <div class="appointment-info">
+              <h3>${a.title}</h3>
+              <p>${a.doctor} · ${a.type}</p>
+              <div class="time">${icon('clock')} ${a.time}</div>
+            </div>
+            <button class="btn" onclick="showToast('Appointment details & directions opened.')">View Pass</button>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+// Prescription dates are fictional demo data, independent of treatment duration.
+function prescriptionFlag(m, now = new Date()) {
+  if (!m.ongoing || !/^\d{4}-\d{2}-\d{2}$/.test(m.prescriptionEnd || '')) return '';
+  const end = Date.parse(m.prescriptionEnd + 'T00:00:00Z');
+  if (!Number.isFinite(end) || new Date(end).toISOString().slice(0, 10) !== m.prescriptionEnd) return '';
+  const parts = new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/Ljubljana', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(now);
+  const part = name => parts.find(p => p.type === name).value;
+  const today = Date.parse(`${part('year')}-${part('month')}-${part('day')}T00:00:00Z`);
+  const days = Math.round((end - today) / 86400000);
+  if (days > 7) return '';
+  const label = days < 0 ? 'Prescription overdue for review' : days === 0 ? 'Prescription runs out today' : `Prescription runs out in ${days} day${days === 1 ? '' : 's'}`;
+  return `<div class="medicine-tags"><span class="pill ${days <= 0 ? 'red' : 'amber'}">${icon('alert')} ${label}</span></div>`;
+}
+
+function prescriptionInfo(m) {
+  if (state.role !== 'doctor') return '';
+  const date = m.prescriptionEnd ? new Date(m.prescriptionEnd + 'T12:00:00Z').toLocaleDateString('en-GB', {timeZone:'Europe/Ljubljana', day:'numeric', month:'short', year:'numeric'}) : 'Not recorded';
+  return `${prescriptionFlag(m)}<p class="small muted">Prescription run-out date: ${date}</p>`;
+}
+
+function renderPassportCard(p) {
+  const hasAllergies = p.allergies && p.allergies.length > 0;
+  return `
+    <div class="panel passport ${state.expandedPassport ? 'expanded' : ''}">
+      <div class="passport-title">
+        ${icon('passport')}
+        <div>
+          <h2>Patient Passport</h2>
+          <p>Shared Health Identity (zVEM)</p>
+        </div>
+      </div>
+
+      <div class="passport-mobile-summary muted">
+        ${hasAllergies ? `<span class="pill red">${p.allergies.length} allergy listed</span>` : `<span class="pill gray">No known allergies</span>`}
+        · ${p.medications.length} active medications
+      </div>
+
+      <div class="identity">
+        <div class="avatar">${p.name.split(' ').map(n=>n[0]).join('')}</div>
+        <div>
+          <h3>${p.name}</h3>
+          <p>EMT: ${p.emt} · Age ${p.age}</p>
+        </div>
+      </div>
+
+      <div class="passport-content">
+        ${hasAllergies ? `
+          <div class="allergy">
+            ${icon('alert')}
+            <div>
+              <strong>Allergy Alert</strong>
+              <span>${p.allergies.join(', ')}</span>
+            </div>
+          </div>
+        ` : `
+          <div class="allergy safe">
+            ${icon('checkCircle')}
+            <div>
+              <strong>Allergy Status</strong>
+              <span>No known drug or food allergies recorded.</span>
+            </div>
+          </div>
+        `}
+
+        <div class="record-group" style="border-top:0; margin-top:0; padding-top:0;">
+          <h3>${icon('shield')} Chronic Conditions</h3>
+          ${p.conditions.map(c => `<div class="record-item"><strong>${c}</strong><span>Confirmed diagnosis</span></div>`).join('')}
+        </div>
+
+        <div class="record-group">
+          <h3>${icon('pill')} Active Medications</h3>
+          ${p.medications.map(m => `
+            <div class="record-item">
+              <strong>${m.name}</strong>
+              <span>${m.dose} · Started ${m.start}</span>
+              ${prescriptionInfo(m)}
+            </div>
+          `).join('')}
+        </div>
+
+        <div class="passport-note">
+          This passport is synchronized across your primary care doctor, specialists, and emergency services in real time.
+        </div>
+      </div>
+
+      <button class="btn full passport-toggle" onclick="togglePassportExpansion()">
+        ${state.expandedPassport ? 'Collapse Passport' : 'Expand Full Passport'}
+      </button>
+    </div>
+  `;
+}
+
+function togglePassportExpansion() {
+  state.expandedPassport = !state.expandedPassport;
+  render();
+}
+
+function renderPassportContent(p) {
+  const hasAllergies = p.allergies && p.allergies.length > 0;
+  return `
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Complete Patient Passport</h2>
+          <p>Official health record summary authorized by zVEM</p>
+        </div>
+        ${icon('passport')}
+      </div>
+
+      ${hasAllergies ? `
+        <div class="allergy">
+          ${icon('alert')}
+          <div>
+            <strong>Recorded Allergies & Sensitivities</strong>
+            <span>${p.allergies.join('; ')}</span>
+          </div>
+        </div>
+      ` : `
+        <div class="allergy safe">
+          ${icon('checkCircle')}
+          <div>
+            <strong>Allergy Status</strong>
+            <span>No known allergies recorded in your medical profile.</span>
+          </div>
+        </div>
+      `}
+
+      <div class="record-group">
+        <h3>${icon('shield')} Confirmed Medical Conditions</h3>
+        ${p.conditions.map(c => `
+          <div class="record-item" style="display:flex; justify-content:space-between; align-items:center">
+            <div>
+              <strong>${c}</strong>
+              <span>ICD-10 verified chronic record</span>
+            </div>
+            <span class="pill">Active</span>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="record-group">
+        <h3>${icon('pill')} Prescribed Medications & Regimens</h3>
+        ${p.medications.map(m => `
+          <div class="medicine-record">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start">
+              <strong>${m.name}</strong>
+              <span class="pill ${m.ongoing?'':'gray'}">${m.ongoing ? 'Ongoing' : 'Completed'}</span>
+            </div>
+            <div class="muted small" style="margin-top:4px;">Dosage: ${m.dose}</div>
+            ${m.caution ? `<div class="medicine-caution muted small">${m.caution}</div>` : ''}
+            <div class="medicine-dates">Started: ${m.start}</div>
+            ${prescriptionInfo(m)}
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderAppointmentsTab(p) {
+  return `
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Your Appointments</h2>
+          <p>Scheduled visits and video consultations</p>
+        </div>
+        ${icon('calendar')}
+      </div>
+
+      <div class="appointment-list">
+        ${p.appointments.map(a => `
+          <div class="appointment">
+            <div class="date-block">
+              <span>${a.month}</span>
+              <strong>${a.date}</strong>
+            </div>
+            <div class="appointment-info">
+              <h3>${a.title}</h3>
+              <p>${a.doctor} · ${a.type}</p>
+              <div class="time">${icon('clock')} ${a.time}</div>
+            </div>
+            <button class="btn primary" onclick="showToast('Opening check-in pass...')">Check-in Pass</button>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="margin-top:25px; padding-top:20px; border-top:1px solid var(--line);">
+        <button class="btn primary" onclick="openBookAppointmentModal()">${icon('plus')} Book New Appointment</button>
+      </div>
+    </div>
+  `;
+}
+
+function renderRequestsTab() {
+  const requests = state.requests.filter(r => (r.patientId || 'p1') === state.selectedPatientId);
+  return `
+    <div class="panel">
+      <div class="panel-head">
+        <div>
+          <h2>Requests & Sample Status</h2>
+          <p>Track your submissions sent to your doctor</p>
+        </div>
+        ${icon('inbox')}
+      </div>
+
+      ${requests.length === 0 ? `<div class="empty">No active requests found.</div>` : `
+        <div style="display:grid; gap:16px;">
+          ${requests.map(r => `
+            <div class="request-status">
+              <div class="status-top">
+                <div>
+                  <span class="pill ${r.status==='approved'?'':'amber'}">${r.status.toUpperCase()}</span>
+                  <h3>${r.title}</h3>
+                  <p>Submitted: ${r.date} · Type: ${r.type}${r.requestedBy ? ' · Requested by: ' + r.requestedBy : ''}</p>
+                </div>
+              </div>
+              ${r.response ? `<div class="status-response"><strong>Doctor's Response:</strong> ${r.response}</div>` : `<div class="status-response muted">Your doctor will review this request within 1 business day.</div>`}
+            </div>
+          `).join('')}
+        </div>
+      `}
+
+      <div style="margin-top:25px; padding-top:20px; border-top:1px solid var(--line);">
+        <button class="btn primary" onclick="openTestRequestModal()">${icon('plus')} Request Urine or Stool Sample</button>
+      </div>
+    </div>
+  `;
+}
+
+// MODALS FOR PATIENT WORKFLOWS
+function openModal(html) {
+  state.modal = html;
+  render();
+}
+
+function closeModal() {
+  state.modal = null;
+  render();
+}
+
+function openHelpModal() {
+  openModal(`
+    <div class="modal-header">
+      <div>
+        <h2>About zVEM Prototype</h2>
+        <p>Interactive demonstration of proposed patient, doctor, and nurse workflows</p>
+      </div>
+      <button class="close" onclick="closeModal()">${icon('x')}</button>
+    </div>
+    <div class="modal-body">
+      <p>This prototype demonstrates streamlined additions to the zVEM national health portal:</p>
+      <div class="notice">
+        ${icon('leaf')}
+        <div>
+          <strong>Key Proposed Features:</strong>
+          <ul style="margin:8px 0 0; padding-left:20px;">
+            <li><strong>Guided Clinical Questions:</strong> Structured symptom triage before visits.</li>
+            <li><strong>Shared Patient Passport:</strong> Real-time overview of allergies, conditions, and medications.</li>
+            <li><strong>Streamlined Requests:</strong> Direct booking and test result submissions reviewed by your doctor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn primary" onclick="closeModal()">Got it</button>
+    </div>
+  `);
+}
+
+function openAccountModal() {
+  openModal(`
+    <div class="modal-header">
+      <div>
+        <h2>Switch Demo Persona</h2>
+        <p>Explore the prototype from different user roles</p>
+      </div>
+      <button class="close" onclick="closeModal()">${icon('x')}</button>
+    </div>
+    <div class="modal-body">
+      <div class="choice-grid">
+        <button class="choice ${state.role==='patient'?'selected':''}" onclick="switchRole('patient'); closeModal();">
+          <div class="choice-box">${icon('users')}</div>
+          <div>
+            <strong>Patient View (Marija Novak)</strong>
+            <small>Submit guided questionnaires, view patient passport and appointment requests.</small>
+          </div>
+        </button>
+        <button class="choice ${state.role==='doctor'?'selected':''}" onclick="switchRole('doctor'); closeModal();">
+          <div class="choice-box">${icon('stethoscope')}</div>
+          <div>
+            <strong>Doctor View (Dr. Ana Novak)</strong>
+            <small>Review incoming patient queue, guided responses, and adjust care pathways.</small>
+          </div>
+        </button>
+        <button class="choice ${state.role==='nurse'?'selected':''}" onclick="switchRole('nurse'); closeModal();">
+          <div class="choice-box">${icon('activity')}</div>
+          <div>
+            <strong>Nurse View (Triage Nurse Petra S.)</strong>
+            <small>Perform pre-visit clinical triage, check vitals, and verify passport data.</small>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+  `);
+}
+
+function openWizardModal() {
+  state.questionState = { step: 1, answers: { main: 'Shortness of breath / Cough', duration: '3-5 days', severity: 'Moderate' } };
+  renderWizardStep();
+}
+
+function renderWizardStep() {
+  const step = state.questionState.step;
+  let content = '';
+  if(step === 1) {
+    content = `
+      <h2 class="question-title">What is your primary health concern today?</h2>
+      <p class="question-hint">Select the option that best matches your symptoms.</p>
+      <div class="choice-grid">
+        ${['Shortness of breath / Cough', 'Persistent headache or dizziness', 'Joint or back pain', 'General fatigue / Fever'].map(opt => `
+          <button class="choice ${state.questionState.answers.main===opt?'selected':''}" onclick="setWizardAnswer('main', '${opt}')">
+            <div class="choice-box">${icon('check')}</div>
+            <div><strong>${opt}</strong></div>
+          </button>
+        `).join('')}
+      </div>
+    `;
+  } else if(step === 2) {
+    content = `
+      <h2 class="question-title">How long have you experienced these symptoms?</h2>
+      <p class="question-hint">Knowing the duration helps your doctor prioritize care.</p>
+      <div class="choice-grid">
+        ${['Less than 24 hours', '1 to 3 days', '3 to 5 days', 'More than a week'].map(opt => `
+          <button class="choice ${state.questionState.answers.duration===opt?'selected':''}" onclick="setWizardAnswer('duration', '${opt}')">
+            <div class="choice-box">${icon('check')}</div>
+            <div><strong>${opt}</strong></div>
+          </button>
+        `).join('')}
+      </div>
+    `;
+  } else if(step === 3) {
+    content = `
+      <h2 class="question-title">Review & Submit Questionnaire</h2>
+      <p class="question-hint">Your answers will be securely attached to your file so your doctor will review them before your consultation.</p>
+      
+      <div class="answer-list">
+        <div class="answer-row">
+          <span>Primary Concern</span>
+          <strong>${state.questionState.answers.main}</strong>
+        </div>
+        <div class="answer-row">
+          <span>Duration</span>
+          <strong>${state.questionState.answers.duration}</strong>
+        </div>
+      </div>
+
+      <div class="notice" style="margin-top:20px;">
+        ${icon('shield')}
+        <div>
+          <strong>Privacy Note:</strong> Your responses are encrypted and directly linked to your electronic health record.
+        </div>
+      </div>
+    `;
+  } else {
+    content = `
+      <div class="success">
+        <div class="success-mark">${icon('check')}</div>
+        <h3>Questionnaire Submitted Successfully</h3>
+        <p>Your doctor will review your responses prior to your appointment.</p>
+        <div class="notice">
+          ${icon('clock')}
+          <div>
+            <strong>Next Step:</strong> You can view this summary in your Requests & Test Status tab.
+          </div>
+        </div>
+      </div>
+    `;
   }
- }
-}
-function nursingTimestamp(value){return value?new Date(value).toLocaleString('en-GB',{timeZone:'Europe/Ljubljana',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}):'';}
-function nursingRecordHTML(state,person,{icon,escapeHTML:e}){
- const records=(state.examinations||[]).filter(x=>x.patient===person&&Object.keys(x.steps).length);
- return `<section class="panel nursing-summary"><div class="panel-head"><div><p class="eyebrow">SHARED EXAMINATION RECORD</p><h2>Steps recorded by the nurse</h2></div>${icon('checkCircle')}</div>${records.length?records.map(x=>{
-  const steps=stepsForExam(x),template=state.nurseTemplates.find(t=>t.id===x.templateId);
-  return `<article class="nursing-record"><div class="status-top"><h3>${e(x.title)}</h3><span class="pill ${x.status==='Completed'?'':'amber'}">${e(x.status)}</span></div><p class="small muted">${e(template?.name||'Nurse checklist')} · Nurse Maja Petrič${x.completedAt?' · Finished '+nursingTimestamp(x.completedAt):''}</p>${steps.filter(s=>x.steps[s.id]).map(s=>{const entry=x.steps[s.id];return `<div class="nursing-summary-step">${icon(entry.value==='Done'?'checkCircle':'clock')}<div><strong>${e(s.label)} · ${e(entry.value)}</strong><small>${e(entry.by)} · ${nursingTimestamp(entry.at)}</small></div></div>`;}).join('')}<p class="small muted">${steps.length-steps.filter(s=>x.steps[s.id]).length} steps not yet recorded</p></article>`;
- }).join(''):'<p class="empty">No examination steps have been recorded for this patient yet. Saved nurse steps appear here automatically.</p>'}</section>`;
-}
-function renderNurse(state,{icon,escapeHTML:e,passportHTML}){
- const active=state.nurseFilter!=='Completed';
- const exams=state.examinations.filter(x=>active?x.status==='In progress':x.status==='Completed');
- const exam=exams.find(x=>x.id===state.selectedExam)||exams[0];
- const admins=state.requests.filter(r=>r.route==='Administration'&&r.status==='Pending');
- return `<div class="intro"><div><p class="eyebrow">NURSE WORKSPACE · MAJA PETRIČ</p><h1>Record each step, once.</h1><p>Apply a reusable checklist, then record what was completed. The doctor sees the saved steps automatically.</p></div><span class="step-label">${icon('users')} ${exams.length} ${active?'open':'completed'} examinations</span></div><div class="doctor-layout"><section class="panel queue-panel"><div class="panel-head"><h2>Nursing examinations</h2></div><div class="filters"><button class="filter ${active?'active':''}" data-action="nurse-filter" data-value="Open">Open</button><button class="filter ${!active?'active':''}" data-action="nurse-filter" data-value="Completed">Completed</button></div>${exams.map(x=>{const steps=stepsForExam(x);return `<button class="queue-row ${exam?.id===x.id?'selected':''}" data-action="select-exam" data-id="${e(x.id)}"><div class="queue-patient"><strong>${e(state.patients[x.patient].name)}</strong><span class="pill">${steps.filter(s=>x.steps[s.id]).length}/${steps.length} recorded</span></div><h3>${e(x.title)}</h3><p>${x.appointmentId?'Approved laboratory appointment':'Automatically assigned to nurse'}</p></button>`;}).join('')||'<p class="empty">No examinations in this list.</p>'}<div class="record-group"><h3>${icon('file')} Administrative requests</h3>${admins.map(r=>`<article class="admin-task"><strong>${e(state.patients[r.patient].name)}</strong><p>${e(r.title)}</p><button class="btn" data-action="complete-admin" data-id="${e(r.id)}">${icon('check')} Complete request</button></article>`).join('')||'<p class="small muted">No administrative requests pending.</p>'}</div></section><div class="stack" id="request-detail">${exam?examDetail(exam):'<section class="panel"><h2>Select an examination</h2><p class="empty">Nurse-directed patient requests and booked lab collections appear here automatically.</p></section>'}</div></div>`;
- function examDetail(x){
-  const completed=x.status==='Completed',steps=stepsForExam(x),template=state.nurseTemplates.find(t=>t.id===x.templateId),request=state.requests.find(r=>r.id===x.requestId);
-  const draft=state.nurseTemplateDraft?.id===x.templateId?state.nurseTemplateDraft:null;
-  return `<section class="panel"><div class="panel-head"><div><p class="eyebrow">${e(state.patients[x.patient].name)} · EXAMINATION</p><h2>${e(x.title)}</h2></div><span class="pill ${completed?'':'amber'}">${e(x.status)}</span></div><div class="notice">${icon('passport')}<span>Use the same patient record. Each saved step records who completed it and when.</span></div>${request?`<details class="nurse-answers"><summary>View patient’s selected answers</summary>${request.answers.map(([q,a])=>`<p><strong>${e(q)}</strong><br>${e(a)}</p>`).join('')}</details>`:''}
-  <div class="nurse-template-panel"><div class="template-heading"><div><p class="eyebrow">REUSABLE CHECKLISTS</p><h3>Start with a common template</h3></div>${icon('file')}</div>${completed?`<p class="small muted">Used: ${e(template?.name||'Nurse checklist')}</p>`:`<div class="template-grid">${state.nurseTemplates.map(t=>`<button class="template-choice ${t.id===x.templateId?'selected':''}" data-action="apply-nurse-template" data-id="${e(x.id)}" data-template="${e(t.id)}" aria-pressed="${t.id===x.templateId}"><strong>${e(t.name)}</strong><small>${e(t.description)}</small><span>${t.steps.length} steps · ${t.id===x.templateId?'In use':'Apply'}</span></button>`).join('')}</div><button class="btn template-edit" data-action="edit-nurse-template" data-id="${e(x.id)}">${icon('settings')} Customize ${e(template?.name||'template')}</button><p class="small muted">Saved changes to a template can be used again for other patients. Applying it never marks a step as completed.</p>${draft?`<div class="template-editor"><h3>Choose steps to keep</h3><p class="small muted">Required identity, Passport, answers and next-step checks stay in every template.</p><div class="template-step-grid">${examinationSteps.map(s=>{const locked=s.required||(draft.id==='samples'&&s.id==='sample');const selected=draft.steps.includes(s.id);return `<button class="template-step ${selected?'selected':''}" data-action="toggle-nurse-template-step" data-id="${e(x.id)}" data-step="${s.id}" aria-pressed="${selected}" ${locked?'disabled':''}><span class="choice-box">${selected?icon('check'):''}</span><span>${e(s.label)}${locked?'<small>Always included</small>':''}</span></button>`;}).join('')}</div><div class="template-editor-actions"><button class="btn primary" data-action="save-nurse-template" data-id="${e(x.id)}">${icon('check')} Save template</button><button class="btn" data-action="cancel-nurse-template">Cancel</button></div></div>`:''}`}</div>
-  <div class="nurse-checklist"><div class="template-heading"><h3>Examination steps</h3><span class="pill">${steps.filter(s=>x.steps[s.id]).length}/${steps.length} recorded</span></div>${steps.map(s=>{const entry=x.steps[s.id],required=s.required||!!x.appointmentId&&s.id==='sample';return `<article class="nurse-step"><h3>${e(s.label)}${required?'<span class="required-step">Required</span>':''}</h3><p>${e(s.detail)}</p><div class="step-options" role="group" aria-label="${e(s.label)}">${['Done',...(!required?['Not applicable']:[])].map(v=>`<button class="btn ${entry?.value===v?'primary':''}" data-action="exam-step" data-id="${e(x.id)}" data-step="${s.id}" data-value="${v}" aria-pressed="${entry?.value===v}" ${completed?'disabled':''}>${icon(v==='Done'?'check':'x')} ${v}</button>`).join('')}${entry&&!completed?`<button class="btn subtle" data-action="exam-step" data-id="${e(x.id)}" data-step="${s.id}" data-value="clear">Undo step</button>`:''}</div><p class="step-stamp">${entry?e(entry.by)+' · '+nursingTimestamp(entry.at):'Not yet recorded'}</p></article>`;}).join('')}</div>${completed?`<div class="notice">${icon('checkCircle')}<span>Completed by Nurse Maja Petrič · ${nursingTimestamp(x.completedAt)}. This signed demo record is read-only.</span></div>`:`<button class="btn primary full" data-action="finish-exam" data-id="${e(x.id)}" ${!canFinishExamination(x)?'disabled':''}>${icon('checkCircle')} Complete examination record</button><p class="small muted" style="margin-top:10px">Complete every required step and mark included optional steps Done or Not applicable.</p>`}${x.history?.length?`<details class="nurse-answers"><summary>Step history · ${x.history.length} updates</summary>${x.history.slice().reverse().map(h=>`<p><strong>${e(examinationSteps.find(s=>s.id===h.step)?.label||h.step)} · ${e(h.value)}</strong><br>${e(h.by)} · ${nursingTimestamp(h.at)}</p>`).join('')}</details>`:''}<p class="warning-note">Illustrative workflow checklist. Completed observations are recorded as steps; this demo does not capture measurements or replace a clinical protocol.</p></section>${passportHTML(x.patient,true)}`;
- }
+
+  openModal(`
+    <div class="modal-header">
+      <div>
+        <h2>Guided Consultation Assistant</h2>
+        <p>Step ${Math.min(step, 3)} of 3</p>
+      </div>
+      <button class="close" onclick="closeModal()">${icon('x')}</button>
+    </div>
+    <div class="modal-body">
+      <div class="progress">
+        <span class="${step>=1?'done':''}"></span>
+        <span class="${step>=2?'done':''}"></span>
+        <span class="${step>=3?'done':''}"></span>
+      </div>
+      ${content}
+    </div>
+    <div class="modal-footer">
+      ${step > 1 && step < 4 ? `<button class="btn" onclick="prevWizardStep()">Back</button>` : `<div></div>`}
+      ${step < 3 ? `<button class="btn primary" onclick="nextWizardStep()">Continue</button>` : (step === 3 ? `<button class="btn primary" onclick="submitWizard()">Submit to Doctor</button>` : `<button class="btn primary" onclick="closeModal()">Done</button>`)}
+    </div>
+  `);
 }
 
-function renderClinician(state, { icon, escapeHTML:e, passportHTML, medicineLinkHTML, nursingRecordHTML }) {
- const doctorRequests=state.requests.filter(r=>r.route==='Doctor');
- const pending=doctorRequests.filter(r=>r.status==='Pending');
- const list=doctorRequests.filter(r=>state.filter==='Completed'?r.status!=='Pending':r.status==='Pending'&&(state.filter==='Pending'||r.category===state.filter)).sort((a,b)=>({Urgent:0,Medical:1,Administrative:2}[a.category]-{Urgent:0,Medical:1,Administrative:2}[b.category]));
- const selected=list.find(r=>r.id===state.selectedRequest)||list[0];
- const tones={Urgent:'red',Medical:'amber',Administrative:'gray'};
- const labels={Urgent:'Urgent review',Medical:'Medical review',Administrative:'Administrative'};
- return `<div class="intro"><div><p class="eyebrow">DOCTOR WORKSPACE · DR. NINA KOVAČ</p><h1>One request. The whole patient picture.</h1><p>Automatically assigned doctor requests, with medication details and the nurse’s recorded steps.</p></div><span class="step-label">${icon('inbox')} ${pending.length} awaiting review</span></div>
- <div class="doctor-layout"><section class="panel queue-panel"><div class="panel-head"><h2>Incoming requests</h2><span class="queue-count">${pending.length}</span></div><div class="filters" role="group" aria-label="Request category">${[['Pending','All'],['Urgent','Urgent'],['Medical','Medical'],['Completed','Completed']].map(([v,t])=>`<button class="filter ${state.filter===v?'active':''}" data-action="filter" data-value="${v}" aria-pressed="${state.filter===v}">${t}${v==='Completed'?'':` · ${pending.filter(r=>v==='Pending'||r.category===v).length}`}</button>`).join('')}</div>
- ${list.map(r=>`<button class="queue-row ${selected?.id===r.id?'selected':''} ${r.category==='Urgent'?'urgent':''}" data-action="select-request" data-id="${e(r.id)}" aria-pressed="${selected?.id===r.id}"><div class="queue-patient"><strong>${e(state.patients[r.patient].name)}</strong><span class="pill ${r.status==='Pending'?tones[r.category]:'gray'}">${e(r.status==='Pending'?labels[r.category]:r.status)}</span></div><h3>${e(r.title)}</h3><p>${e(r.created)} · ${e(r.route)}</p></button>`).join('')||'<p class="empty">No requests in this category.</p>'}
- ${state.activity.length?`<div class="record-group"><h3>${icon('calendar')} Appointment updates</h3>${state.activity.slice(0,3).map(a=>`<div class="activity-row">${e(a.message)}<small>Demo scheduling activity</small></div>`).join('')}</div>`:''}
- <p class="context-line">Requests entered by patients appear here automatically. These are sample records.</p></section>
- <div class="stack" id="request-detail">${selected?detail(selected):'<section class="panel"><h2>Nothing to review here.</h2><p class="empty">Choose another category, or create a request in the patient version.</p></section>'}</div></div>`;
- function detail(r){const p=state.patients[r.patient];return `<section class="panel request-detail ${r.type==='Symptoms'?'decision-section':''}"><div class="panel-head"><div><p class="eyebrow">${e(state.patients[r.patient].name)} · ${e(r.type)}</p><h2>${e(r.title)}</h2></div><span class="pill ${tones[r.category]}">${labels[r.category]}</span></div>
- <div class="clinical-passport-strip"><strong>${icon('passport')} Patient Passport · ${e(p.name)}</strong><p><b>Allergies:</b> ${e(p.allergies.join(', '))}</p><div class="medicine-short-list"><b>Medications · select to inspect</b>${p.medications.map(m=>medicineLinkHTML(m,r.patient,{icon,escapeHTML:e})).join('')}</div><p><b>Previous operations:</b> ${e(p.operations.map(o=>o.name+' ('+o.date+')').join(' · '))}</p></div>
- ${r.type==='Symptoms'?`<div class="decision-preview"><h3>${icon('activity')} Decision-tree pathway</h3><div class="tree-path"><span class="tree-node">Patient’s choices</span>${icon('arrow')}<span class="tree-node">Automatically → ${e(r.route)}</span>${icon('arrow')}<span class="tree-node">Professional decision</span></div><p>The demo decision tree assigns the receiving professional automatically. These routing rules are illustrative, not clinically validated.</p></div>`:''}
- <div class="answer-list">${r.answers.map(([q,a])=>`<div class="answer-row"><span>${e(q)}</span><strong>${e(a)}</strong></div>`).join('')}</div>
- <p class="context-line">${icon('passport')} Patient Passport attached automatically. Nothing needs to be entered again.</p>
- ${r.status==='Pending'?`<div class="notice auto-route">${icon('checkCircle')}<span><strong>Automatically routed to ${e(r.route.toLowerCase())}</strong><br>The request’s type and questionnaire answers determine the receiving queue.</span></div><div class="doctor-actions">
- ${r.category==='Administrative'?`<button class="btn primary" data-action="complete-admin" data-id="${e(r.id)}">${icon('check')} Approve administrative request</button>`:
- r.type==='Tests'?`<button class="btn primary" data-action="review" data-id="${e(r.id)}" data-outcome="tests">${icon('check')} Review and approve test request</button><button class="btn" data-action="review" data-id="${e(r.id)}" data-outcome="consultation">${icon('calendar')} Consultation needed first</button>`:
- r.type==='Prescription'?`<button class="btn primary" data-action="review" data-id="${e(r.id)}" data-outcome="prescription">${icon('check')} Review and issue demo prescription</button><button class="btn" data-action="review" data-id="${e(r.id)}" data-outcome="consultation">${icon('calendar')} Medication review needed first</button>`:
- `<button class="btn primary" data-action="review" data-id="${e(r.id)}" data-outcome="${r.category==='Urgent'?'contact':'consultation'}">${icon(r.category==='Urgent'?'alert':'calendar')} ${r.category==='Urgent'?'Record urgent contact required':'Arrange a consultation'}</button>`}
- <p class="small muted">Actions update this demonstration only.</p></div>`:`<div class="status-response"><strong>${e(r.status)}</strong><p>${e(r.response||'Completed in this demo.')}</p></div>`}</section>${nursingRecordHTML(state,r.patient,{icon,escapeHTML:e})}${passportHTML(r.patient,true)}`;}
+function setWizardAnswer(key, val) {
+  state.questionState.answers[key] = val;
+  renderWizardStep();
 }
 
-const e = escapeHTML;
-const KEY='zvem-workflow-demo-v2';
-let state=structuredClone(seed);
-try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved?.version===2&&saved.patients?.ana&&Array.isArray(saved.requests))state=saved;}catch{}
-function prepareClinicalState(data){
- data.examinations??=[];data.nurseFilter??='Open';
- for(const p of Object.values(data.patients)){p.medications=p.medications.map(m=>({...medicationDefaults[m.id],...m}));}
- if(!data.clinicalFeatures){
-  if(!data.patients.ana.medications.some(m=>m.id==='m4'))data.patients.ana.medications.push(structuredClone(medicationDefaults.m4));
-  if(!data.requests.some(r=>r.id==='r4'))data.requests.unshift({id:'r4',patient:'ana',type:'Prescription',title:'Short-course medicine: Ibuprofen',category:'Medical',route:'Doctor',status:'Pending',medications:['m4'],answers:[['Medicine','Ibuprofen 400 mg'],['Planned treatment','17 October 2026 to 21 October 2026'],['Prescription status','Not issued — sample clinical review']],created:'Today · 09:10'});
-  data.clinicalFeatures=1;
- }
- delete data.demoAccount;
- ensureExaminations(data);return data;
+function nextWizardStep() {
+  state.questionState.step++;
+  renderWizardStep();
 }
-state=prepareClinicalState(state);
-try{if(JSON.parse(localStorage.getItem(KEY))?.demoAccount)localStorage.setItem(KEY,JSON.stringify(state));}catch{}
-let flow=null,returnFocus=null,expandedPassport=false;
-const app=document.getElementById('app'),modalRoot=document.getElementById('modal-root');
-const role=()=>location.hash==='#doctor'?'doctor':location.hash==='#nurse'?'nurse':'patient';
-const patient=()=>state.patients[state.patient];
-const uid=prefix=>prefix+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,7);
-const persist=()=>{prepareClinicalState(state);try{localStorage.setItem(KEY,JSON.stringify(state));}catch{}};
-const dateLabel=date=>new Date(date+'T12:00:00').toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
-const initials=name=>name.split(' ').map(n=>n[0]).join('');
-const pill=(label,tone='')=>`<span class="pill ${tone}">${e(label)}</span>`;
-const pendingMeds=person=>state.requests.filter(r=>r.patient===person&&r.type==='Prescription'&&r.status==='Pending').flatMap(r=>r.medications||[]);
-function toast(message){const el=document.createElement('div');el.className='toast';el.innerHTML=`${icon('checkCircle')}<span>${e(message)}</span>`;document.getElementById('toast-region').replaceChildren(el);setTimeout(()=>el.remove(),4200);}
-function commit(message){persist();render();if(message)toast(message);}
-function activity(message){state.activity.unshift({id:uid('act'),message});}
-function render(){const doctor=role()==='doctor',nurse=role()==='nurse';app.innerHTML=`<a href="#main-content" class="skip">Skip to main content</a><div class="prototype-bar"><span>${icon('activity')} Proposed zVEM additions · Interactive demonstration</span><nav class="version-links" aria-label="Demonstration versions"><a href="#patient" data-action="version" data-role="patient" class="${role()==='patient'?'active':''}" ${role()==='patient'?'aria-current="page"':''}>${icon('users')} Patient</a><a href="#doctor" data-action="version" data-role="doctor" class="${doctor?'active':''}" ${doctor?'aria-current="page"':''}>${icon('stethoscope')} Doctor</a><a href="#nurse" data-action="version" data-role="nurse" class="${nurse?'active':''}" ${nurse?'aria-current="page"':''}>${icon('heart')} Nurse</a></nav></div>
- <header class="site-header"><a href="#patient" class="wordmark" data-action="version" data-role="patient"><strong>zVEM</strong><span>Suggested care workflows</span></a>${doctor?'<div class="small muted">Dr. Nina Kovač · Doctor workspace</div>':nurse?'<div class="small muted">Maja Petrič · Nurse workspace</div>':`<button class="account-button" data-action="profile"><span class="avatar">${initials(patient().name)}</span><span>${e(patient().name)}<small>${state.patient==='ana'?'My care':'Authorized family profile · demo'}</small></span>${icon('chevron')}</button>`}</header>
- <main class="page" id="main-content">${doctor?renderClinician(state,{icon,escapeHTML:e,passportHTML,medicineLinkHTML,nursingRecordHTML}):nurse?renderNurse(state,{icon,escapeHTML:e,passportHTML}):patientPage()}<footer class="footer"><span>Fictional records · Local demo · No real bookings, prescriptions or test orders</span><div><button class="btn subtle" data-action="explain">How this demonstration works</button><button class="btn subtle" data-action="reset-confirm">Reset demo</button></div></footer></main>`;}
-function passportHTML(person,doctor=false){const p=state.patients[person];return `<section class="panel passport ${doctor?'doctor-passport':''} ${expandedPassport?'expanded':''}" aria-label="Patient Passport for ${e(p.name)}"><div class="passport-title"><div><p class="eyebrow">ONE RECORD FOR EVERY VISIT</p><h2>Patient Passport</h2><p>Already available to your care team.</p></div>${icon('passport')}</div><div class="passport-mobile-summary"><strong>${e(p.name)}</strong><br><span style="color:var(--red)">Allergies: ${e(p.allergies.join(', '))}</span><br>${p.medications.length} medications · ${p.operations.length} previous operation</div><div class="passport-content"><div class="identity"><span class="avatar">${initials(p.name)}</span><div><h3>${e(p.name)}</h3><p>Born ${e(p.dob)}</p><p>${e(p.insurance)}</p></div></div><div class="allergy">${icon('alert')}<div><strong>Allergies</strong>${e(p.allergies.join(', '))}</div></div><div class="record-group"><h3>${icon('pill')} Medications & treatment dates</h3>${p.medications.map(m=>medicineRowHTML(m,person,{icon,escapeHTML:e},doctor)).join('')}</div><div class="record-group"><h3>${icon('activity')} Ongoing conditions</h3>${p.conditions.map(c=>`<div class="record-item">${e(c)}</div>`).join('')}</div><div class="record-group"><h3>${icon('stethoscope')} Previous operations</h3>${p.operations.map(o=>`<div class="record-item"><strong>${e(o.name)}</strong><span>${e(o.date)}</span></div>`).join('')}</div><div class="record-group"><h3>${icon('shield')} Medication interactions</h3><p class="small muted">${doctor?'Select a medicine above to see interaction examples, precautions and its treatment timeline.':'Your care team can open each medicine to review interaction examples and precautions.'} Full clinical interaction screening is not connected.</p></div><div class="record-group"><h3>${icon('users')} Personal doctor</h3><p class="record-item">${e(p.doctor)}</p><span class="small muted">Health Centre Ljubljana</span></div></div><div class="passport-note">Sample clinical record. Existing medication, allergy and procedure data is attached to each request automatically.</div>${!doctor?`<button class="btn passport-toggle" data-action="toggle-passport" aria-expanded="${expandedPassport}">${expandedPassport?'Close passport details':'View medications, allergies & history'} ${icon('chevron')}</button>`:''}</section>`;}
-function patientPage(){const p=patient();const requests=state.requests.filter(r=>r.patient===state.patient);const offers=state.offers.filter(o=>o.patient===state.patient&&o.status==='Offered');return `<div class="intro"><div><p class="eyebrow">PATIENT VERSION</p><h1>Hello, ${e(p.name.split(' ')[0])}. What do you need?</h1><p>Choose a box. We’ll guide you through the rest.</p></div><span class="step-label">${icon('checkCircle')} No typing needed</span></div><div class="patient-layout"><div class="stack"><section class="question-hero"><span class="tree-symbol">${icon('activity')}</span><p class="eyebrow">GUIDED QUESTIONS · DECISION TREE</p><h2>I need help with my health.</h2><p>Answer simple questions, one at a time. Your answers go to the care team with your Patient Passport.</p><button class="btn primary" data-action="start" data-kind="symptoms">Start the guided questions ${icon('arrow')}</button><div class="process-preview"><span><b>1</b> Choose answers</span>${icon('arrow')}<span><b>2</b> Automatic routing</span>${icon('arrow')}<span><b>3</b> Professional review</span></div></section>
- <div class="action-grid"><button class="action-tile" data-action="start" data-kind="tests">${icon('activity')}<strong>Blood or urine test</strong><span>Choose a test and request it</span></button><button class="action-tile" data-action="start" data-kind="prescription">${icon('pill')}<strong>Repeat medication</strong><span>Select your existing medicine</span></button><button class="action-tile" data-action="start" data-kind="admin">${icon('file')}<strong>Administrative request</strong><span>Choose the document you need</span></button></div>
- ${offers.map(o=>`<section class="panel offer"><p class="eyebrow">AN EARLIER APPOINTMENT IS AVAILABLE</p><h3>${dateLabel(o.date)} · ${e(o.time)}</h3><p>A cancelled appointment has been offered to you. Your current booking stays in place until you accept.</p><div class="route-control"><button class="btn primary" data-action="accept-offer" data-id="${e(o.id)}">Accept this time ${icon('check')}</button><button class="btn" data-action="decline-offer" data-id="${e(o.id)}">Keep my current time</button></div></section>`).join('')}
- ${appointmentsPanel()}<section class="panel"><div class="panel-head"><div><h2>Your requests</h2><p>The next step appears here after your team reviews it.</p></div>${icon('inbox')}</div>${requests.length?requests.map(requestStatus).join(''):'<p class="empty">You have no requests yet.</p>'}</section>
- <button class="btn" data-action="start" data-kind="checkin">${icon('users')} At the clinic without an appointment? Check in</button>
- </div><aside class="stack passport-column">${passportHTML(state.patient)}</aside></div>`;}
-function appointmentsPanel(){const booked=state.appointments.filter(a=>a.patient===state.patient&&a.status==='Booked').sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));const available=getSlots('Consultation').slice(0,3);const wait=state.waitingList.find(w=>w.patient===state.patient);return `<section class="panel" id="appointments"><div class="panel-head"><div><h2>Your upcoming appointments</h2><p>Can’t come? Cancel here without calling.</p></div>${icon('calendar')}</div><div class="appointment-list">${booked.map(a=>`<article class="appointment"><div class="date-block"><span>OCT</span><strong>${a.date.slice(-2)}</strong></div><div class="appointment-info"><h3>${e(a.title)}</h3><p class="time">${icon('clock')} ${dateLabel(a.date)} · ${e(a.time)}</p><p>${e(a.place)}</p></div><button class="btn danger" data-action="cancel" data-id="${e(a.id)}">Cancel</button></article>`).join('')||'<p class="empty">No upcoming appointments. Choose an available time below.</p>'}</div><h3 class="section-label">Available doctor appointments</h3><div class="slots">${available.map(slotButton).join('')||'<p class="empty">No sample times available.</p>'}</div><button class="toggle-choice ${wait?.enabled?'selected':''}" role="checkbox" aria-checked="${!!wait?.enabled}" data-action="waiting-list"><span class="choice-box">${wait?.enabled?icon('check'):''}</span><span>Offer me an earlier suitable appointment</span></button><div class="plan-reminder">${icon('bell')} Appointment reminders and regular follow-ups are shown here. Reminder delivery is simulated.</div></section>`;}
-function slotButton(s){return `<button class="slot" data-action="book-slot" data-id="${e(s.id)}"><span>${dateLabel(s.date)}</span><strong>${e(s.time)}</strong><span>Choose this time</span></button>`;}
-function requestStatus(r){return `<article class="request-status"><div class="status-top"><h3>${e(r.title)}</h3>${pill(r.status,r.status==='Pending'?'amber':'')}</div><p>${r.status==='Pending'?`Sent to ${e(r.route.toLowerCase())} review. Your Passport is attached.`:e(r.response||'Updated by your care team.')}</p>${r.status==='Approved'&&r.type==='Tests'&&r.collection==='Laboratory'&&!r.booked?`<button class="btn" data-action="lab-times" data-id="${e(r.id)}">${icon('calendar')} Choose a laboratory time</button>`:''}${r.status==='Appointment needed'&&!r.booked?`<button class="btn" data-action="consultation-times" data-id="${e(r.id)}">${icon('calendar')} Choose ${r.route==='Nurse'?'a nurse':'a doctor'} appointment</button>`:''}${r.type==='Symptoms'?`<button class="btn subtle" data-action="view-answers" data-id="${e(r.id)}">View my selected answers ${icon('chevron')}</button>`:''}</article>`;}
-function getSlots(kind){const slots=[...state.slots];for(const a of state.appointments.filter(a=>a.status==='Cancelled'&&a.kind===kind)){if(!slots.some(s=>s.kind===kind&&s.date===a.date&&s.time===a.time))slots.push({id:'released-'+a.id,date:a.date,time:a.time,kind});}return slots.filter((s,i,all)=>all.findIndex(t=>t.kind===s.kind&&t.date===s.date&&t.time===s.time)===i).filter(s=>s.kind===kind&&!state.appointments.some(a=>a.status==='Booked'&&a.date===s.date&&a.time===s.time&&a.kind===kind)&&!state.offers.some(o=>o.status==='Offered'&&o.date===s.date&&o.time===s.time&&o.kind===kind)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));}
-function offerReleased(slot,excluded,declined=[]){if(slot.kind!=='Consultation')return;const next=state.waitingList.find(w=>w.enabled&&w.patient!==excluded&&!declined.includes(w.patient)&&state.appointments.some(a=>a.id===w.appointment&&a.status==='Booked'&&a.date+a.time>slot.date+slot.time)&&!state.offers.some(o=>o.patient===w.patient&&o.status==='Offered'));if(next){state.offers.push({id:uid('offer'),patient:next.patient,appointment:next.appointment,date:slot.date,time:slot.time,kind:slot.kind,status:'Offered',excluded,declined});activity(`${dateLabel(slot.date)} at ${slot.time} automatically offered to ${state.patients[next.patient].name}, the next eligible demo patient.`);}else activity(`${dateLabel(slot.date)} at ${slot.time} released to available appointments.`);}
-function showModal(title,body,footer='',subtitle=''){if(!modalRoot.children.length)returnFocus=document.activeElement;document.getElementById('toast-region').replaceChildren();app.inert=true;modalRoot.innerHTML=`<div class="modal-overlay"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><header class="modal-header"><div><h2 id="dialog-title">${e(title)}</h2>${subtitle?`<p>${e(subtitle)}</p>`:''}</div><button class="close" data-action="close" aria-label="Close dialog">${icon('x')}</button></header><div class="modal-body">${body}</div>${footer?`<footer class="modal-footer">${footer}</footer>`:''}</section></div>`;document.body.style.overflow='hidden';modalRoot.querySelector('.choice,.btn,.close')?.focus();}
-function closeModal(){modalRoot.innerHTML='';app.inert=false;document.body.style.overflow='';flow=null;if(returnFocus?.isConnected)returnFocus.focus();}
-function choice(value,label,description='',selected=false,multiple=false){return `<button class="choice ${selected?'selected':''}" role="${multiple?'checkbox':'radio'}" aria-checked="${selected}" data-action="choose" data-value="${e(value)}"><span class="choice-box">${selected?icon('check'):''}</span><span><strong>${e(label)}</strong>${description?`<small>${e(description)}</small>`:''}</span></button>`;}
-function choices(options,selected,multiple=false){return `<div class="choice-grid" role="${multiple?'group':'radiogroup'}" aria-label="Choose ${multiple?'one or more answers':'one answer'}">${options.map(o=>{const [value,label,desc]=Array.isArray(o)?o:[o,o,''];return choice(value,label,desc||'',multiple?(selected||[]).includes(value):selected===value,multiple);}).join('')}</div>`;}
-function steps(){if(flow.kind==='symptoms'){if(flow.answers.urgency&&flow.answers.urgency!=='No')return ['urgency','summary'];return ['urgency','concern',...(flow.answers.concern&&flow.answers.concern!=='unsure'?['detail']:[]),'duration','summary'];}return {tests:['test','collection','summary'],prescription:['medication','summary'],admin:['admin','summary'],checkin:['checkin','summary']}[flow.kind];}
-function currentStep(){return steps()[Math.min(flow.index,steps().length-1)];}
-function canContinue(){const key=currentStep();if(key==='summary')return true;const val=flow.answers[key];return Array.isArray(val)?val.length>0:!!val;}
-function flowRoute(){if(flow.kind!=='symptoms')return flow.kind==='admin'?'Administration':'Doctor';if(flow.answers.urgency!=='No')return 'Doctor';return ['cold','urine'].includes(flow.answers.concern)?'Nurse':'Doctor';}
-function flowCategory(){return flow.kind==='admin'?'Administrative':flow.kind==='symptoms'&&flow.answers.urgency!=='No'?'Urgent':'Medical';}
-function flowPairs(){const a=flow.answers;if(flow.kind==='symptoms')return [['Urgent help needed?',a.urgency],...(a.concern?[['Main concern',concernOptions.find(c=>c.value===a.concern)?.label||a.concern]]:[]),...(a.detail?.length?[['Selected answers',a.detail.join('; ')]]:[]),...(a.duration?[['Duration',a.duration]]:[])];if(flow.kind==='tests')return [['Tests',a.test.join(' + ')],['Collection',a.collection],['Patient',state.patients[flow.patient].name]];if(flow.kind==='prescription')return [['Medication',state.patients[flow.patient].medications.filter(m=>a.medication.includes(m.id)).map(m=>m.name+' '+m.dose).join('; ')],['Details','Existing medication and allergy record attached']];return [[flow.kind==='admin'?'Document':'Reason for visit',a[flow.kind==='admin'?'admin':'checkin']]];}
-function answersHTML(pairs){return `<div class="answer-list">${pairs.map(([q,a])=>`<div class="answer-row"><span>${e(q)}</span><strong>${e(a)}</strong></div>`).join('')}</div>`;}
-function drawFlow(){const step=currentStep(),a=flow.answers;let title='',body='';const progress=`<div class="progress" aria-label="Step ${flow.index+1} of ${steps().length}">${steps().map((_,i)=>`<span class="${i<=flow.index?'done':''}"></span>`).join('')}</div>`;
- if(step==='urgency'){title='Do you feel you need urgent help?';body=`<p class="question-hint">Choose one box. If you think this is an emergency, seek emergency help directly.</p>${choices([['Yes','Yes, I need urgent help'],['No','No, this is not urgent'],['Not sure','I’m not sure']],a.urgency)}`;}
- if(step==='concern'){title='What would you like help with?';body=`<p class="question-hint">Choose the closest match. You do not need to type.</p>${choices(concernOptions.map(c=>[c.value,c.label]),a.concern)}`;}
- if(step==='detail'){const branch=branchOptions[a.concern];title=branch.question;body=`<p class="question-hint">Choose all the boxes that apply.</p>${choices(branch.choices,a.detail,true)}`;}
- if(step==='duration'){title='How long has this been happening?';body=choices(['Today','A few days','A week or longer','I’m not sure / not applicable'],a.duration);}
- if(step==='test'){title='Which test do you need?';body=`<p class="question-hint">Choose one or both. Your doctor will review the request before ordering.</p>${choices([['Blood test','Blood test','Request a blood test for professional review'],['Urine test','Urine test','Request a urine test for professional review']],a.test,true)}`;}
- if(step==='collection'){title='Where would you prefer collection?';body=`<p class="question-hint">Home collection depends on the test and your provider’s approval.</p>${choices([['Laboratory','At the laboratory','Choose an available time after approval'],['Home kit','Request home collection','Ask about a urine container or suitable home blood kit']],a.collection)}`;}
- if(step==='medication'){title='Which medication do you need?';const meds=state.patients[flow.patient].medications;const blocked=pendingMeds(flow.patient);body=`<p class="question-hint">Select your existing medication. Your care team already has the details.</p><div class="choice-grid" role="group" aria-label="Medication choices">${meds.map(m=>blocked.includes(m.id)?`<div class="notice">${icon('clock')}<span><strong>${e(m.name)}</strong><br>A renewal request is already awaiting review.</span></div>`:choice(m.id,m.name+' · '+m.dose,m.when,(a.medication||[]).includes(m.id),true)).join('')}</div>`;}
- if(step==='admin'){title='Which document do you need?';body=`<p class="question-hint">Choose a box. Your details will be filled in automatically.</p>${choices(['Attendance confirmation','Copy of a medical report','Sick-leave certificate request'],a.admin)}`;}
- if(step==='checkin'){title='What brings you to the clinic?';body=`<div class="notice">${icon('passport')}<span>Sample insurance card recognized: <strong>${e(state.patients[flow.patient].name)}</strong></span></div>${choices(['A health concern','A regular follow-up','An administrative request'],a.checkin)}`;}
- if(step==='summary'){title=flow.kind==='checkin'?'Confirm your check-in':'Check your choices';body=answersHTML(flowPairs());if(flow.kind==='symptoms'){const urgent=flowCategory()==='Urgent';body=`${urgent?`<div class="notice urgent">${icon('alert')}<span><strong>Do not wait for a reply here if you need urgent help.</strong><br>Contact your healthcare team directly. If you think this is an emergency, seek emergency care now. This demo cannot assess urgency or contact anyone.</span></div>`:''}${body}<div class="decision-preview"><h3>Where your answers go</h3><div class="tree-path"><span class="tree-node">Your answers</span>${icon('arrow')}<span class="tree-node">${urgent?'Urgent flag':'Auto → '+flowRoute()}</span>${icon('arrow')}<span class="tree-node">Professional decision</span></div><p>Demo rules send your request to the appropriate queue automatically. The receiving professional reviews the request. This sample tree does not diagnose or give treatment advice.</p></div>`;}else body+=`<div class="order-summary">${icon('passport')} Your Patient Passport is attached automatically.</div>`;}
- const subject={symptoms:'Guided questions',tests:'Blood & urine test request',prescription:'Repeat prescription',admin:'Administrative request',checkin:'Clinic check-in'}[flow.kind];showModal(subject,`${progress}<h3 class="question-title">${title}</h3>${body}${flow.kind==='symptoms'?'<p class="warning-note">Illustrative decision tree · Not clinically validated · Demo only</p>':''}`,`<button class="btn" data-action="flow-back">${flow.index?'Back':'Cancel'}</button><button class="btn primary" data-action="flow-next" ${!canContinue()?'disabled':''}>${step==='summary'?(flow.kind==='checkin'?'Confirm check-in':'Send request'):'Continue'} ${icon(step==='summary'?'check':'arrow')}</button>`,`Step ${flow.index+1} of ${steps().length} · ${state.patients[flow.patient].name}`);
+
+function prevWizardStep() {
+  state.questionState.step--;
+  renderWizardStep();
 }
-function submitFlow(){const a=flow.answers;const person=flow.patient;const type={symptoms:'Symptoms',tests:'Tests',prescription:'Prescription',admin:'Administrative',checkin:'Walk-in'}[flow.kind];if(flow.kind==='prescription'&&a.medication.some(id=>pendingMeds(person).includes(id))){flow.index=0;drawFlow();toast('A selected medication already has a pending request.');return;}if(flow.kind==='tests'&&state.requests.some(r=>r.patient===person&&r.type==='Tests'&&r.status==='Pending'&&r.tests.slice().sort().join()===a.test.slice().sort().join())){closeModal();toast('That test request is already awaiting review.');return;}
- let title=flow.kind==='symptoms'?(concernOptions.find(c=>c.value===a.concern)?.label||'Request for urgent help'):flow.kind==='tests'?a.test.join(' + '):flow.kind==='prescription'?'Repeat prescription: '+state.patients[person].medications.filter(m=>a.medication.includes(m.id)).map(m=>m.name).join(', '):flow.kind==='admin'?a.admin:'Walk-in: '+a.checkin;
- const clinicalAdmin=flow.kind==='admin'&&a.admin==='Sick-leave certificate request';
- const r={id:uid('r'),patient:person,type,title,category:clinicalAdmin?'Medical':flow.kind==='checkin'&&a.checkin==='An administrative request'?'Administrative':flowCategory(),route:clinicalAdmin?'Doctor':flow.kind==='checkin'?(a.checkin==='An administrative request'?'Administration':'Nurse'):flowRoute(),status:'Pending',answers:flowPairs(),created:'Just now',...(flow.kind==='tests'?{tests:a.test,collection:a.collection}:{}),...(flow.kind==='prescription'?{medications:a.medication}:{})};state.requests.unshift(r);state.selectedRequest=r.id;state.filter='Pending';const kind=flow.kind;closeModal();commit();if(kind==='checkin'){state.ticket++;persist();showModal('You are checked in.',`<div class="checkin-ticket"><span>YOUR DEMO QUEUE NUMBER</span><strong>A–${String(state.ticket).padStart(3,'0')}</strong><p>Example wait: 20–30 minutes</p><p class="small muted">Collect your buzzer at reception.<br>Tell reception if you need urgent help.</p></div><p class="warning-note">Sample ticket and estimate. No real card reader, buzzer or queue is connected.</p>`,`<span></span><button class="btn primary" data-action="close">Done</button>`);}else showModal('Your request is ready for review.',`<div class="success"><div class="success-mark">${icon('check')}</div><h3>${e(title)}</h3><p>Your choices and Patient Passport are together in the ${e(r.route.toLowerCase())} queue.</p><div class="notice">${icon('inbox')}<span>Watch “Your requests” for the next step. This demonstration does not contact a real healthcare provider.</span></div></div>`,`<button class="btn" data-action="close">Back to my care</button><button class="btn primary" data-action="version" data-role="${r.route==='Doctor'?'doctor':'nurse'}">See ${r.route==='Doctor'?'doctor':'nurse'} version ${icon('arrow')}</button>`);}
-function openBooking(slotId,orderId=null){const request=orderId?state.requests.find(r=>r.id===orderId):null;const kind=request?.type==='Tests'&&request.status==='Approved'?'Laboratory':request?.route==='Nurse'?'Nurse':'Consultation';const slot=getSlots(kind).find(s=>s.id===slotId);if(!slot){toast('This time is no longer available. Choose another.');return;}showModal('Book this appointment?',`<div class="order-summary"><h3>${dateLabel(slot.date)} · ${e(slot.time)}</h3><p>${kind==='Laboratory'?'Blood / urine sample collection':kind==='Nurse'?'Nurse consultation':'Doctor consultation'}</p><p>${e(patient().name)} · Health Centre Ljubljana</p></div><p class="small muted" style="margin-top:20px">This books the sample calendar only.</p>`,`<button class="btn" data-action="close">Back</button><button class="btn primary" data-action="confirm-book" data-id="${e(slot.id)}" data-order="${e(orderId||'')}">Confirm appointment ${icon('check')}</button>`);}
-function reviewModal(id,outcome){const r=state.requests.find(r=>r.id===id);if(!r||r.status!=='Pending'||r.route!=='Doctor')return;const label=outcome==='tests'?'Approve test request':outcome==='prescription'?'Review and issue demo prescription':outcome==='contact'?'Record urgent contact required':'Arrange a consultation';showModal(label,`<p><strong>${e(state.patients[r.patient].name)}</strong> · ${e(r.title)}</p>${answersHTML(r.answers)}<div class="notice" style="margin-top:20px">${icon('shield')}<span>Confirm that you have reviewed the attached Patient Passport. This action updates demo records only; no clinical order is issued.</span></div>`,`<button class="btn" data-action="close">Back</button><button class="btn primary" data-action="confirm-review" data-id="${e(id)}" data-outcome="${e(outcome)}">${outcome==='prescription'?'Reviewed · issue in demo':'Reviewed · confirm'} ${icon('check')}</button>`);}
 
-document.addEventListener('click',event=>{const el=event.target.closest('[data-action]');if(!el)return;event.preventDefault();const action=el.dataset.action,id=el.dataset.id,value=el.dataset.value;
- switch(action){
- case'version':closeModal();location.hash=el.dataset.role;render();window.scrollTo(0,0);break;
- case'close':closeModal();break;
- case'start':flow={kind:el.dataset.kind,index:0,patient:state.patient,answers:{}};drawFlow();break;
- case'choose':{if(!flow)return;const key=currentStep();const multi=['detail','test','medication'].includes(key);if(multi){let values=flow.answers[key]||[];values=values.includes(value)?values.filter(v=>v!==value):[...values,value];if(value.includes('sure')&&values.includes(value))values=[value];else values=values.filter(v=>!v.includes('sure'));flow.answers[key]=values;}else{if(key==='concern'&&value!==flow.answers.concern){delete flow.answers.detail;delete flow.answers.duration;}if(key==='urgency'&&value!==flow.answers.urgency){delete flow.answers.concern;delete flow.answers.detail;delete flow.answers.duration;}flow.answers[key]=value;}const scroll=modalRoot.querySelector('.modal-body').scrollTop;drawFlow();modalRoot.querySelector('.modal-body').scrollTop=scroll;[...modalRoot.querySelectorAll('[data-action="choose"]')].find(b=>b.dataset.value===value)?.focus({preventScroll:true});break;}
- case'flow-back':if(!flow)return;if(flow.index===0)closeModal();else{flow.index--;drawFlow();}break;
- case'flow-next':if(!flow||!canContinue())return;if(currentStep()==='summary')submitFlow();else{flow.index++;drawFlow();}break;
- case'toggle-passport':expandedPassport=!expandedPassport;render();document.querySelector('.passport-toggle')?.focus({preventScroll:true});break;
- case'profile':showModal('Whose care are you managing?',`<div class="choice-grid"><button class="choice" data-action="profile-select" data-value="ana"><span class="choice-box">${state.patient==='ana'?icon('check'):''}</span><span><strong>Ana Novak</strong><small>My own care</small></span></button><button class="choice" data-action="profile-select" data-value="marija"><span class="choice-box">${state.patient==='marija'?icon('check'):''}</span><span><strong>Marija Novak</strong><small>Family member · Authorized demo access</small></span></button></div><p class="warning-note">Fictional profiles. A live service must verify the patient’s authorization.</p>`);break;
- case'profile-select':state.patient=value;expandedPassport=false;closeModal();commit();window.scrollTo(0,0);break;
- case'book-slot':openBooking(id,el.dataset.order||null);break;
- case'confirm-book':{const orderId=el.dataset.order||null;const order=orderId?state.requests.find(r=>r.id===orderId&&r.patient===state.patient&&!r.booked&&((r.status==='Approved'&&r.type==='Tests'&&r.collection==='Laboratory')||r.status==='Appointment needed')):null;if(orderId&&!order){closeModal();toast('This test request is not ready for booking.');break;}const kind=order?.type==='Tests'&&order.status==='Approved'?'Laboratory':order?.route==='Nurse'?'Nurse':'Consultation';const slot=getSlots(kind).find(s=>s.id===id);if(!slot){closeModal();commit('That time was just taken. Please choose another.');break;}const appointment={id:uid('a'),patient:state.patient,date:slot.date,time:slot.time,kind,title:kind==='Laboratory'?order.tests.join(' + '):kind==='Nurse'?'Nurse consultation':'Doctor consultation',place:'Health Centre Ljubljana · '+(kind==='Laboratory'?'Laboratory':kind==='Nurse'?'Nurse clinic':'Room 12'),status:'Booked',...(order?{orderId}:{} )};state.appointments.push(appointment);if(order)order.booked=true;const wait=state.waitingList.find(w=>w.patient===state.patient);if(wait&&kind==='Consultation'&&!state.appointments.some(a=>a.id===wait.appointment&&a.status==='Booked'))wait.appointment=appointment.id;activity(`${patient().name} booked ${dateLabel(slot.date)} at ${slot.time}.`);closeModal();commit('Appointment booked. It is now in your upcoming appointments.');break;}
- case'cancel':{const a=state.appointments.find(a=>a.id===id&&a.patient===state.patient&&a.status==='Booked');if(!a)break;showModal('Cancel this appointment?',`<div class="order-summary"><h3>${e(a.title)}</h3><p>${dateLabel(a.date)} · ${e(a.time)}</p><p>${e(a.place)}</p></div><div class="notice" style="margin-top:20px">${icon('users')}<span>A suitable released doctor appointment is automatically offered to the next eligible demo patient.</span></div>`,`<button class="btn" data-action="close">Keep appointment</button><button class="btn danger" data-action="confirm-cancel" data-id="${e(id)}">Yes, cancel</button>`);break;}
- case'confirm-cancel':{const a=state.appointments.find(a=>a.id===id&&a.patient===state.patient&&a.status==='Booked');if(!a){closeModal();break;}a.status='Cancelled';if(a.orderId){const order=state.requests.find(r=>r.id===a.orderId);if(order)order.booked=false;}activity(`${patient().name} cancelled ${dateLabel(a.date)} at ${a.time}.`);offerReleased(a,a.patient);closeModal();commit('Appointment cancelled. The time has been released.');break;}
- case'waiting-list':{let w=state.waitingList.find(w=>w.patient===state.patient);if(!w){const a=state.appointments.find(a=>a.patient===state.patient&&a.status==='Booked'&&a.kind==='Consultation');w={patient:state.patient,appointment:a?.id,enabled:false};state.waitingList.push(w);}w.enabled=!w.enabled;if(!w.enabled){for(const o of state.offers.filter(o=>o.patient===state.patient&&o.status==='Offered')){o.status='Declined';offerReleased(o,o.excluded,[...(o.declined||[]),o.patient]);}}commit(w.enabled?'Earlier appointment offers enabled.':'Earlier appointment offers turned off.');break;}
- case'accept-offer':{const o=state.offers.find(o=>o.id===id&&o.patient===state.patient&&o.status==='Offered');if(!o)break;const a=state.appointments.find(a=>a.id===o.appointment&&a.status==='Booked');if(!a||state.appointments.some(a=>a.status==='Booked'&&a.date===o.date&&a.time===o.time&&a.kind===o.kind)){o.status='Expired';commit('This offer is no longer available. Your current appointments are unchanged.');break;}const old={...a};a.date=o.date;a.time=o.time;o.status='Accepted';state.slots.push({id:uid('s'),date:old.date,time:old.time,kind:old.kind});offerReleased(old,state.patient);activity(`${patient().name} accepted the earlier appointment on ${dateLabel(o.date)} at ${o.time}.`);commit('Earlier appointment confirmed. Your old time has been released.');break;}
- case'decline-offer':{const o=state.offers.find(o=>o.id===id&&o.patient===state.patient&&o.status==='Offered');if(!o)break;o.status='Declined';offerReleased(o,o.excluded,[...(o.declined||[]),o.patient]);commit('Your original appointment is unchanged.');break;}
- case'consultation-times':{const r=state.requests.find(r=>r.id===id&&r.patient===state.patient&&r.status==='Appointment needed'&&!r.booked);if(!r)break;const kind=r.route==='Nurse'?'Nurse':'Consultation';showModal(kind==='Nurse'?'Available nurse appointments':'Available doctor appointments',`<p>${e(r.title)} · Professional review completed</p><div class="slots">${getSlots(kind).map(s=>slotButton(s).replace('data-action="book-slot"',`data-action="book-slot" data-order="${e(r.id)}"`)).join('')||'<p class="empty">No sample appointments are available.</p>'}</div>`);break;}
- case'show-times':document.getElementById('appointments')?.scrollIntoView({behavior:'smooth',block:'start'});break;
- case'lab-times':{const r=state.requests.find(r=>r.id===id&&r.patient===state.patient&&r.type==='Tests'&&r.status==='Approved'&&!r.booked&&r.collection==='Laboratory');if(!r)break;showModal('Available laboratory times',`<p>${e(r.tests.join(' + '))} · Approved in this demo</p><div class="slots">${getSlots('Laboratory').map(s=>slotButton(s).replace('data-action="book-slot"',`data-action="book-slot" data-order="${e(r.id)}"`)).join('')||'<p class="empty">No sample laboratory slots are available.</p>'}</div>`);break;}
- case'view-answers':{const r=state.requests.find(r=>r.id===id);if(r)showModal('Your selected answers',answersHTML(r.answers),`<span></span><button class="btn primary" data-action="close">Done</button>`);break;}
- case'filter':if(role()!=='doctor')break;state.filter=value;commit();break;
- case'select-request':if(role()!=='doctor')break;state.selectedRequest=id;commit();if(innerWidth<=760)document.getElementById('request-detail')?.scrollIntoView({behavior:'smooth',block:'start'});break;
- case'complete-admin':{if(role()!=='nurse')break;const r=state.requests.find(r=>r.id===id&&r.category==='Administrative'&&r.status==='Pending');if(!r)break;r.status='Completed';r.response='Your administrative request has been completed in this demonstration.';commit('Completed. The patient’s request status has been updated.');break;}
- case'review':if(role()==='doctor')reviewModal(id,el.dataset.outcome);break;
- case'confirm-review':{if(role()!=='doctor')break;const r=state.requests.find(r=>r.id===id&&r.status==='Pending'&&r.route==='Doctor');if(!r){closeModal();break;}const outcome=el.dataset.outcome;if(outcome==='tests'){r.status='Approved';r.response=r.collection==='Laboratory'?'Your blood / urine test request is approved in the demo. Choose a laboratory time below.':'Home collection approved in the demo. Your team would arrange the appropriate kit and collection instructions. Nothing is shipped by this prototype.';}else if(outcome==='prescription'){r.status='Issued in demo';r.response='The prescription is marked issued in the demonstration. No real prescription has been issued.';for(const m of state.patients[r.patient].medications.filter(m=>(r.medications||[]).includes(m.id))){m.issueStatus='Issued';m.issuedAt=new Date().toISOString();}}else if(outcome==='contact'){r.status='Contact required';r.response='Please contact your healthcare team directly. This demo does not arrange urgent care. If you think this is an emergency, seek emergency help now.';}else{r.status='Appointment needed';r.response=`Your ${r.route.toLowerCase()} has requested a consultation in this demo. Choose an available appointment below.`;}closeModal();commit('Review recorded. The next step is now visible to the patient.');break;}
- case'medicine':{if(!['doctor','nurse'].includes(role()))break;const p=state.patients[el.dataset.patient];const m=p?.medications.find(m=>m.id===id);if(!m)break;showModal(m.name+' · '+m.dose,medicationDetailHTML(m,p,{icon,escapeHTML:e}),`<span></span><button class="btn primary" data-action="close">Done</button>`,'Medicine specifications, treatment dates and interactions');break;}
- case'nurse-filter':if(role()!=='nurse')break;state.nurseFilter=value;delete state.nurseTemplateDraft;commit();break;
- case'select-exam':if(role()!=='nurse')break;state.selectedExam=id;delete state.nurseTemplateDraft;commit();if(innerWidth<=760)document.getElementById('request-detail')?.scrollIntoView({behavior:'smooth'});break;
- case'apply-nurse-template':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress'),template=state.nurseTemplates.find(t=>t.id===el.dataset.template);if(!exam||!template)break;applyTemplateToExam(exam,template);state.selectedExam=id;delete state.nurseTemplateDraft;commit(template.name+' checklist applied. No steps were marked complete.');break;}
- case'edit-nurse-template':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress'),template=state.nurseTemplates.find(t=>t.id===exam?.templateId);if(!template)break;state.nurseTemplateDraft={id:template.id,steps:[...template.steps]};commit();break;}
- case'toggle-nurse-template-step':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress'),draft=state.nurseTemplateDraft,step=examinationSteps.find(s=>s.id===el.dataset.step);if(!exam||!draft||draft.id!==exam.templateId||!step||step.required||(draft.id==='samples'&&step.id==='sample'))break;draft.steps=draft.steps.includes(step.id)?draft.steps.filter(s=>s!==step.id):[...draft.steps,step.id];commit();break;}
- case'save-nurse-template':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress'),draft=state.nurseTemplateDraft,template=state.nurseTemplates.find(t=>t.id===draft?.id);if(!exam||!template||template.id!==exam.templateId)break;template.steps=[...draft.steps];applyTemplateToExam(exam,template);delete state.nurseTemplateDraft;commit(template.name+' saved for future visits and applied to this examination.');break;}
- case'cancel-nurse-template':if(role()!=='nurse')break;delete state.nurseTemplateDraft;commit();break;
- case'exam-step':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress');const step=examinationSteps.find(s=>s.id===el.dataset.step);if(!exam||!step||!stepsForExam(exam).some(s=>s.id===step.id)||!['Done','Not applicable','clear'].includes(value)||((step.required||(exam.appointmentId&&step.id==='sample'))&&value==='Not applicable'))break;const entry={value,at:new Date().toISOString(),by:'Nurse Maja Petrič'};if(value==='clear')delete exam.steps[step.id];else exam.steps[step.id]=entry;exam.history.push({step:step.id,...entry});commit('Examination step saved and shared with the doctor.');document.querySelector(`[data-action="exam-step"][data-id="${CSS.escape(id)}"][data-step="${step.id}"]`)?.focus({preventScroll:true});break;}
- case'finish-exam':{if(role()!=='nurse')break;const exam=state.examinations.find(x=>x.id===id&&x.status==='In progress');if(!exam||!canFinishExamination(exam))break;exam.status='Completed';exam.completedAt=new Date().toISOString();const r=state.requests.find(r=>r.id===exam.requestId);if(r&&exam.appointmentId){r.status='Collected in demo';r.response='The nurse recorded sample collection in the demonstration. No real sample was collected.';}else if(r&&r.route==='Nurse'){r.status='Completed';r.response='The nurse completed the examination checklist in the demonstration. The record is shared with your doctor.';}state.nurseFilter='Completed';commit('Examination completed. The patient and doctor views are updated.');break;}
- case'reset-confirm':showModal('Start the demonstration again?',`<p>This restores the original fictional records, appointments and requests.</p>`,`<button class="btn" data-action="close">Keep my changes</button><button class="btn danger" data-action="reset">Reset demo</button>`);break;
- case'reset':state=prepareClinicalState(structuredClone(seed));expandedPassport=false;closeModal();commit('The demonstration has been reset.');break;
- case'explain':showModal('An addition to zVEM, not a replacement.',`<p>This local demonstration shows suggested improvements to the existing patient and doctor workflow.</p><ol class="plain-list"><li>The patient chooses large boxes without typing.</li><li>A request is organized by type, with the Patient Passport attached.</li><li>Automatic rules send the request to the nurse or doctor. Each professional records their own work.</li><li>The patient sees the result in the same request.</li></ol><div class="notice" style="margin-top:20px">${icon('shield')}<span>Only fictional records are used. The decision tree is illustrative, not clinically validated. No real healthcare service is connected.</span></div><p class="small muted" style="margin-top:20px">For a side-by-side demonstration, open this same file in three tabs: #patient, #doctor and #nurse. Saved changes are shared between these tabs where browser storage is available.</p>`,`<span></span><button class="btn primary" data-action="close">Got it</button>`);break;
- }
-});
-window.addEventListener('hashchange',()=>{closeModal();render();});
-window.addEventListener('storage',event=>{if(event.key!==KEY||!event.newValue)return;try{const updated=JSON.parse(event.newValue);if(updated.version===2){state=prepareClinicalState(updated);render();}}catch{}});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')closeModal();if(event.key==='Tab'&&modalRoot.children.length){const buttons=[...modalRoot.querySelectorAll('button:not(:disabled),a[href]')];const first=buttons[0],last=buttons.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus();}}});
-render();
+function submitWizard() {
+  state.requests.unshift({
+    id: 'req-' + Date.now(),
+    type: 'Guided Questionnaire',
+    title: 'Symptom Report: ' + state.questionState.answers.main,
+    date: 'Just now',
+    status: 'pending',
+    response: ''
+  });
+  state.questionState.step = 4;
+  renderWizardStep();
+  showToast('Questionnaire submitted to your doctor.');
+}
 
+function openBookAppointmentModal() {
+  state.appointmentBooking = { doctor: 'Dr. Ana Novak', date: 'Oct 24', slot: '10:30 AM' };
+  renderAppointmentModal();
+}
+
+function renderAppointmentModal() {
+  openModal(`
+    <div class="modal-header">
+      <div>
+        <h2>Book Appointment</h2>
+        <p>Schedule a visit with your primary care provider</p>
+      </div>
+      <button class="close" onclick="closeModal()">${icon('x')}</button>
+    </div>
+    <div class="modal-body">
+      <p>Select preferred doctor and available slot:</p>
+      <div class="choice-grid" style="margin-bottom:20px;">
+        ${['Dr. Ana Novak', 'Dr. Marko Zupan'].map(doc => `
+          <button class="choice ${state.appointmentBooking.doctor===doc?'selected':''}" onclick="setApptDoc('${doc}')">
+            <div class="choice-box">${icon('check')}</div>
+            <div><strong>${doc}</strong><small>General Practice</small></div>
+          </button>
+        `).join('')}
+      </div>
+
+      <div class="section-label">Available Time Slots for ${state.appointmentBooking.date}</div>
+      <div class="slots">
+        ${['09:00 AM', '10:30 AM', '02:15 PM'].map(slot => `
+          <button class="slot btn ${state.appointmentBooking.slot===slot?'selected':''}" onclick="setApptSlot('${slot}')">
+            <span>Morning</span>
+            <strong>${slot}</strong>
+            <span>Available</span>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="confirmAppointment()">Confirm Booking</button>
+    </div>
+  `);
+}
+
+function setApptDoc(doc) {
+  state.appointmentBooking.doctor = doc;
+  renderAppointmentModal();
+}
+
+function setApptSlot(slot) {
+  state.appointmentBooking.slot = slot;
+  renderAppointmentModal();
+}
+
+function confirmAppointment() {
+  const newAppt = {
+    date: '24', month: 'OCT', title: 'Consultation with ' + state.appointmentBooking.doctor,
+    doctor: state.appointmentBooking.doctor, time: state.appointmentBooking.slot, type: 'In-person'
+  };
+  state.patients[state.selectedPatientId].appointments.push(newAppt);
+  state.requests.unshift({
+    id: 'req-' + Date.now(),
+    type: 'Appointment',
+    title: 'Booked: ' + newAppt.title,
+    date: 'Just now',
+    status: 'approved',
+    response: 'Appointment confirmed.'
+  });
+  closeModal();
+  showToast('Appointment successfully booked.');
+}
+
+function openTestRequestModal() {
+  state.testRequest = { type: 'Urine sample', description: '', patientId: state.selectedPatientId, requestedBy: state.role === 'doctor' ? 'Doctor' : 'Patient' };
+  renderTestModal();
+}
+
+function renderTestModal() {
+  openModal(`
+    <div class="modal-header">
+      <div>
+        <h2>Request Urine or Stool Sample</h2>
+        <p>${state.testRequest.requestedBy === 'Doctor' ? 'Request a sample for' : 'Send a sample request to your doctor for'} ${state.patients[state.testRequest.patientId].name}</p>
+      </div>
+      <button class="close" onclick="closeModal()">${icon('x')}</button>
+    </div>
+    <div class="modal-body">
+      <div class="choice-grid" style="margin-bottom:20px;">
+        ${['Urine sample', 'Stool sample'].map(t => `
+          <button class="choice ${state.testRequest.type===t?'selected':''}" aria-pressed="${state.testRequest.type===t}" onclick="setTestType('${t}')">
+            <div class="choice-box">${state.testRequest.type===t?icon('check'):''}</div>
+            <div><strong>${t}</strong></div>
+          </button>
+        `).join('')}
+      </div>
+
+      <div class="section-label">Additional notes (optional)</div>
+      <textarea id="test-notes" rows="3" style="width:100%; padding:12px; border:1px solid var(--line); border-radius:10px; font:inherit;" placeholder="Add details about the sample request...">${state.testRequest.description}</textarea>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeModal()">Cancel</button>
+      <button class="btn primary" onclick="submitTestRequest()">Submit Request</button>
+    </div>
+  `);
+}
+
+function setTestType(t) {
+  if (!['Urine sample', 'Stool sample'].includes(t)) return;
+  state.testRequest.description = document.getElementById('test-notes')?.value || '';
+  state.testRequest.type = t;
+  renderTestModal();
+}
+
+function submitTestRequest() {
+  if (!state.testRequest || !['Urine sample', 'Stool sample'].includes(state.testRequest.type)) return;
+  const notes = document.getElementById('test-notes') ? document.getElementById('test-notes').value : '';
+  state.requests.unshift({
+    id: 'req-' + Date.now(),
+    type: 'Sample request',
+    patientId: state.testRequest.patientId,
+    requestedBy: state.testRequest.requestedBy,
+    title: state.testRequest.type,
+    notes,
+    date: 'Just now',
+    status: 'pending',
+    response: ''
+  });
+  closeModal();
+  showToast(state.testRequest.requestedBy === 'Doctor' ? 'Sample request recorded for the patient.' : 'Sample request submitted to your doctor.');
+}
+
+
+// DOCTOR VIEW
+function renderDoctorView() {
+  const p = state.patients[state.selectedPatientId];
+  return `
+    <div class="intro">
+      <div>
+        <h1>Doctor Dashboard · Dr. Ana Novak</h1>
+        <p>Review patient queues, guided question summaries, and manage care pathways in zVEM.</p>
+      </div>
+      <div class="step-label">
+        ${icon('stethoscope')} Clinical Workstation Active
+      </div>
+    </div>
+
+    <div class="doctor-layout">
+      <div class="stack queue-panel">
+        <div class="panel">
+          <div class="category-heading">
+            <h2>Patient Queue</h2>
+            <span class="queue-count">3 Pending</span>
+          </div>
+          <div class="filters" style="margin-top:15px;">
+            <button class="filter btn ${state.doctorQueueFilter==='all'?'active':''}" onclick="setDocFilter('all')">All</button>
+            <button class="filter btn ${state.doctorQueueFilter==='urgent'?'active':''}" onclick="setDocFilter('urgent')">Urgent</button>
+            <button class="filter btn ${state.doctorQueueFilter==='questionnaires'?'active':''}" onclick="setDocFilter('questionnaires')">Questionnaires</button>
+          </div>
+
+          <div style="display:grid; gap:10px; margin-top:10px;">
+            <button class="queue-row btn ${state.selectedPatientId==='p1'?'selected':''}" onclick="selectDocPatient('p1')">
+              <div class="queue-patient">
+                <strong>Marija Novak</strong>
+                <span class="pill">Questionnaire Ready</span>
+              </div>
+              <p>Shortness of breath / Cough (3-5 days)</p>
+            </button>
+            <button class="queue-row btn urgent ${state.selectedPatientId==='p2'?'selected':''}" onclick="selectDocPatient('p2')">
+              <div class="queue-patient">
+                <strong>Janez Horvat</strong>
+                <span class="pill red">Urgent Review</span>
+              </div>
+              <p>Blood glucose review · High reading reported</p>
+            </button>
+            <button class="queue-row btn ${state.selectedPatientId==='p3'?'selected':''}" onclick="selectDocPatient('p3')">
+              <div class="queue-patient">
+                <strong>Ana Zupančič</strong>
+                <span class="pill gray">Routine Check</span>
+              </div>
+              <p>Allergy consultation follow-up</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="panel request-detail">
+          <div class="panel-head">
+            <div>
+              <span class="pill">Selected Patient File</span>
+              <h2>${p.name}</h2>
+              <p>EMT: ${p.emt} · Age ${p.age}</p>
+            </div>
+            ${icon('stethoscope')}
+          </div>
+
+          <div class="clinical-passport-strip">
+            <strong>${icon('passport')} Guided Questionnaire Summary</strong>
+            <p><strong>Primary Concern:</strong> Shortness of breath / Cough</p>
+            <p><strong>Duration:</strong> 3-5 days (Moderate severity)</p>
+          </div>
+
+          ${p.allergies && p.allergies.length > 0 ? `
+            <div class="allergy">
+              ${icon('alert')}
+              <div>
+                <strong>Active Allergies</strong>
+                <span>${p.allergies.join(', ')}</span>
+              </div>
+            </div>
+          ` : `
+            <div class="allergy safe">
+              ${icon('checkCircle')}
+              <div>
+                <strong>Allergy Status</strong>
+                <span>No known drug or food allergies recorded.</span>
+              </div>
+            </div>
+          `}
+
+          <div class="record-group">
+            <h3>${icon('passport')} Patient Passport · Conditions & Medications</h3>
+            <p class="small muted">Prescription flags appear within 7 days of the recorded run-out date. Sample dates shown for this demo.</p>
+            ${p.conditions.map(c => `<div class="record-item"><strong>${c}</strong><span>Confirmed diagnosis</span></div>`).join('')}
+            ${p.medications.map(m => `<div class="record-item"><strong>${m.name}</strong><span>${m.dose}</span>${prescriptionInfo(m)}</div>`).join('')}
+          </div>
+
+          <div class="record-group">
+            <h3>${icon('file')} Urine & Stool Sample Requests</h3>
+            ${state.requests.filter(r => r.type === 'Sample request' && r.patientId === p.id).map(r => `<div class="record-item"><strong>${r.title}</strong><span>Requested by: ${r.requestedBy} · ${r.date} · ${r.status}</span></div>`).join('') || '<p class="small muted">No sample requests for this patient.</p>'}
+            <button class="btn" onclick="openTestRequestModal()">${icon('plus')} Request Urine or Stool Sample</button>
+          </div>
+
+          <div class="doctor-actions">
+            <button class="btn primary" onclick="showToast('Care pathway updated and sent to patient.')">${icon('check')} Approve Care Plan & Send Note</button>
+            <button class="btn" onclick="openBookAppointmentModal()">${icon('calendar')} Schedule In-Person Visit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function setDocFilter(f) {
+  state.doctorQueueFilter = f;
+  render();
+}
+
+function selectDocPatient(id) {
+  state.selectedPatientId = id;
+  render();
+}
+
+function setDocRoute(r) {
+  state.doctorActiveRoute = r;
+  render();
+}
+
+
+// NURSE VIEW
+function renderNurseView() {
+  const np = state.nursePatients[state.selectedNursePatientId];
+  return `
+    <div class="intro">
+      <div>
+        <h1>Nurse Triage Dashboard · Unit 2</h1>
+        <p>Pre-visit assessments, vital signs verification, and passport checks.</p>
+      </div>
+      <div class="step-label">
+        ${icon('activity')} Triage Workstation Active
+      </div>
+    </div>
+
+    <div class="doctor-layout">
+      <div class="stack queue-panel">
+        <div class="panel">
+          <div class="category-heading">
+            <h2>Waiting Patients</h2>
+            <span class="queue-count">2 Triage</span>
+          </div>
+
+          <div style="display:grid; gap:10px; margin-top:15px;">
+            <button class="queue-row btn ${state.selectedNursePatientId==='np1'?'selected':''}" onclick="selectNursePatient('np1')">
+              <div class="queue-patient">
+                <strong>Marija Novak</strong>
+                <span class="pill">Room 2</span>
+              </div>
+              <p>Routine check · 10 mins ago</p>
+            </button>
+            <button class="queue-row btn urgent ${state.selectedNursePatientId==='np2'?'selected':''}" onclick="selectNursePatient('np2')">
+              <div class="queue-patient">
+                <strong>Janez Horvat</strong>
+                <span class="pill red">Urgent</span>
+              </div>
+              <p>Room 4 · 2 mins ago</p>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <span class="pill">Pre-Visit Triage</span>
+              <h2>${np.name}</h2>
+              <p>Location: ${np.room} · Status: ${np.triage}</p>
+            </div>
+            ${icon('activity')}
+          </div>
+
+          ${np.allergies && np.allergies.length > 0 ? `
+            <div class="allergy">
+              ${icon('alert')}
+              <div>
+                <strong>Allergy Verification Required</strong>
+                <span>${np.allergies.join(', ')}</span>
+              </div>
+            </div>
+          ` : `
+            <div class="allergy safe">
+              ${icon('checkCircle')}
+              <div>
+                <strong>Allergy Verification</strong>
+                <span>No known allergies on record. Verified with patient.</span>
+              </div>
+            </div>
+          `}
+
+          <div class="nurse-template-panel">
+            <div class="template-heading">
+              <div>
+                <span class="eyebrow">Standard Clinical Protocol</span>
+                <h3>Pre-Visit Triage Checklist</h3>
+              </div>
+              ${icon('checkCircle')}
+            </div>
+
+            <div class="template-step-grid">
+              ${state.customTemplateSteps.map((stepName, idx) => `
+                <button class="template-step btn ${np.steps[idx] ? 'selected' : ''}" onclick="toggleNurseStep(${idx})">
+                  <div class="choice-box">${np.steps[idx] ? icon('check') : ''}</div>
+                  <div>
+                    <strong>${stepName}</strong>
+                    <small>${np.steps[idx] ? 'Completed' : 'Pending'}</small>
+                  </div>
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <button class="btn primary full" onclick="showToast('Triage assessment successfully saved to zVEM record.')">${icon('check')} Finalize & Sync to Patient Passport</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function selectNursePatient(id) {
+  state.selectedNursePatientId = id;
+  render();
+}
+
+function toggleNurseStep(idx) {
+  const np = state.nursePatients[state.selectedNursePatientId];
+  np.steps[idx] = !np.steps[idx];
+  render();
+}
+
+function resetDemoState() {
+  state.requests = [
+    { id: 'req-1', type: 'Sample request', patientId: 'p1', requestedBy: 'Patient', title: 'Urine sample', date: 'Today, 09:15', status: 'pending', response: '' },
+    { id: 'req-2', type: 'Appointment', title: 'Cardiology follow-up with Dr. Ana Novak', date: 'Yesterday', status: 'approved', response: 'Confirmed for Oct 24 at 10:30 AM.' }
+  ];
+  showToast('Demo data reset to initial state.');
+}
+
+function renderModal() {
+  const root = document.getElementById('modal-root');
+  if(!state.modal) {
+    root.innerHTML = '';
+    return;
+  }
+  root.innerHTML = `
+    <div class="modal-overlay" onclick="if(event.target===this) closeModal();">
+      <div class="modal">
+        ${state.modal}
+      </div>
+    </div>
+  `;
+}
+
+function renderToast() {
+  const reg = document.getElementById('toast-region');
+  if(!state.toast) {
+    reg.innerHTML = '';
+    return;
+  }
+  reg.innerHTML = `
+    <div class="toast">
+      ${icon('checkCircle')}
+      <div>${state.toast}</div>
+    </div>
+  `;
+}
+
+Object.assign(window, {closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
+
+window.onload = function() {
+  const requestedRole = location.hash.slice(1);
+  if (['patient', 'doctor', 'nurse'].includes(requestedRole)) state.role = requestedRole;
+  render();
+};
 })();
-</script>
+  </script>
 </body>
 </html>
