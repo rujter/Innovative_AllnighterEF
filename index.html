@@ -91,6 +91,7 @@ const state = {
   questionState: { step: 0, answers: {} },
   appointmentBooking: { doctor: null, date: null, slot: null },
   testRequest: { type: null, description: '' },
+  renewalRequest: null,
   doctorQueueFilter: 'all',
   approvedPlans: [],
   doctorActiveRoute: 'default',
@@ -274,9 +275,11 @@ function renderPatientHome(p) {
       <div class="process-preview">
         <span><b>1</b> Select main concern</span>
         ${icon('chevron')}
-        <span><b>2</b> Symptom duration</span>
+        <span><b>2</b> Mark pain on body silhouette</span>
         ${icon('chevron')}
-        <span><b>3</b> Summary for doctor</span>
+        <span><b>3</b> Symptom duration</span>
+        ${icon('chevron')}
+        <span><b>4</b> Review & submit</span>
       </div>
     </div>
 
@@ -299,6 +302,11 @@ function renderPatientHome(p) {
           ${icon('pill')}
           <strong>Request Urine or Stool Sample</strong>
           <span>Request urine or stool sampling</span>
+        </button>
+        <button class="action-tile btn" onclick="openRenewalRequestModal()">
+          ${icon('pill')}
+          <strong>Request Medication Renewal</strong>
+          <span>Ask your doctor to renew an existing medication</span>
         </button>
         <button class="action-tile btn" onclick="setPatientTab('passport')">
           ${icon('passport')}
@@ -550,7 +558,7 @@ function renderRequestsTab() {
               <div class="status-top">
                 <div>
                   <span class="pill ${r.status==='approved'?'':'amber'}">${r.status.toUpperCase()}</span>
-                  <h3>${r.title}</h3>${r.answers?wizardSymptomSummary(r.answers):''}
+                  <h3>${r.title}</h3>${r.answers?wizardSymptomSummary(r.answers):''}${r.type==='Medication renewal'&&r.notes?`<p>${e(r.notes)}</p>`:''}
                   <p>Submitted: ${r.date} · Type: ${r.type}${r.requestedBy ? ' · Requested by: ' + r.requestedBy : ''}</p>
                 </div>
               </div>
@@ -562,6 +570,7 @@ function renderRequestsTab() {
 
       <div style="margin-top:25px; padding-top:20px; border-top:1px solid var(--line);">
         <button class="btn primary" onclick="openTestRequestModal()">${icon('plus')} Request Urine or Stool Sample</button>
+        <button class="btn" onclick="openRenewalRequestModal()">${icon('pill')} Request Medication Renewal</button>
       </div>
     </div>
   `;
@@ -882,6 +891,43 @@ function confirmAppointment() {
   showToast('Appointment successfully booked.');
 }
 
+function pendingRenewal(patientId, index) {
+  return state.requests.some(r=>r.type==='Medication renewal'&&r.patientId===patientId&&r.status==='pending'&&r.medicationIndexes.includes(index));
+}
+
+function openRenewalRequestModal() {
+  state.renewalRequest={patientId:state.selectedPatientId, medications:[], notes:'', requestedBy:state.role==='doctor'?'Doctor':'Patient'};
+  renderRenewalModal();
+}
+
+function renderRenewalModal() {
+  const request=state.renewalRequest, patient=state.patients[request.patientId];
+  openModal(`<div class="modal-header"><div><h2>Request Medication Renewal</h2><p>${e(patient.name)} · Select the medications you would like renewed.</p></div><button class="close" aria-label="Close renewal request" onclick="closeModal()">${icon('x')}</button></div>
+    <div class="modal-body"><p class="question-hint">Choose one or more existing medications. Your doctor will review the request.</p><div class="choice-grid">
+    ${patient.medications.map((med,index)=>{const pending=pendingRenewal(patient.id,index), selected=request.medications.includes(index);return `<button class="choice ${selected?'selected':''}" aria-pressed="${selected}" onclick="toggleRenewalMedication(${index})" ${pending?'disabled':''}><span class="choice-box">${selected?icon('check'):''}</span><span><strong>${e(med.name)}</strong><small>${e(med.dose)}${pending?' · Renewal already pending':''}</small></span></button>`;}).join('')||'<p>No medications are listed in this patient’s Passport.</p>'}
+    </div><div class="other-symptom"><label for="renewal-notes">Additional notes (optional)</label><textarea id="renewal-notes" rows="3" maxlength="1000">${e(request.notes)}</textarea></div></div>
+    <div class="modal-footer"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn primary" onclick="submitRenewalRequest()" ${request.medications.length?'':'disabled'}>Submit Renewal Request</button></div>`);
+}
+
+function toggleRenewalMedication(index) {
+  const r=state.renewalRequest;
+  if(!r||!state.patients[r.patientId].medications[index]||pendingRenewal(r.patientId,index))return;
+  r.notes=document.getElementById('renewal-notes')?.value||'';
+  r.medications=r.medications.includes(index)?r.medications.filter(i=>i!==index):[...r.medications,index];
+  renderRenewalModal();
+}
+
+function submitRenewalRequest() {
+  const r=state.renewalRequest;
+  if(!r||!r.medications.length||r.medications.some(i=>pendingRenewal(r.patientId,i)))return;
+  const medications=r.medications.map(i=>state.patients[r.patientId].medications[i]);
+  const notes=(document.getElementById('renewal-notes')?.value||'').trim();
+  state.requests.unshift({id:'renewal-'+Date.now(),type:'Medication renewal',patientId:r.patientId,requestedBy:r.requestedBy,medicationIndexes:[...r.medications],title:'Medication renewal: '+medications.map(m=>m.name).join(', '),medicationDetails:medications.map(m=>m.name+' · '+m.dose).join('; '),notes,date:'Just now',status:'pending',response:''});
+  state.renewalRequest=null;
+  closeModal();
+  showToast('Medication renewal request submitted for doctor review.');
+}
+
 function openTestRequestModal() {
   state.testRequest = { type: 'Urine sample', description: '', patientId: state.selectedPatientId, requestedBy: state.role === 'doctor' ? 'Doctor' : 'Patient' };
   renderTestModal();
@@ -1042,6 +1088,11 @@ function renderDoctorView() {
             <button class="btn" onclick="openTestRequestModal()">${icon('plus')} Request Urine or Stool Sample</button>
           </div>
 
+          <div class="record-group">
+            <h3>${icon('pill')} Medication Renewal Requests</h3>
+            ${state.requests.filter(r=>r.type==='Medication renewal'&&r.patientId===p.id).map(r=>`<div class="record-item"><strong>${e(r.medicationDetails)}</strong><span>Requested by: ${e(r.requestedBy)} · ${r.date} · ${r.status}</span>${r.notes?`<p>${e(r.notes)}</p>`:''}</div>`).join('')||'<p class="small muted">No medication renewal requests for this patient.</p>'}
+            <button class="btn" onclick="openRenewalRequestModal()">${icon('plus')} Request Medication Renewal</button>
+          </div>
           <div class="doctor-actions">
             <button class="btn primary" onclick="approveCarePlan()" ${state.approvedPlans.includes(p.id)?'disabled':''}>${icon('check')} ${state.approvedPlans.includes(p.id)?'Care Plan Approved':'Approve Care Plan & Send Note'}</button>
             <button class="btn" onclick="openBookAppointmentModal()">${icon('calendar')} Schedule In-Person Visit</button>
@@ -1221,7 +1272,7 @@ function renderToast() {
   `;
 }
 
-Object.assign(window, {openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
+Object.assign(window, {openRenewalRequestModal, toggleRenewalMedication, submitRenewalRequest, openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
 
 window.onload = function() {
   const requestedRole = location.hash.slice(1);
