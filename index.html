@@ -46,6 +46,9 @@
 .queue-row.btn.approved,.queue-row.btn.approved:hover{background:#e1f2df;border-color:#6aab69;border-left:5px solid var(--green);color:#174d30}
 .queue-row.btn.approved.selected{box-shadow:0 0 0 2px var(--green)}
 .request-queue-message{display:flex;align-items:center;gap:8px;font-weight:650;color:var(--green)}.request-queue-message .icon{width:18px;height:18px}.request-detail>.notice{margin-bottom:16px}
+.global-step-form{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.global-step-field{flex:1 1 220px;min-width:0}.global-step-field label{display:block;font-weight:650;margin-bottom:8px}.global-step-field input{width:100%;min-height:54px;padding:12px;border:1px solid #8fa496;border-radius:10px;background:white;color:var(--ink)}
+.global-step-form>p{flex-basis:100%}.global-step-error{color:var(--red);font-size:14px}.global-step-error:empty{display:none}
 </style>
 </head>
 <body>
@@ -88,6 +91,7 @@ const state = {
   selectedNursePatientId: 'np1',
   expandedPassport: false,
   modal: null,
+  appointmentCancellation: null,
   toast: null,
   questionState: { step: 0, answers: {} },
   appointmentBooking: { doctor: null, date: null, slot: null },
@@ -337,7 +341,7 @@ function renderPatientHome(p) {
               <p>${a.doctor} · ${a.type}</p>
               <div class="time">${icon('clock')} ${a.time}</div>
             </div>
-            <button class="btn" onclick="openAppointmentPass('${p.id}', ${index})">View Pass</button>
+            <button class="btn" onclick="openAppointmentPass('${p.id}', ${index})">View Pass</button><button class="btn danger" onclick="openCancelAppointment('${p.id}', ${index})">Cancel Appointment</button>
           </div>
         `).join('')}
       </div>
@@ -527,9 +531,9 @@ function renderAppointmentsTab(p) {
               <p>${a.doctor} · ${a.type}</p>
               <div class="time">${icon('clock')} ${a.time}</div>
             </div>
-            <button class="btn primary" onclick="openAppointmentPass('${p.id}', ${index})">Check-in Pass</button>
+            <button class="btn primary" onclick="openAppointmentPass('${p.id}', ${index})">Check-in Pass</button><button class="btn danger" onclick="openCancelAppointment('${p.id}', ${index})">Cancel Appointment</button>
           </div>
-        `).join('')}
+        `).join('') || '<p class="empty">No upcoming appointments.</p>'}
       </div>
 
       <div style="margin-top:25px; padding-top:20px; border-top:1px solid var(--line);">
@@ -557,7 +561,7 @@ function renderRequestsTab() {
             <div class="request-status">
               <div class="status-top">
                 <div>
-                  <span class="pill ${r.status==='rejected'?'red':r.status==='approved'?'':'amber'}">${r.status.toUpperCase()}</span>
+                  <span class="pill ${r.status==='cancelled'?'gray':r.status==='rejected'?'red':r.status==='approved'?'':'amber'}">${r.status.toUpperCase()}</span>
                   <h3>${r.title}</h3>${r.answers?wizardSymptomSummary(r.answers):''}${r.type==='Medication renewal'&&r.notes?`<p>${e(r.notes)}</p>`:''}
                   <p>Submitted: ${r.date} · Type: ${r.type}${r.requestedBy ? ' · Requested by: ' + r.requestedBy : ''}</p>
                 </div>
@@ -583,6 +587,7 @@ function openModal(html) {
 }
 
 function closeModal() {
+  state.appointmentCancellation=null;
   state.modal = null;
   render();
 }
@@ -811,6 +816,28 @@ function submitWizard() {
   showToast('Questionnaire submitted to your doctor.');
 }
 
+function openCancelAppointment(patientId, index) {
+  if(state.role!=='patient'||patientId!==state.selectedPatientId)return;
+  const appointment=state.patients[patientId]?.appointments[index];
+  if(!appointment)return;
+  state.appointmentCancellation={patientId,appointment};
+  openModal(`<div class="modal-header"><h2>Cancel appointment?</h2><button class="close" aria-label="Close cancellation" onclick="closeModal()">${icon('x')}</button></div><div class="modal-body"><h3>${e(appointment.title)}</h3><p>${e(appointment.month)} ${e(appointment.date)} · ${e(appointment.time)}</p><p>${e(appointment.doctor)}</p><p class="question-hint">This appointment will be removed from your upcoming visits.</p></div><div class="modal-footer"><button class="btn" onclick="closeModal()">Keep appointment</button><button class="btn danger" onclick="confirmCancelAppointment()">Yes, cancel appointment</button></div>`);
+}
+
+function confirmCancelAppointment() {
+  const pending=state.appointmentCancellation;
+  if(!pending||state.role!=='patient'||pending.patientId!==state.selectedPatientId)return;
+  const appointments=state.patients[pending.patientId].appointments;
+  const index=appointments.indexOf(pending.appointment);
+  if(index<0)return;
+  const [appointment]=appointments.splice(index,1);
+  const request=appointment.requestId?state.requests.find(r=>r.id===appointment.requestId&&r.patientId===pending.patientId):null;
+  if(request){request.status='cancelled';request.response='Appointment cancelled by the patient.';}
+  else state.requests.unshift({id:'cancel-'+Date.now(),type:'Appointment',patientId:pending.patientId,title:'Cancelled: '+appointment.title,date:'Just now',status:'cancelled',response:'Appointment cancelled by the patient.'});
+  closeModal();
+  showToast('Appointment cancelled. Your upcoming visits have been updated.');
+}
+
 function openAppointmentPass(patientId, index) {
   const patient = state.patients[patientId];
   const appointment = patient?.appointments[index];
@@ -873,13 +900,15 @@ function setApptSlot(slot) {
 }
 
 function confirmAppointment() {
+  const requestId='req-'+Date.now();
   const newAppt = {
+    requestId,
     date: '24', month: 'OCT', title: 'Consultation with ' + state.appointmentBooking.doctor,
     doctor: state.appointmentBooking.doctor, time: state.appointmentBooking.slot, type: 'In-person'
   };
   state.patients[state.selectedPatientId].appointments.push(newAppt);
   state.requests.unshift({
-    id: 'req-' + Date.now(),
+    id: requestId,
     type: 'Appointment',
     patientId: state.selectedPatientId,
     title: 'Booked: ' + newAppt.title,
@@ -1250,12 +1279,18 @@ function renderNurseView() {
                 <button class="template-step btn ${np.steps[idx] ? 'selected' : ''}" onclick="toggleNurseStep(${idx})">
                   <div class="choice-box">${np.steps[idx] ? icon('check') : ''}</div>
                   <div>
-                    <strong>${stepName}</strong>
+                    <strong>${e(stepName)}</strong>
                     <small>${np.steps[idx] ? 'Completed' : 'Pending'}</small>
                   </div>
                 </button>
               `).join('')}
             </div>
+            <form class="global-step-form" onsubmit="addGlobalNurseStep(); return false;">
+              <div class="global-step-field"><label for="global-step-name">New global checklist step</label><input id="global-step-name" type="text" maxlength="120" placeholder="Enter a step name" aria-describedby="global-step-hint global-step-error"></div>
+              <button class="btn primary" type="submit">${icon('plus')} Add global step</button>
+              <p id="global-step-hint" class="small muted">Added to every patient’s checklist. Each patient’s completion is tracked separately.</p>
+              <p id="global-step-error" class="global-step-error" role="alert"></p>
+            </form>
           </div>
 
           <div style="margin-top:20px;">
@@ -1270,6 +1305,20 @@ function renderNurseView() {
 function selectNursePatient(id) {
   state.selectedNursePatientId = id;
   render();
+}
+
+function addGlobalNurseStep() {
+  if(state.role!=='nurse')return;
+  const input=document.getElementById('global-step-name');
+  const name=(input?.value||'').trim().replace(/\s+/g,' ');
+  const error=document.getElementById('global-step-error');
+  const message=!name?'Enter a step name.':name.length>120?'Use 120 characters or fewer.':state.customTemplateSteps.some(step=>step.toLowerCase()===name.toLowerCase())?'This step already exists.':'';
+  if(message){error.textContent=message;input.setAttribute?.('aria-invalid','true');input.focus?.();return;}
+  const index=state.customTemplateSteps.length;
+  state.customTemplateSteps.push(name);
+  for(const patient of Object.values(state.nursePatients))patient.steps[index]=false;
+  showToast('Global step added to every patient’s checklist.');
+  document.getElementById('global-step-name')?.focus?.();
 }
 
 function toggleNurseStep(idx) {
@@ -1317,7 +1366,7 @@ function renderToast() {
   `;
 }
 
-Object.assign(window, {openRejectSample, rejectSample, openRejectRenewal, rejectRenewal, openRenewalRequestModal, toggleRenewalMedication, submitRenewalRequest, openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
+Object.assign(window, {addGlobalNurseStep, openCancelAppointment, confirmCancelAppointment, openRejectSample, rejectSample, openRejectRenewal, rejectRenewal, openRenewalRequestModal, toggleRenewalMedication, submitRenewalRequest, openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
 
 window.onload = function() {
   const requestedRole = location.hash.slice(1);
