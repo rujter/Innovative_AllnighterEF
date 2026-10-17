@@ -45,6 +45,7 @@
 .slot.btn.selected,.slot.btn.selected:hover{background:var(--green);border-color:var(--green);color:white;box-shadow:0 0 0 2px #a7c39b}
 .queue-row.btn.approved,.queue-row.btn.approved:hover{background:#e1f2df;border-color:#6aab69;border-left:5px solid var(--green);color:#174d30}
 .queue-row.btn.approved.selected{box-shadow:0 0 0 2px var(--green)}
+.request-queue-message{display:flex;align-items:center;gap:8px;font-weight:650;color:var(--green)}.request-queue-message .icon{width:18px;height:18px}.request-detail>.notice{margin-bottom:16px}
 </style>
 </head>
 <body>
@@ -143,12 +144,12 @@ const state = {
   },
   nursePatients: {
     'np1': {
-      id: 'np1', name: 'Marija Novak', emt: '051283-50214', room: 'Room 2', triage: 'Routine', time: '10 mins ago',
+      id: 'np1', patientId: 'p1', name: 'Marija Novak', emt: '051283-50214', room: 'Room 2', triage: 'Routine', time: '10 mins ago',
       allergies: ['Penicillin (Moderate rash)'],
       steps: { vitals: true, pain: false, allergy: false, meds: false }
     },
     'np2': {
-      id: 'np2', name: 'Janez Horvat', emt: '180475-50891', room: 'Room 4', triage: 'Urgent', time: '2 mins ago',
+      id: 'np2', patientId: 'p2', name: 'Janez Horvat', emt: '180475-50891', room: 'Room 4', triage: 'Urgent', time: '2 mins ago',
       allergies: [],
       steps: { vitals: false, pain: false, allergy: false, meds: false }
     }
@@ -206,7 +207,6 @@ function render() {
       <div>zVEM Prototype · Demonstrating guided clinical questions, shared Patient Passport, and streamlined requests.</div>
       <div style="display:flex; gap:10px;">
         <button class="btn subtle" onclick="resetDemoState()">Reset Demo Data</button>
-        <button class="btn subtle" onclick="openHelpModal()">About this Prototype</button>
       </div>
     </footer>
   `;
@@ -1007,6 +1007,17 @@ function approveCarePlan() {
   showToast('Care plan approved. Patient moved to the bottom of the queue.');
 }
 
+function staffRequestMessages(patientId, role, compact=false) {
+  const requests=state.requests.filter(r=>r.patientId===patientId&&r.status==='pending'&&['Medication renewal','Sample request'].includes(r.type));
+  return requests.map(r=>{
+    const renewal=r.type==='Medication renewal';
+    const title=renewal?'Medication renewal requested':`${r.title} requested`;
+    if(compact)return `<p class="request-queue-message">${icon(renewal?'pill':'file')} ${e(title)}</p>`;
+    const message=renewal?(role==='doctor'?'Review the requested medications for prescription renewal.':'Medication renewal is awaiting doctor review. Check the medication list with the patient.'):(role==='doctor'?'Review this sample request.':'Sample request is awaiting doctor review before collection is arranged.');
+    return `<div class="notice"><span>${icon(renewal?'pill':'file')}</span><div><strong>${e(title)}</strong><p>${e(message)}</p>${renewal?`<p>${e(r.medicationDetails)}</p>`:''}${r.notes?`<p>Patient notes: ${e(r.notes)}</p>`:''}</div></div>`;
+  }).join('');
+}
+
 function renderDoctorView() {
   const p = state.patients[state.selectedPatientId];
   return `
@@ -1034,7 +1045,7 @@ function renderDoctorView() {
           </div>
 
           <div style="display:grid; gap:10px; margin-top:10px;">
-            ${doctorQueue().map(item => `<button class="queue-row btn ${item.approved?'approved':item.category==='urgent'?'urgent':''} ${state.selectedPatientId===item.id?'selected':''}" onclick="selectDocPatient('${item.id}')" aria-pressed="${state.selectedPatientId===item.id}"><div class="queue-patient"><strong>${e(state.patients[item.id].name)}</strong><span class="pill ${!item.approved&&item.category==='urgent'?'red':''}">${item.approved?'Care Plan Approved':item.label}</span></div><p>${item.description}</p></button>`).join('') || '<p class="empty">No patients match this filter.</p>'}
+            ${doctorQueue().map(item => `<button class="queue-row btn ${item.approved?'approved':item.category==='urgent'?'urgent':''} ${state.selectedPatientId===item.id?'selected':''}" onclick="selectDocPatient('${item.id}')" aria-pressed="${state.selectedPatientId===item.id}"><div class="queue-patient"><strong>${e(state.patients[item.id].name)}</strong><span class="pill ${!item.approved&&item.category==='urgent'?'red':''}">${item.approved?'Care Plan Approved':item.label}</span></div><p>${item.description}</p>${staffRequestMessages(item.id,'doctor',true)}</button>`).join('') || '<p class="empty">No patients match this filter.</p>'}
           </div>
         </div>
       </div>
@@ -1050,6 +1061,7 @@ function renderDoctorView() {
             ${icon('stethoscope')}
           </div>
 
+          ${staffRequestMessages(p.id,'doctor')}
           <div class="clinical-passport-strip">
             <strong>${icon('passport')} Guided Questionnaire Summary</strong>
             <p><strong>Primary Concern:</strong> Shortness of breath / Cough</p>
@@ -1149,14 +1161,14 @@ function renderNurseView() {
                 <strong>Marija Novak</strong>
                 <span class="pill">Room 2</span>
               </div>
-              <p>Routine check · 10 mins ago</p>
+              <p>Routine check · 10 mins ago</p>${staffRequestMessages('p1','nurse',true)}
             </button>
             <button class="queue-row btn urgent ${state.selectedNursePatientId==='np2'?'selected':''}" onclick="selectNursePatient('np2')">
               <div class="queue-patient">
                 <strong>Janez Horvat</strong>
                 <span class="pill red">Urgent</span>
               </div>
-              <p>Room 4 · 2 mins ago</p>
+              <p>Room 4 · 2 mins ago</p>${staffRequestMessages('p2','nurse',true)}
             </button>
           </div>
         </div>
@@ -1173,6 +1185,7 @@ function renderNurseView() {
             ${icon('activity')}
           </div>
 
+          ${staffRequestMessages(np.patientId,'nurse')}
           ${np.allergies && np.allergies.length > 0 ? `
             <div class="allergy">
               ${icon('alert')}
