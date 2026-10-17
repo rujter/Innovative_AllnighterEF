@@ -7,7 +7,7 @@ A local, interactive system demonstration, not a replacement portal. All records
 - `../patient.html` opens the patient version.
 - `../doctor.html` opens the separate doctor workspace.
 - `../nurse.html` opens the separate nurse workspace.
-- All three use `../allnighter.html`, with `#patient`, `#doctor` or `#nurse` selecting the workspace. Opening the same underlying file in three tabs allows browser-local state to be shared where localStorage is available.
+- All three use `../index.html`, with `#patient`, `#doctor` or `#nurse` selecting the workspace. Opening the same underlying file in three tabs allows browser-local state to be shared where localStorage is available.
 - For HTTP preview, run `npm run dev` and open `http://localhost:5173/` with the appropriate role hash.
 
 The patient version opens directly to the care workflow, with large choices and no typing. The sample patient's ZZZS number remains visible in the Patient Passport. **Reset demo** restores the fictional records and appointments.
@@ -34,10 +34,10 @@ Other original proposal flows retained: repeat prescriptions, selected administr
 
 ## Development
 
-No dependencies are required to run the app. Source is in `dist/`. Run `npm run check` for JavaScript syntax checks. Regenerate the standalone file after edits:
+No dependencies are required to run the app. Source is in `dist/`. Run `npm run check` for JavaScript syntax checks. The root `index.html` is maintained separately. Export this development preview to a separate file after edits:
 
 ```
-node scripts/export-standalone.mjs ../allnighter.html
+node scripts/export-standalone.mjs ../preview.html
 ```
 
 This demo stores fictional state in localStorage under `zvem-workflow-demo-v2`. Existing version-2 records are enriched with medication metadata and the nurse workspace without clearing previous activity. Reset demo restores the original records. No patient text fields, real authorizations, prescriptions, shipments, test orders, clinically validated triage, or external messages are implemented. Publication is disabled by the user's local-only instruction.

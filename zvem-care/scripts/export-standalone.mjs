@@ -15,6 +15,6 @@ for (const name of ['icons.js', 'data.js', 'medications.js', 'nurse.js', 'clinic
   code.push(source);
 }
 html = html.replace('<script type="module" src="./app.js"></script>', `<script>\n(() => {\n${code.join('\n')}\n})();\n</script>`);
-const output = resolve(process.argv[2] || 'allnighter.html');
+const output = resolve(process.argv[2] || 'preview.html');
 await writeFile(output, html);
 console.log(`Standalone website written to ${output}`);
