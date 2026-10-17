@@ -20,9 +20,11 @@ export const concernOptions = [
  {value:'pain',label:'Pain or discomfort',icon:'heart'},
  {value:'urine',label:'A urinary problem',icon:'activity'},
  {value:'ongoing',label:'An ongoing condition',icon:'file'},
- {value:'unsure',label:'Something else / I’m not sure',icon:'help'}
+ {value:'other',label:'Other symptoms',icon:'activity'},
+ {value:'unsure',label:'I’m not sure',icon:'help'}
 ];
 export const branchOptions = {
+ other:{question:'Tell us about your symptoms',choices:['Other']},
  cold:{question:'What are you experiencing?',choices:['Cough','Sore throat','Blocked or runny nose','Feeling feverish','I’m not sure']},
  pain:{question:'Where is the discomfort?',choices:['Head','Back or joints','Stomach','Somewhere else / I’m not sure']},
  urine:{question:'What has changed?',choices:['Discomfort when passing urine','Going more often','A change I’m worried about','I’m not sure']},

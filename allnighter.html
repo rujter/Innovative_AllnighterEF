@@ -23,6 +23,24 @@
 .medicine-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;position:relative}.medicine-timeline-line{position:absolute;top:28px;left:7px;right:calc(50% - 16px);margin:0;min-width:0}.medicine-timeline .timeline-point{position:relative;z-index:1}
 .nurse-template-panel{padding:22px;margin:24px 0;background:#f3f8ef;border:1px solid #c9dfc7;border-radius:13px}.template-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.template-heading>.icon{color:var(--green)}.template-heading .eyebrow{margin-bottom:3px}.template-heading h3{font-size:19px}.template-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:17px 0}.template-choice{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;min-height:125px;border:2px solid #d4e1d3;background:white;padding:12px;border-radius:10px}.template-choice.selected{border-color:var(--green);background:#e8f3e5}.template-choice strong{font-size:15px;line-height:1.25}.template-choice small{font-size:12px;color:var(--muted);line-height:1.3}.template-choice span{margin-top:auto;color:var(--green);font-size:12px;font-weight:700}.template-edit{min-height:44px;font-size:14px;padding:8px 12px;margin-bottom:12px}.nurse-template-panel>.small{font-size:13px}.template-editor{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin-top:20px}.template-editor h3{font-size:17px}.template-editor>.small{margin-top:6px}.template-step-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.template-step{display:flex;align-items:center;gap:9px;text-align:left;min-height:60px;border:1px solid #d5e0d9;background:#fff;padding:9px;border-radius:8px;font-size:13px}.template-step.selected{background:#eaf4e7;border-color:#7ca888}.template-step:disabled{opacity:1;cursor:default}.template-step .choice-box{width:20px;height:20px;min-width:20px;border-radius:5px}.template-step .choice-box .icon{width:15px;height:15px}.template-step small{display:block;color:var(--muted);font-size:11px}.template-editor-actions{display:flex;gap:8px;flex-wrap:wrap}.template-editor-actions .btn{min-height:45px;font-size:14px}.nurse-checklist>.template-heading{padding-bottom:8px}
 @media(max-width:760px){.nurse-template-panel{padding:17px;margin:19px 0}.template-grid,.template-step-grid{grid-template-columns:1fr}.template-choice{min-height:70px}.template-choice small,.template-choice span{font-size:13px}.template-step{min-height:55px}}
+/* The demonstration uses one shared, accessible visual system in styles.css. */
+
+/* Interactive pain location picker */
+.body-maps{display:flex;justify-content:center;gap:clamp(12px,5vw,48px);padding:18px 8px;background:#f4f8fa;border:1px solid #dce6ea;border-radius:16px}
+.body-maps figure{margin:0;width:190px;max-width:46%}
+.body-maps figcaption{text-align:center;font-weight:700;margin-bottom:12px;color:#304d59}
+.body-maps svg{display:block;width:100%;height:auto;overflow:visible}
+.body-region{fill:#cbdde3;stroke:#fff;stroke-width:3;cursor:pointer;transition:fill .15s}
+.body-region:hover{fill:#91bcc5}
+.body-region.selected{fill:#087e83;stroke:#064f56}
+.body-region:focus-visible{outline:none;stroke:#172d46;stroke-width:5;fill:#e8b64a}
+.pain-selection{line-height:1.6;padding:12px 0}
+.other-symptom{margin-top:18px}
+.other-symptom label{display:block;font-weight:700;margin-bottom:8px}
+.other-symptom label span{font-weight:400}
+.other-symptom textarea{display:block;box-sizing:border-box;width:100%;padding:12px;border:1px solid #9aafb7;border-radius:10px;font:inherit;resize:vertical}
+.other-symptom textarea:focus-visible{outline:3px solid #087e83;outline-offset:2px}
+
 </style>
 </head>
 <body>
@@ -527,7 +545,7 @@ function renderRequestsTab() {
               <div class="status-top">
                 <div>
                   <span class="pill ${r.status==='approved'?'':'amber'}">${r.status.toUpperCase()}</span>
-                  <h3>${r.title}</h3>
+                  <h3>${r.title}</h3>${r.answers?wizardSymptomSummary(r.answers):''}
                   <p>Submitted: ${r.date} · Type: ${r.type}${r.requestedBy ? ' · Requested by: ' + r.requestedBy : ''}</p>
                 </div>
               </div>
@@ -624,8 +642,31 @@ function openAccountModal() {
   `);
 }
 
+function e(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+// Anatomical left/right refer to the patient, not the viewer.
+const bodyRegions = [
+ ['Head','M90 35 a30 30 0 1 0 60 0 a30 30 0 1 0 -60 0'],
+ ['Neck','M106 66 H134 V90 H106 Z'],
+ ['Chest','M85 92 Q120 82 155 92 L150 158 H90 Z','Upper back'],
+ ['Abdomen','M90 162 H150 L155 214 H85 Z','Lower back'],
+ ['Pelvis','M85 218 H155 L158 251 L120 265 L82 251 Z','Buttocks'],
+ ['Right arm','M80 94 L85 153 L65 217 L45 210 L58 135 Q63 104 80 94'],
+ ['Left arm','M160 94 L155 153 L175 217 L195 210 L182 135 Q177 104 160 94'],
+ ['Right hand','M44 214 L64 221 L57 253 Q40 269 34 249 Z'],
+ ['Left hand','M196 214 L176 221 L183 253 Q200 269 206 249 Z'],
+ ['Right leg','M83 257 L117 270 L113 352 L105 425 H81 L78 350 Z'],
+ ['Left leg','M157 257 L123 270 L127 352 L135 425 H159 L162 350 Z'],
+ ['Right foot','M81 429 H105 L106 450 Q87 462 68 453 Z'],
+ ['Left foot','M135 429 H159 L172 453 Q153 462 134 450 Z']
+];
+function painMap(selected=[]){return `<p class="question-hint">Click or tap where it hurts. Select more than one area if needed; select again to remove. Left and right refer to your body.</p><div class="body-maps">${['Front','Back'].map(view=>`<figure><figcaption>${view}</figcaption><svg viewBox="20 0 200 470" role="group" aria-label="${view} of body: select pain locations">${bodyRegions.map(([name,path,back])=>{const label=view==='Back'?(back||name.replace('Right','TEMP').replace('Left','Right').replace('TEMP','Left')):name;const value=`${label} (${view.toLowerCase()})`;return `<path d="${path}" class="body-region ${selected.includes(value)?'selected':''}" role="button" tabindex="0" aria-label="${value}" aria-pressed="${selected.includes(value)}" data-pain-location="${value}"><title>${value}</title></path>`;}).join('')}</svg></figure>`).join('')}</div><p class="pain-selection" aria-live="polite"><strong>Selected:</strong> ${selected.length?e(selected.join('; ')):'No areas selected yet'}</p>`; }
+function wizardSymptomSummary(answers){return `<div class="answer-row"><span>Pain locations</span><strong>${e((answers.locations||[]).join('; ')||'No locations selected')}</strong></div>${answers.main==='Other'&&answers.other?.trim()?`<div class="answer-row"><span>Other symptoms</span><strong>${e(answers.other)}</strong></div>`:''}`;}
+document.addEventListener('input',event=>{if(event.target.id==='other-symptom')state.questionState.answers.other=event.target.value;});
+document.addEventListener('click',event=>{const target=event.target.closest('[data-pain-location]');if(!target)return;const value=target.dataset.painLocation;const selected=state.questionState.answers.locations||[];state.questionState.answers.locations=selected.includes(value)?selected.filter(v=>v!==value):[...selected,value];const scroll=document.querySelector('.modal-body').scrollTop;renderWizardStep();document.querySelector('.modal-body').scrollTop=scroll;[...document.querySelectorAll('[data-pain-location]')].find(el=>el.dataset.painLocation===value)?.focus({preventScroll:true});});
+document.addEventListener('keydown',event=>{if(event.target.matches('[data-pain-location]')&&['Enter',' '].includes(event.key)){event.preventDefault();event.target.dispatchEvent(new MouseEvent('click',{bubbles:true}));}});
+
 function openWizardModal() {
-  state.questionState = { step: 1, answers: { main: 'Shortness of breath / Cough', duration: '3-5 days', severity: 'Moderate' } };
+  state.questionState = { step: 1, answers: { main: 'Shortness of breath / Cough', duration: '3-5 days', severity: 'Moderate', locations: [], other: '' } };
   renderWizardStep();
 }
 
@@ -637,7 +678,7 @@ function renderWizardStep() {
       <h2 class="question-title">What is your primary health concern today?</h2>
       <p class="question-hint">Select the option that best matches your symptoms.</p>
       <div class="choice-grid">
-        ${['Shortness of breath / Cough', 'Persistent headache or dizziness', 'Joint or back pain', 'General fatigue / Fever'].map(opt => `
+        ${['Shortness of breath / Cough', 'Persistent headache or dizziness', 'Joint or back pain', 'General fatigue / Fever', 'Other'].map(opt => `
           <button class="choice ${state.questionState.answers.main===opt?'selected':''}" onclick="setWizardAnswer('main', '${opt}')">
             <div class="choice-box">${icon('check')}</div>
             <div><strong>${opt}</strong></div>
@@ -645,6 +686,7 @@ function renderWizardStep() {
         `).join('')}
       </div>
     `;
+    content += `${state.questionState.answers.main==='Other'?`<div class="other-symptom"><label for="other-symptom">Describe your symptoms (optional)</label><textarea id="other-symptom" rows="3" maxlength="1000">${e(state.questionState.answers.other)}</textarea></div>`:''}<h3 style="margin:24px 0 12px">Where does it hurt?</h3>${painMap(state.questionState.answers.locations)}<p class="question-hint">If you have no pain, continue without selecting an area.</p>`;
   } else if(step === 2) {
     content = `
       <h2 class="question-title">How long have you experienced these symptoms?</h2>
@@ -664,6 +706,7 @@ function renderWizardStep() {
       <p class="question-hint">Your answers will be securely attached to your file so your doctor will review them before your consultation.</p>
       
       <div class="answer-list">
+        ${wizardSymptomSummary(state.questionState.answers)}
         <div class="answer-row">
           <span>Primary Concern</span>
           <strong>${state.questionState.answers.main}</strong>
@@ -739,6 +782,8 @@ function submitWizard() {
   state.requests.unshift({
     id: 'req-' + Date.now(),
     type: 'Guided Questionnaire',
+    patientId: state.selectedPatientId,
+    answers: structuredClone(state.questionState.answers),
     title: 'Symptom Report: ' + state.questionState.answers.main,
     date: 'Just now',
     status: 'pending',
@@ -948,6 +993,7 @@ function renderDoctorView() {
             <strong>${icon('passport')} Guided Questionnaire Summary</strong>
             <p><strong>Primary Concern:</strong> Shortness of breath / Cough</p>
             <p><strong>Duration:</strong> 3-5 days (Moderate severity)</p>
+            ${state.requests.filter(r=>r.answers&&r.patientId===state.selectedPatientId).map(r=>`<div class="nurse-answers"><p><strong>Latest submitted concern:</strong> ${e(r.answers.main)}</p><p><strong>Duration:</strong> ${e(r.answers.duration)}</p>${wizardSymptomSummary(r.answers)}</div>`).join('')}
           </div>
 
           ${p.allergies && p.allergies.length > 0 ? `

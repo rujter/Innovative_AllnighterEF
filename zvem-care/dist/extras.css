@@ -1,1 +1,17 @@
 /* The demonstration uses one shared, accessible visual system in styles.css. */
+
+/* Interactive pain location picker */
+.body-maps{display:flex;justify-content:center;gap:clamp(12px,5vw,48px);padding:18px 8px;background:#f4f8fa;border:1px solid #dce6ea;border-radius:16px}
+.body-maps figure{margin:0;width:190px;max-width:46%}
+.body-maps figcaption{text-align:center;font-weight:700;margin-bottom:12px;color:#304d59}
+.body-maps svg{display:block;width:100%;height:auto;overflow:visible}
+.body-region{fill:#cbdde3;stroke:#fff;stroke-width:3;cursor:pointer;transition:fill .15s}
+.body-region:hover{fill:#91bcc5}
+.body-region.selected{fill:#087e83;stroke:#064f56}
+.body-region:focus-visible{outline:none;stroke:#172d46;stroke-width:5;fill:#e8b64a}
+.pain-selection{line-height:1.6;padding:12px 0}
+.other-symptom{margin-top:18px}
+.other-symptom label{display:block;font-weight:700;margin-bottom:8px}
+.other-symptom label span{font-weight:400}
+.other-symptom textarea{display:block;box-sizing:border-box;width:100%;padding:12px;border:1px solid #9aafb7;border-radius:10px;font:inherit;resize:vertical}
+.other-symptom textarea:focus-visible{outline:3px solid #087e83;outline-offset:2px}
