@@ -1287,8 +1287,8 @@ function renderNurseView() {
               `).join('')}
             </div>
             <form class="global-step-form" onsubmit="addGlobalNurseStep(); return false;">
-              <div class="global-step-field"><label for="global-step-name">New global checklist step</label><input id="global-step-name" type="text" maxlength="120" placeholder="Enter a step name" aria-describedby="global-step-hint global-step-error"></div>
-              <button class="btn primary" type="submit">${icon('plus')} Add global step</button>
+              <div class="global-step-field"><label for="global-step-name">New checklist step</label><input id="global-step-name" type="text" maxlength="120" placeholder="Enter a step name" aria-describedby="global-step-hint global-step-error"></div>
+              <button class="btn primary" type="submit">${icon('plus')} Add step</button>
               <p id="global-step-hint" class="small muted">Added to every patient’s checklist. Each patient’s completion is tracked separately.</p>
               <p id="global-step-error" class="global-step-error" role="alert"></p>
             </form>
