@@ -907,6 +907,22 @@ function rejectRenewal(id) {
   showToast('Medication renewal rejected. The decision is visible in the patient’s requests.');
 }
 
+function openRejectSample(id) {
+  const request=state.requests.find(r=>r.id===id&&r.type==='Sample request'&&r.status==='pending'&&r.patientId===state.selectedPatientId);
+  if(state.role!=='doctor'||!request)return;
+  openModal(`<div class="modal-header"><div><h2>Reject sample request?</h2><p>${e(state.patients[request.patientId].name)}</p></div><button class="close" aria-label="Close rejection" onclick="closeModal()">${icon('x')}</button></div><div class="modal-body"><p>${e(request.title)}</p><div class="other-symptom"><label for="sample-rejection-reason">Reason for the patient (optional)</label><textarea id="sample-rejection-reason" rows="3" maxlength="1000" placeholder="Explain why this sample request cannot be approved…"></textarea></div><p class="question-hint">The patient will see this request marked as rejected, together with your reason.</p></div><div class="modal-footer"><button class="btn" onclick="closeModal()">Cancel</button><button class="btn danger" onclick="rejectSample('${request.id}')">Reject request</button></div>`);
+}
+
+function rejectSample(id) {
+  const request=state.requests.find(r=>r.id===id&&r.type==='Sample request'&&r.status==='pending'&&r.patientId===state.selectedPatientId);
+  if(state.role!=='doctor'||!request)return;
+  const reason=(document.getElementById('sample-rejection-reason')?.value||'').trim().slice(0,1000);
+  request.status='rejected';
+  request.response='Your sample request was rejected by Dr. Ana Novak.'+(reason?' Reason: '+reason:'');
+  closeModal();
+  showToast('Sample request rejected. The decision is visible in the patient’s requests.');
+}
+
 function pendingRenewal(patientId, index) {
   return state.requests.some(r=>r.type==='Medication renewal'&&r.patientId===patientId&&r.status==='pending'&&r.medicationIndexes.includes(index));
 }
@@ -1112,7 +1128,7 @@ function renderDoctorView() {
 
           <div class="record-group">
             <h3>${icon('file')} Urine & Stool Sample Requests</h3>
-            ${state.requests.filter(r => r.type === 'Sample request' && r.patientId === p.id).map(r => `<div class="record-item"><strong>${r.title}</strong><span>Requested by: ${r.requestedBy} · ${r.date} · ${r.status}</span></div>`).join('') || '<p class="small muted">No sample requests for this patient.</p>'}
+            ${state.requests.filter(r => r.type === 'Sample request' && r.patientId === p.id).map(r => `<div class="record-item"><strong>${r.title}</strong><span>Requested by: ${r.requestedBy} · ${r.date} · ${r.status}</span>${r.response?`<p>${e(r.response)}</p>`:''}${r.status==='pending'?`<button class="btn danger" onclick="openRejectSample('${r.id}')">Reject sample request</button>`:''}</div>`).join('') || '<p class="small muted">No sample requests for this patient.</p>'}
             <button class="btn" onclick="openTestRequestModal()">${icon('plus')} Request Urine or Stool Sample</button>
           </div>
 
@@ -1301,7 +1317,7 @@ function renderToast() {
   `;
 }
 
-Object.assign(window, {openRejectRenewal, rejectRenewal, openRenewalRequestModal, toggleRenewalMedication, submitRenewalRequest, openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
+Object.assign(window, {openRejectSample, rejectSample, openRejectRenewal, rejectRenewal, openRenewalRequestModal, toggleRenewalMedication, submitRenewalRequest, openAppointmentPass, approveCarePlan, closeModal, confirmAppointment, nextWizardStep, openAccountModal, openBookAppointmentModal, openHelpModal, openTestRequestModal, openWizardModal, prevWizardStep, resetDemoState, selectDocPatient, selectNursePatient, setApptDoc, setApptSlot, setDocFilter, setDocRoute, setPatientTab, setTestType, setWizardAnswer, showToast, submitTestRequest, submitWizard, switchRole, toggleNurseStep, togglePassportExpansion});
 
 window.onload = function() {
   const requestedRole = location.hash.slice(1);
